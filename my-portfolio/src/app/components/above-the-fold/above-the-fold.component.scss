@@ -1,0 +1,173 @@
+// ✅ Hintergrundbild für die ATF-Sektion
+
+.atf-section {
+  width: 100%;
+  height: 100vh; // Volle Bildschirmhöhe
+  background-image: url("/assets/Images/AboveTheFold/BackgroundATF/bgATF.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+// ✅ Header-Styling
+.atf-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: transparent;
+}
+
+// ✅ Logo-Styling
+.logo {
+  width: 80px;
+  transition: filter 0.3s ease-in-out, transform 0.2s;
+
+  &:hover {
+    filter: hue-rotate(-50deg) saturate(300%) brightness(1.2);
+  }
+}
+
+// ✅ Navbar-Styling
+.navbar {
+  display: flex;
+  gap: 250px;
+
+  a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: #e67d60;
+    }
+  }
+}
+
+// ✅ Sprachumschalter (EN/DE)
+.language-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px; // Weniger Abstand zwischen "EN" und "DE"
+
+  .lang-option {
+    font-size: 16px; // Etwas kleiner
+    color: white;
+    transition: color 0.3s ease-in-out;
+  }
+
+  .switch-container {
+    position: relative;
+    width: 48px; // Breite verkleinert
+    height: 14px; // Höhe verkleinert
+    cursor: pointer;
+
+    .lang-bar {
+      width: 100%;
+      height: 100%; // Passt die Höhe automatisch an
+    }
+
+    .lang-circle {
+      position: absolute;
+      top: 2%; // Kreis minimal nach oben verschoben
+      left: 0px; // Etwas weiter nach links
+      width: 18px; // Kreis kleiner
+      height: 18px;
+      transition: all 0.3s ease-in-out;
+
+      &.active {
+        left: 32px; // Neue Position nach rechts verschoben
+      }
+    }
+  }
+}
+
+// ✅ Text-Bereich für "Fullstack Developer"
+.atf-content {
+  text-align: center;
+  margin-top: 100px;
+
+  h1 {
+    font-size: 4rem;
+    font-weight: bold;
+    color: white;
+    text-transform: uppercase;
+  }
+
+  .fullstack {
+    position: relative;
+    display: inline-block;
+  }
+
+  .developer {
+    margin-left: 20px; // Verschiebt "Developer" leicht nach rechts
+  }
+}
+
+// ✅ "Hello World" Styling
+.hello-world {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: white;
+  font-size: 16px;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+
+  &:hover {
+    padding: 10px 40px;
+    background: white;
+    color: black;
+    content: "I'm Enes Hadzic";
+  }
+}
+
+// ✅ Polaroid Styling
+.polaroid {
+  display: block;
+  margin: 20px auto;
+  width: 250px;
+}
+
+// ✅ "Get in Touch"-Button
+.get-in-touch {
+  display: inline-block;
+  padding: 12px 25px;
+  border: 2px solid white;
+  border-radius: 5px;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0 10px white;
+
+  &:hover {
+    background-color: #e67d60;
+    border-color: #e67d60;
+    box-shadow: 0 0 15px #e67d60;
+  }
+}
+
+// ✅ Social Icons (unten links)
+.socials {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  img {
+    width: 30px;
+    transition: transform 0.2s ease-in-out;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+}

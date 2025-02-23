@@ -1,0 +1,37 @@
+<section class="atf-section">
+  <header class="atf-header">
+    <!-- Logo -->
+    <img
+      src="assets/Images/AboveTheFold/EnesLogo/EHBlau.png"
+      alt="Enes Logo"
+      class="logo"
+    />
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <a href="#about">About me</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Language Switch -->
+    <div class="language-switch">
+      <span class="lang-option" id="lang-en">EN</span>
+      <div class="switch-container" (click)="toggleLanguage()">
+        <img
+          src="assets/Images/AboveTheFold/LanguageButton/orangeBar.png"
+          alt="Language Bar"
+          class="lang-bar"
+        />
+        <img
+          src="assets/Images/AboveTheFold/LanguageButton/blueCircle.png"
+          alt="Switch Circle"
+          class="lang-circle"
+          [class.active]="isGerman"
+        />
+      </div>
+      <span class="lang-option" id="lang-de">DE</span>
+    </div>
+  </header>
+</section>
