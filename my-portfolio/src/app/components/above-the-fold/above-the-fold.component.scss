@@ -1,5 +1,4 @@
 // ✅ Hintergrundbild für die ATF-Sektion
-
 .atf-section {
   width: 100%;
   height: 100vh; // Volle Bildschirmhöhe
@@ -42,19 +41,114 @@ p {
   }
 }
 
-// ✅ Navbar-Styling
+// ✅ Navbar-Styling mit Kritzel-Animationen
 .navbar {
   display: flex;
   gap: 250px;
 
-  a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    transition: color 0.3s ease-in-out;
+  .nav-item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
-    &:hover {
-      color: #e67d60;
+    a {
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      transition: color 0.3s ease-in-out;
+    }
+
+    .nav-underline {
+      position: absolute;
+      opacity: 0; // Unsichtbar zu Beginn
+      transition: opacity 0.3s ease-in-out;
+    }
+  }
+
+  // ✅ About Me - Kreis schließt sich
+  .aboutme-line {
+    width: 120px;
+
+    bottom: -10px;
+    animation: closeCircle 0.5s linear forwards;
+    transform-origin: center;
+  }
+
+  .nav-item:hover .aboutme-line {
+    opacity: 1;
+  }
+
+  @keyframes closeCircle {
+    0% {
+      transform: scaleY(0);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
+
+  // ✅ Skills - Unterstrich fährt von links nach rechts
+  .skills-line {
+    width: 120px;
+    bottom: -10px;
+    animation: underlineSkills 0.5s ease forwards;
+    transform-origin: left;
+  }
+
+  .nav-item:hover .skills-line {
+    opacity: 1;
+  }
+
+  @keyframes underlineSkills {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  // ✅ Projects - Wellenlinie als Durchstreichung
+  .projects-line {
+    width: 120px;
+    top: 5px;
+    animation: strikeThrough 0.5s ease forwards;
+    transform-origin: left;
+  }
+
+  .nav-item:hover .projects-line {
+    opacity: 1;
+  }
+
+  @keyframes strikeThrough {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }
+
+  // ✅ Contact - Unterstrich fährt von links nach rechts (wie Skills)
+  .contact-line {
+    width: 120px;
+    bottom: -10px;
+    animation: underlineContact 0.5s ease forwards;
+    transform-origin: left;
+  }
+
+  .nav-item:hover .contact-line {
+    opacity: 1;
+  }
+
+  @keyframes underlineContact {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
     }
   }
 }
