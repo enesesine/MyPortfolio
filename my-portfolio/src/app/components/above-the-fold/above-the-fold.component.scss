@@ -9,6 +9,18 @@
   background-repeat: no-repeat;
   display: flex;
   flex-direction: column;
+  font-family: "Bricolage", sans-serif;
+  color: white;
+}
+
+h1 {
+  font-family: "Bricolage", sans-serif;
+  font-weight: bold;
+}
+
+p {
+  font-family: "Bricolage", sans-serif;
+  font-weight: normal;
 }
 
 // ✅ Header-Styling
@@ -61,9 +73,11 @@
 
   .switch-container {
     position: relative;
-    width: 48px; // Breite verkleinert
-    height: 14px; // Höhe verkleinert
+    width: 40px; // Breite verkleinert
+    height: 10px; // Höhe verkleinert
     cursor: pointer;
+    position: relative;
+    top: -5px;
 
     .lang-bar {
       width: 100%;
@@ -79,7 +93,7 @@
       transition: all 0.3s ease-in-out;
 
       &.active {
-        left: 32px; // Neue Position nach rechts verschoben
+        left: 25px; // Neue Position nach rechts verschoben
       }
     }
   }
