@@ -192,17 +192,52 @@ p {
     text-align: center;
   }
 
+  // Fullstack weiterhin nach links verschieben
   .fullstack {
     display: inline-block;
     position: relative;
-    left: -140px; /* Weiter nach links verschieben */
+    left: -140px;
   }
 
+  // Hier legen wir Developer + Button
+  .developer-container {
+    position: relative;
+    display: inline-block; /* So sitzen Developer und Button eng beieinander */
+  }
+
+  // Developer nach rechts verschieben
   .developer {
     display: inline-block;
     position: relative;
-    left: 140px; /* Weiter nach rechts verschieben */
-    margin-top: -20px; /* Optional: Wenn du sie enger zusammen möchtest */
+    left: 140px;
+    margin-top: -20px;
+  }
+
+  // Button fest (fester Schatten, Hover Orange)
+  .get-in-touch {
+    position: absolute;
+    top: 150px; /* Abstand unter Developer */
+    right: -100px; /* Rechtsbündig an .developer-container */
+    transform: translateX(40px); /* Noch weiter raus nach rechts */
+
+    background: transparent;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 10px 25px;
+    cursor: pointer;
+
+    /* Fester Schatten nach unten rechts, kein Glow */
+    box-shadow: 6px 6px 0 #fff;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: none; // Schatten verschwindet
+      background: #e67d60; // Orange
+      color: #fff; // Text in Weiß
+    }
   }
 }
 
@@ -232,25 +267,8 @@ p {
   width: 250px;
 }
 
-// ✅ "Get in Touch"-Button
-.get-in-touch {
-  display: inline-block;
-  padding: 12px 25px;
-  border: 2px solid white;
-  border-radius: 5px;
-  color: white;
-  font-size: 18px;
-  text-decoration: none;
-  margin-top: 20px;
-  transition: all 0.3s ease-in-out;
-  box-shadow: 0 0 10px white;
-
-  &:hover {
-    background-color: #e67d60;
-    border-color: #e67d60;
-    box-shadow: 0 0 15px #e67d60;
-  }
-}
+// ✅ "Get in Touch"-Button (falls du es woanders brauchst)
+// → Siehe oben in .developer-container
 
 // ✅ Social Icons (unten links)
 .socials {
