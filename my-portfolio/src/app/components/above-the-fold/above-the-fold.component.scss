@@ -67,35 +67,35 @@ p {
     }
   }
 
-  // ✅ About Me per clip-path (von oben nach unten)
+  // ✅ About Me per clip-path (von oben nach unten, smooth Ende)
   .aboutme-line {
     width: 120px;
-    // Höhe ist hier egal, da wir clip-path nutzen
     bottom: -10px;
-
-    // Startzustand: Von oben abgeschnitten (inset: top right bottom left)
-    clip-path: inset(100% 0 0 0);
+    // Start: oben abgeschnitten, "0 0 100% 0" bedeutet:
+    //  top = 0, right = 0, bottom = 100%, left = 0
+    //  => der untere Teil ist 100% abgeschnitten
+    clip-path: inset(0 0 100% 0);
   }
 
   .nav-item:hover .aboutme-line {
     opacity: 1;
-    animation: revealTopToBottom 0.5s linear forwards;
+    animation: revealTopToBottom 0.3s ease-in-out forwards;
   }
 
   @keyframes revealTopToBottom {
     0% {
-      clip-path: inset(100% 0 0 0);
+      clip-path: inset(0 0 100% 0);
     }
     100% {
       clip-path: inset(0 0 0 0);
     }
   }
 
-  // ✅ Skills (clip-path) - von rechts nach links
+  // ✅ Skills (clip-path)
   .skills-line {
     width: 120px;
     bottom: -12px;
-    clip-path: inset(0 100% 0 0); // Start: versteckt (rechts abgeschnitten)
+    clip-path: inset(0 100% 0 0); // Start: rechts abgeschnitten
   }
 
   .nav-item:hover .skills-line {
@@ -103,7 +103,7 @@ p {
     animation: waveClip 0.6s ease forwards;
   }
 
-  // ✅ Projects (clip-path) - von rechts nach links
+  // ✅ Projects (clip-path)
   .projects-line {
     width: 120px;
     top: 5px;
@@ -115,7 +115,7 @@ p {
     animation: waveClip 0.6s ease forwards;
   }
 
-  // ✅ Contact (clip-path) - von rechts nach links
+  // ✅ Contact (clip-path)
   .contact-line {
     width: 120px;
     bottom: -10px;
