@@ -67,13 +67,10 @@ p {
     }
   }
 
-  // ✅ About Me per clip-path (von oben nach unten, smooth Ende)
+  // ✅ About Me per clip-path (von oben nach unten)
   .aboutme-line {
     width: 120px;
     bottom: -10px;
-    // Start: oben abgeschnitten, "0 0 100% 0" bedeutet:
-    //  top = 0, right = 0, bottom = 100%, left = 0
-    //  => der untere Teil ist 100% abgeschnitten
     clip-path: inset(0 0 100% 0);
   }
 
@@ -95,7 +92,7 @@ p {
   .skills-line {
     width: 120px;
     bottom: -12px;
-    clip-path: inset(0 100% 0 0); // Start: rechts abgeschnitten
+    clip-path: inset(0 100% 0 0);
   }
 
   .nav-item:hover .skills-line {
@@ -181,21 +178,31 @@ p {
 .atf-content {
   text-align: center;
   margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 
   h1 {
-    font-size: 4rem;
+    font-size: 7rem; /* SEHR große Schrift */
     font-weight: bold;
     color: white;
     text-transform: uppercase;
+    position: relative;
+    text-align: center;
   }
 
   .fullstack {
-    position: relative;
     display: inline-block;
+    position: relative;
+    left: -140px; /* Weiter nach links verschieben */
   }
 
   .developer {
-    margin-left: 20px;
+    display: inline-block;
+    position: relative;
+    left: 140px; /* Weiter nach rechts verschieben */
+    margin-top: -20px; /* Optional: Wenn du sie enger zusammen möchtest */
   }
 }
 
