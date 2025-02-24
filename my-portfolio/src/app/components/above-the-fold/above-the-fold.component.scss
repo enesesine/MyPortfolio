@@ -1,7 +1,7 @@
 // ✅ Hintergrundbild für die ATF-Sektion
 .atf-section {
   width: 100%;
-  height: 100vh; // Volle Bildschirmhöhe
+  height: 100vh;
   background-image: url("/assets/Images/AboveTheFold/BackgroundATF/bgATF.png");
   background-size: cover;
   background-position: center;
@@ -62,23 +62,21 @@ p {
 
     .nav-underline {
       position: absolute;
-      opacity: 0; // Unsichtbar zu Beginn
+      opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
   }
 
-  // ✅ About Me per clip-path (von oben nach unten)
+  // ✅ About Me (clip-path)
   .aboutme-line {
     width: 120px;
     bottom: -10px;
     clip-path: inset(0 0 100% 0);
   }
-
   .nav-item:hover .aboutme-line {
     opacity: 1;
     animation: revealTopToBottom 0.3s ease-in-out forwards;
   }
-
   @keyframes revealTopToBottom {
     0% {
       clip-path: inset(0 0 100% 0);
@@ -88,43 +86,29 @@ p {
     }
   }
 
-  // ✅ Skills (clip-path)
-  .skills-line {
-    width: 120px;
-    bottom: -12px;
-    clip-path: inset(0 100% 0 0);
-  }
-
-  .nav-item:hover .skills-line {
-    opacity: 1;
-    animation: waveClip 0.6s ease forwards;
-  }
-
-  // ✅ Projects (clip-path)
-  .projects-line {
-    width: 120px;
-    top: 5px;
-    clip-path: inset(0 100% 0 0);
-  }
-
-  .nav-item:hover .projects-line {
-    opacity: 1;
-    animation: waveClip 0.6s ease forwards;
-  }
-
-  // ✅ Contact (clip-path)
+  // ✅ Skills, Projects, Contact
+  .skills-line,
+  .projects-line,
   .contact-line {
     width: 120px;
-    bottom: -10px;
     clip-path: inset(0 100% 0 0);
   }
+  .skills-line {
+    bottom: -12px;
+  }
+  .projects-line {
+    top: 5px;
+  }
+  .contact-line {
+    bottom: -10px;
+  }
 
+  .nav-item:hover .skills-line,
+  .nav-item:hover .projects-line,
   .nav-item:hover .contact-line {
     opacity: 1;
     animation: waveClip 0.6s ease forwards;
   }
-
-  // ✅ Einheitliche Animation für Skills/Projects/Contact
   @keyframes waveClip {
     0% {
       clip-path: inset(0 100% 0 0);
@@ -135,7 +119,7 @@ p {
   }
 }
 
-// ✅ Sprachumschalter (EN/DE)
+// ✅ Sprachumschalter
 .language-switch {
   display: flex;
   align-items: center;
@@ -162,7 +146,7 @@ p {
     .lang-circle {
       position: absolute;
       top: 2%;
-      left: 0px;
+      left: 0;
       width: 18px;
       height: 18px;
       transition: all 0.3s ease-in-out;
@@ -184,7 +168,7 @@ p {
   justify-content: center;
 
   h1 {
-    font-size: 7rem; /* SEHR große Schrift */
+    font-size: 7rem;
     font-weight: bold;
     color: white;
     text-transform: uppercase;
@@ -192,20 +176,157 @@ p {
     text-align: center;
   }
 
-  // Fullstack weiterhin nach links verschieben
+  /* **********************************
+   * FULLSTACK-BEREICH
+   ********************************** */
+  .fullstack-container {
+    position: relative;
+    display: inline-block;
+  }
+
   .fullstack {
     display: inline-block;
     position: relative;
     left: -140px;
   }
 
-  // Hier legen wir Developer + Button
-  .developer-container {
-    position: relative;
-    display: inline-block; /* So sitzen Developer und Button eng beieinander */
+  /* ************ HELLO WORLD-BUTTON + WAVING HAND ************ */
+
+  .hello-world {
+    position: absolute;
+    top: -55px; /* tiefer => nicht so hoch */
+    left: -130px; /* horizontal justieren */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 140px;
+    min-height: 40px;
+    padding: 10px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    overflow: hidden;
+    white-space: nowrap; /* "I'm Enes Hadzic" => keine 2. Zeile */
+
+    /* Standard => unhover => expandOut */
+    animation: expandOut 0.8s ease-in-out forwards;
   }
 
-  // Developer nach rechts verschieben
+  /* Hover => expandIn, background blau */
+  .hello-world:hover {
+    animation: expandIn 0.8s ease-in-out forwards;
+    background: #4c66ea;
+    border-color: #4c66ea;
+  }
+
+  /* => Text-Wechsel => fade + blur */
+  .hello-world-text,
+  .enes-text {
+    display: inline-block;
+    margin: 0 -40px;
+    transition: opacity 0.4s ease, filter 0.4s ease;
+  }
+  .enes-text {
+    display: none;
+  }
+  .hello-world:hover .hello-world-text {
+    opacity: 0;
+    filter: blur(4px);
+  }
+  .hello-world:hover .enes-text {
+    display: inline-block;
+    opacity: 1;
+    filter: blur(0);
+  }
+
+  /* Die winkende Hand => "Bowling" */
+  .waving-hand {
+    position: absolute;
+    bottom: 185px;
+    left: -50px;
+    width: 35px;
+    opacity: 0;
+    z-index: 999; /* => Hand überm Button */
+    pointer-events: none;
+    transform-origin: center;
+    /* Standard => waveOut */
+    animation: waveOut 0.8s ease-in-out forwards;
+  }
+
+  /* => Hover => waveIn, fadeIn + rotate => bounce */
+  .hello-world:hover + .waving-hand {
+    animation: waveIn 0.8s ease-in-out forwards;
+  }
+
+  /* ========== KEYFRAMES: expand, wave ========== */
+
+  @keyframes expandIn {
+    0% {
+      width: 140px;
+    }
+    50% {
+      width: 220px;
+    } /* expand */
+    70% {
+      width: 200px;
+    } /* bounce back */
+    100% {
+      width: 210px;
+    }
+  }
+  @keyframes expandOut {
+    0% {
+      width: 210px;
+    }
+    100% {
+      width: 140px;
+    }
+  }
+
+  /* => waveIn => bowling => 2x rotate + bounce */
+  @keyframes waveIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50px) rotate(0);
+    }
+    20% {
+      opacity: 1;
+    }
+    60% {
+      transform: translateX(100px) rotate(720deg);
+    }
+    80% {
+      transform: translateX(80px) rotate(680deg);
+    }
+    100% {
+      transform: translateX(90px) rotate(700deg);
+      opacity: 1;
+    }
+  }
+  /* => waveOut => fade out + return to start */
+  @keyframes waveOut {
+    0% {
+      opacity: 1;
+      transform: translateX(90px) rotate(700deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-50px) rotate(0);
+    }
+  }
+
+  /* **********************************
+   * DEVELOPER-BEREICH
+   ********************************** */
+  .developer-container {
+    position: relative;
+    display: inline-block;
+  }
+
   .developer {
     display: inline-block;
     position: relative;
@@ -213,13 +334,11 @@ p {
     margin-top: -20px;
   }
 
-  // Button fest (fester Schatten, Hover Orange)
   .get-in-touch {
     position: absolute;
-    top: 150px; /* Abstand unter Developer */
-    right: -100px; /* Rechtsbündig an .developer-container */
-    transform: translateX(40px); /* Noch weiter raus nach rechts */
-
+    top: 150px;
+    right: -100px;
+    transform: translateX(40px);
     background: transparent;
     color: #fff;
     font-size: 16px;
@@ -228,49 +347,38 @@ p {
     border-radius: 25px;
     padding: 10px 25px;
     cursor: pointer;
-
-    /* Fester Schatten nach unten rechts, kein Glow */
     box-shadow: 6px 6px 0 #fff;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      box-shadow: none; // Schatten verschwindet
-      background: #e67d60; // Orange
-      color: #fff; // Text in Weiß
+      box-shadow: none;
+      background: #e67d60;
+      color: #fff;
+    }
+  }
+
+  .polaroid {
+    position: absolute;
+    top: -120px;
+    left: 580px;
+    width: 200px;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(2deg);
+
+    &:hover {
+      transform: rotate(2deg) scale(1.05);
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
   }
 }
 
-// ✅ "Hello World" Styling
-.hello-world {
-  display: inline-block;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 10px 20px;
-  border-radius: 25px;
-  color: white;
-  font-size: 16px;
-  transition: all 0.3s ease-in-out;
-  cursor: pointer;
-
-  &:hover {
-    padding: 10px 40px;
-    background: white;
-    color: black;
-    content: "I'm Enes Hadzic";
-  }
-}
-
-// ✅ Polaroid Styling
-.polaroid {
-  display: block;
-  margin: 20px auto;
-  width: 250px;
-}
-
-// ✅ "Get in Touch"-Button (falls du es woanders brauchst)
-// → Siehe oben in .developer-container
-
-// ✅ Social Icons (unten links)
+/* 
+  ============ Neue Social Icons (unten links) ============
+  3 Bilder (GitHub, LinkedIn, Mail), 
+  runde Buttons, Hover => blau und 
+  mit einer weißen Border => wir verstärken 
+  => default => border: 2px solid #fff 
+*/
 .socials {
   position: absolute;
   bottom: 20px;
@@ -279,12 +387,30 @@ p {
   flex-direction: column;
   gap: 15px;
 
-  img {
-    width: 30px;
-    transition: transform 0.2s ease-in-out;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: transparent;
+    text-decoration: none;
+    /* Border anfügen => standard 2px weiß */
+    border: 2px solid #fff;
+    transition: background 0.3s ease, transform 0.3s ease,
+      border-color 0.3s ease;
 
     &:hover {
-      transform: scale(1.2);
+      background: #4c66ea;
+      border-color: #4c66ea;
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 25px;
+      height: 25px;
+      object-fit: cover;
     }
   }
 }
