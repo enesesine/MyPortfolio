@@ -1,0 +1,176 @@
+/* ================================
+   SkillSet Section
+   ================================ */
+.skillset-section {
+  position: relative;
+  background-image: url("/assets/Images/SkillSet/SkillSetBG/SkillsBG.png");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  background-color: #fff; /* Fallback */
+  padding: 60px 50px;
+  font-family: "Bricolage", sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* -------------------------
+   Paper Ripple & Text
+   ------------------------- */
+.paper-ripple-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.paper-ripple-container .paper-ripple {
+  width: 100%;
+  max-width: 600px; /* Passe die Größe nach Bedarf an */
+  display: block;
+  margin: 0 auto;
+}
+
+.paper-ripple-container .ripple-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #000;
+  font-size: 1.2rem;
+  /* Hintergrund entfernt */
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+
+/* Neue Textelemente im Paper Ripple Container */
+.skillset-title {
+  position: absolute;
+  left: -10%;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 4rem; /* Passe an */
+  font-weight: bold;
+  color: #fff;
+}
+
+.my-stack {
+  position: absolute;
+  left: 20px;
+  top: -15%;
+  font-size: 1.2rem; /* Passe an */
+  font-weight: 600;
+  color: #ffffffcf;
+}
+
+/* -------------------------
+   Icons Container & Sticker
+   ------------------------- */
+.icons-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 120px;
+}
+
+/* Frontend Icons: Zwei Reihen – jeweils 5 Icons */
+.icons-row.frontend.top,
+.icons-row.frontend.bottom {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.icons-row.frontend.top .icon-item,
+.icons-row.frontend.bottom .icon-item {
+  flex: 0 0 calc((100% - 4 * 10px) / 5);
+}
+
+/* Backend Icons: Zwei Reihen – obere Reihe 6 Icons, untere Reihe 5 Icons */
+.icons-row.backend.top {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  width: 100%;
+  margin-top: 30px;
+}
+.icons-row.backend.top .icon-item {
+  flex: 0 0 calc((100% - 5 * 10px) / 6);
+}
+
+.icons-row.backend.bottom {
+  display: flex;
+  justify-content: center;
+
+  width: 100%;
+  margin-top: 20px;
+}
+.icons-row.backend.bottom .icon-item {
+  flex: 0 0 calc((100% - 4 * 10px) / 5);
+}
+
+/* Einzelne Icon-Box */
+.icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+
+  .tech-icon {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    filter: grayscale(100%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+
+  .tech-label {
+    margin-top: 6px;
+    font-size: 0.9rem;
+    color: #ffffff;
+  }
+
+  &:hover .tech-icon {
+    filter: grayscale(0%);
+    transform: scale(0.95);
+  }
+}
+
+/* Sticker – rechts neben den Icons */
+.sticker {
+  position: absolute;
+  right: -250px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+
+  img {
+    width: 200px; /* Größer */
+    height: auto;
+  }
+}
+
+/* -------------------------
+   Responsive Anpassungen
+   ------------------------- */
+@media screen and (max-width: 768px) {
+  .icons-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sticker {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-top: 20px;
+  }
+}

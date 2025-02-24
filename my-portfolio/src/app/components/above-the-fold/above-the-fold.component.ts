@@ -35,7 +35,10 @@ export class AboveTheFoldComponent {
   private wrapInLetterSpans(word: string): string {
     return word
       .split('')
-      .map((char) => `<span class="letter">${char}</span>`)
+      .map(
+        (char) =>
+          `<span class="letter-wrapper"><span class="letter">${char}</span></span>`
+      )
       .join('');
   }
 }
