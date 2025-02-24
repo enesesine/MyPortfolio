@@ -68,7 +68,11 @@
     <h1>
       <!-- Fullstack + "Hello World"-Button -->
       <span class="fullstack-container">
-        <span class="fullstack">Fullstack</span>
+        <!-- 
+          Statt "Fullstack" manuell, 
+          nutzen wir splittedFullstack via [innerHTML]
+        -->
+        <span class="fullstack" [innerHTML]="splittedFullstack"></span>
 
         <!-- Button + Textwechsel -->
         <button class="hello-world">
@@ -94,7 +98,12 @@
 
       <!-- Developer + "Get in touch"-Button -->
       <span class="developer-container">
-        <span class="developer">Developer</span>
+        <!-- 
+          Statt "Developer" manuell, 
+          nutzen wir splittedDeveloper via [innerHTML]
+        -->
+        <span class="developer" [innerHTML]="splittedDeveloper"></span>
+
         <button class="get-in-touch">Get in touch</button>
       </span>
     </h1>

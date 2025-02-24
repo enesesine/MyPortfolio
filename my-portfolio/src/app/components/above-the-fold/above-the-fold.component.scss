@@ -211,16 +211,27 @@ p {
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap; /* "I'm Enes Hadzic" => keine 2. Zeile */
-
-    /* Standard => unhover => expandOut */
-    animation: expandOut 0.8s ease-in-out forwards;
+    /* Entferne diese Zeile:
+  animation: expandOut 0.8s ease-in-out forwards;
+  */
   }
 
-  /* Hover => expandIn, background blau */
+  .hello-world {
+    /* Standard-Zustand: initiale Breite, keine Animation */
+    width: 140px;
+    animation: none;
+  }
+
   .hello-world:hover {
     animation: expandIn 0.8s ease-in-out forwards;
     background: #4c66ea;
     border-color: #4c66ea;
+  }
+
+  /* Wenn der Button nicht gehovert ist – also unhover – 
+   soll der expandOut-Keyframe greifen */
+  .hello-world:not(:hover) {
+    animation: expandOut 0.8s ease-in-out forwards;
   }
 
   /* => Text-Wechsel => fade + blur */
@@ -396,7 +407,6 @@ p {
     border-radius: 50%;
     background: transparent;
     text-decoration: none;
-    /* Border anfügen => standard 2px weiß */
     border: 2px solid #fff;
     transition: background 0.3s ease, transform 0.3s ease,
       border-color 0.3s ease;
@@ -413,4 +423,28 @@ p {
       object-fit: cover;
     }
   }
+}
+
+/* 
+  ============ Buchstaben-Hover-Effekt ============
+  Jeder Buchstabe muss einzeln in <span class="letter">B</span> eingepackt werden
+  =>  HOVER => Buchstabe klein, gelb, und von Uppercase -> Lowercase
+*/
+
+::ng-deep .letter {
+  display: inline-block;
+  transition: transform 0.3s ease, color 0.3s ease, text-transform 0.3s ease;
+  text-transform: uppercase;
+  cursor: pointer;
+  will-change: transform;
+  backface-visibility: hidden;
+  transform: translateZ(0);
+}
+
+::ng-deep .letter:hover {
+  transform: scale(0.8);
+  text-transform: lowercase;
+  color: #ffc107;
+  font-family: "Bricolage", "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
 }
