@@ -11,32 +11,36 @@
     <!-- Navigation -->
     <nav class="navbar">
       <div class="nav-item">
-        <a href="#about">About me</a>
+        <a (click)="scrollToSection('about')">About me</a>
         <img
+          (click)="scrollToSection('about')"
           src="assets/Images/AboveTheFold/LinesNavBar/AboutMeLine.png"
           class="nav-underline aboutme-line"
         />
       </div>
 
       <div class="nav-item">
-        <a href="#skills">Skills</a>
+        <a (click)="scrollToSection('skills')">Skills</a>
         <img
+          (click)="scrollToSection('skills')"
           src="assets/Images/AboveTheFold/LinesNavBar/SkillsLine.png"
           class="nav-underline skills-line"
         />
       </div>
 
       <div class="nav-item">
-        <a href="#projects">Projects</a>
+        <a (click)="scrollToSection('projects')">Projects</a>
         <img
+          (click)="scrollToSection('projects')"
           src="assets/Images/AboveTheFold/LinesNavBar/ProjectsLine.png"
           class="nav-underline projects-line"
         />
       </div>
 
       <div class="nav-item">
-        <a href="#contact">Contact</a>
+        <a (click)="scrollToSection('contact')">Contact</a>
         <img
+          (click)="scrollToSection('contact')"
           src="assets/Images/AboveTheFold/LinesNavBar/ContactsLine.png"
           class="nav-underline contact-line"
         />
@@ -104,7 +108,9 @@
         -->
         <span class="developer" [innerHTML]="splittedDeveloper"></span>
 
-        <button class="get-in-touch">Get in touch</button>
+        <button class="get-in-touch" (click)="scrollToSection('contact')">
+          Get in touch
+        </button>
       </span>
     </h1>
   </div>
@@ -131,7 +137,7 @@
       />
     </a>
     <!-- Mail Icon -->
-    <a href="mailto:dein@email.com">
+    <a href="mailto:contacthadzic@gmail.com">
       <img src="assets/Images/AboveTheFold/Socials/Mail.png" alt="Mail" />
     </a>
   </div>

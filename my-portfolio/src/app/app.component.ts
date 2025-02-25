@@ -20,4 +20,11 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 })
 export class AppComponent {
   title = 'my-portfolio';
+
+  scrollToSection(sectionId: string): void {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  }
 }
