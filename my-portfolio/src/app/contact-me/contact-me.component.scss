@@ -1,0 +1,262 @@
+/* ================================
+   ContactMe Section
+   ================================ */
+.contact-me-section {
+  position: relative;
+  background-image: url("/assets/Images/ContactMe/BG/Footer.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Kein Hintergrundfarbe, nur das Image */
+  padding: 60px 50px;
+  font-family: "Bricolage", sans-serif;
+  color: #fff;
+}
+
+/* Container: Linke & Rechte Hälfte */
+.contact-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  max-width: 1200px;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Linke Hälfte */
+.contact-left {
+  flex: 1;
+  padding-right: 20px;
+  position: relative;
+  margin-left: 20px;
+  margin-top: 120px; /* Weiter nach unten */
+
+  .contact-title {
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 10px;
+  }
+
+  .contact-heading {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+
+  .contact-description {
+    font-size: 1.1rem;
+    color: #fff;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  .contact-invite {
+    font-size: 1rem;
+    color: #fff;
+    margin-bottom: 30px;
+  }
+
+  .contact-line {
+    display: block;
+    max-width: 300px;
+    margin: 0 auto 20px auto;
+  }
+
+  .contact-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+
+    img {
+      width: 80px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+  }
+}
+
+/* Rechte Hälfte */
+.contact-right {
+  flex: 1;
+  padding-left: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Verschiebe den rechten Bereich weiter nach rechts */
+  transform: translateX(300px);
+
+  @media screen and (max-width: 768px) {
+    transform: none;
+  }
+
+  .contact-sticker {
+    width: 150px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+
+  .contact-form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+    label {
+      font-size: 1.2rem; /* Größer */
+      font-weight: bold; /* Fett */
+      color: #fff;
+      margin-bottom: 5px;
+    }
+
+    input,
+    textarea {
+      font-size: 1rem;
+      padding: 10px;
+      border: none;
+      border-bottom: 2px solid #ffc107;
+      outline: none;
+      transition: border-color 0.3s ease;
+      background: transparent;
+      color: #fff;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+
+    .divider {
+      background: #ffc107;
+      margin-top: 10px;
+    }
+  }
+
+  /* Entferne die Regel, die zusätzliche Divider ausblendet */
+
+  .consent {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+
+    input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      cursor: pointer;
+    }
+
+    .consent-text {
+      font-size: 0.9rem;
+      color: #fff;
+    }
+
+    a.privacy-link {
+      color: #4c66ea;
+      text-decoration: none; /* Unterstrich entfernen */
+    }
+  }
+
+  .send-button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .send-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #fff;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+      box-shadow: none;
+      background: #e67d60;
+      border-color: #e67d60;
+    }
+  }
+
+  /* Hover-Effekt für Inputs/Texts (Fokus) */
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-bottom-color: #fff;
+  }
+}
+
+/* Footer */
+.contact-footer {
+  width: 100%;
+  padding: 20px 50px;
+  display: flex;
+  justify-content: center;
+  background: transparent;
+
+  .footer-links {
+    display: flex;
+    gap: 120px; /* Viel weiter auseinander */
+
+    a {
+      font-size: 0.9rem;
+      font-weight: bold; /* Dickere Schrift */
+      color: #fff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #4c66ea;
+      }
+    }
+  }
+}
+
+/* -------------------------
+   Responsive Anpassungen
+   ------------------------- */
+@media screen and (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-left,
+  .contact-right {
+    padding: 0;
+    text-align: center;
+  }
+
+  .contact-right {
+    align-items: center;
+    transform: none;
+  }
+
+  .contact-form {
+    max-width: 100%;
+  }
+}

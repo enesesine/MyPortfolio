@@ -3,6 +3,7 @@ import { AboveTheFoldComponent } from './components/above-the-fold/above-the-fol
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { ContactMeComponent } from './contact-me/contact-me.component';
 
 @Component({
   selector: 'app-root',
@@ -14,6 +15,7 @@ import { ProjectsComponent } from './projects/projects.component';
     AboutMeComponent,
     SkillSetComponent,
     ProjectsComponent,
+    ContactMeComponent,
   ],
 })
 export class AppComponent {
