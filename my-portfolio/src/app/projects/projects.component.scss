@@ -208,7 +208,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
   position: relative;
 }
 
@@ -250,7 +249,7 @@
 
   .colleague-info {
     position: absolute;
-    bottom: 135px;
+    bottom: 50px; /* Text weiter unten platzieren */
     left: 10px;
     color: #000;
     transition: color 0.3s ease;
@@ -310,6 +309,10 @@
 .colleague-card:nth-child(3) {
   z-index: 1;
   transform: translateX(-60px) rotate(5deg);
+}
+.colleague-card:nth-child(4) {
+  z-index: 0;
+  transform: translateX(-90px) rotate(-5deg);
 }
 
 /* -------------------------
