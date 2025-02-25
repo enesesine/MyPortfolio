@@ -5,8 +5,6 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './skill-set.component.html',
-  styleUrl: './skill-set.component.scss'
+  styleUrl: './skill-set.component.scss',
 })
-export class SkillSetComponent {
-
-}
+export class SkillSetComponent {}

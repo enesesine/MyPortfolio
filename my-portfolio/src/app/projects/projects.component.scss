@@ -1,0 +1,357 @@
+/* ================================
+   Projects Section
+   ================================ */
+.projects-section {
+  background-color: #fff;
+  padding: 60px 20px;
+  font-family: "Bricolage", sans-serif;
+  color: #333;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+/* ---------- Header (MY CRAFT, Projects & animierte Linie) ---------- */
+.projects-header {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+
+  .my-craft {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+  }
+
+  .projects-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+  .animated-line {
+    width: 300px;
+    height: 30px;
+    margin: 0 auto;
+    background: url("/assets/Images/MyProjects/MyCraftLine.png") no-repeat
+      center;
+    background-size: contain;
+    animation: lineAnimation 5s infinite alternate;
+  }
+}
+
+@keyframes lineAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+/* ---------- Projects Grid (2 Spalten – 6 Projekte) ---------- */
+.projects-grid {
+  width: 100%;
+  max-width: 1400px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+.project-card {
+  background: transparent;
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  min-height: 400px;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  .thumbnail-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  .thumbnail {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover .thumbnail {
+    transform: scale(1.02);
+  }
+
+  .vignette {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .vignette {
+    opacity: 1;
+  }
+
+  .details-btn {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .details-btn {
+    opacity: 1;
+  }
+
+  .project-info {
+    margin-top: 10px;
+    text-align: left;
+
+    .project-title {
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .project-desc {
+      font-size: 1rem;
+      color: #666;
+      margin-top: 5px;
+    }
+  }
+}
+
+/* ---------- Colleagues' Thoughts Section ---------- */
+.colleagues-section {
+  width: 100%;
+  max-width: 1200px;
+  margin-top: 20px;
+  padding: 50px;
+  position: relative;
+}
+
+/* Header für Colleagues' Thoughts */
+.colleagues-header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  margin-bottom: 20px;
+  position: relative;
+
+  .header-text {
+    text-align: right;
+  }
+
+  .in-their-words {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+  }
+
+  .colleagues-thoughts {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 5px;
+  }
+
+  .arrow-line {
+    width: 100px;
+    height: 30px;
+    background: url("/assets/Images/MyProjects/Colleagues Thoughts/Line.png")
+      no-repeat center;
+    background-size: contain;
+    animation: arrowAnimation 5s infinite alternate;
+    margin-left: 10px;
+  }
+}
+
+@keyframes arrowAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-20px);
+  }
+}
+
+/* Colleagues Cards */
+.colleagues-cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  position: relative;
+}
+
+/* Einzelne Kollegen-Karte – Überlappung & Rotation */
+.colleague-card {
+  position: relative;
+  width: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  img.shield {
+    width: 100%;
+    display: block;
+    border-radius: 10px;
+  }
+
+  .scribble-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url("/assets/Images/MyProjects/Colleagues Thoughts/ScribbleForShield.png")
+      no-repeat center;
+    background-size: cover;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  &:hover .scribble-overlay {
+    opacity: 1;
+  }
+
+  .colleague-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: #000;
+    transition: color 0.3s ease;
+
+    .name {
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+
+    .job {
+      font-size: 1rem;
+    }
+
+    .comment {
+      font-size: 0.9rem;
+      margin-top: 5px;
+    }
+  }
+
+  &:hover .colleague-info {
+    color: #fff;
+  }
+
+  .profile-link {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #000;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+
+    img {
+      width: 20px;
+      height: 20px;
+      object-fit: cover;
+    }
+  }
+
+  &:hover .profile-link {
+    color: #fff;
+  }
+}
+
+/* Überlappende Karten – Rotation & Positionierung */
+.colleague-card:nth-child(1) {
+  z-index: 3;
+  transform: rotate(5deg);
+}
+.colleague-card:nth-child(2) {
+  z-index: 2;
+  transform: translateX(-30px) rotate(-5deg);
+}
+.colleague-card:nth-child(3) {
+  z-index: 1;
+  transform: translateX(-60px) rotate(5deg);
+}
+
+/* -------------------------
+   Responsive Anpassungen
+   ------------------------- */
+@media screen and (max-width: 768px) {
+  .projects-section {
+    padding: 40px 20px;
+  }
+
+  .projects-header .my-craft {
+    font-size: 1rem;
+  }
+
+  .projects-header .projects-title {
+    font-size: 2.5rem;
+  }
+
+  .animated-line {
+    width: 250px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .colleagues-header {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .colleagues-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .sticker {
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
+    margin-top: 20px;
+  }
+}
