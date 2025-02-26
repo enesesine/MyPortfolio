@@ -1,13 +1,13 @@
 /* ================================
    ContactMe Section
-   ================================ */
+================================ */
 .contact-me-section {
   position: relative;
+  /* Gedrehtes/angepasstes Bild in Photoshop, also kein rotate nötig */
   background-image: url("/assets/Images/ContactMe/BG/Footer.png");
   background-size: cover;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
-  /* Kein Hintergrundfarbe, nur das Image */
   padding: 60px 50px;
   font-family: "Bricolage", sans-serif;
   color: #fff;
@@ -23,12 +23,19 @@
   margin-bottom: 40px;
 }
 
-/* Linke Hälfte */
+/* =====================================
+   Linke Hälfte
+===================================== */
 .contact-left {
   flex: 1;
   padding-right: 20px;
   position: relative;
-  margin-left: 20px;
+
+  /* Erhöhte Margin, damit sie so weit vom linken Rand entfernt ist 
+     wie die rechte Hälfte (300px) vom rechten Rand 
+  */
+  margin-left: 300px;
+
   margin-top: 120px; /* Weiter nach unten */
 
   .contact-title {
@@ -64,29 +71,11 @@
     max-width: 300px;
     margin: 0 auto 20px auto;
   }
-
-  .contact-logo {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-top: 40px;
-
-    img {
-      width: 80px;
-      margin-top: 20px;
-      margin-bottom: 5px;
-    }
-
-    p {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0;
-    }
-  }
 }
 
-/* Rechte Hälfte */
+/* =====================================
+   Rechte Hälfte
+===================================== */
 .contact-right {
   flex: 1;
   padding-left: 20px;
@@ -94,7 +83,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  /* Verschiebe den rechten Bereich weiter nach rechts */
+
+  /* Verschieben nach rechts, 300px 
+     => entspricht margin-left: 300px auf der linken Seite
+  */
   transform: translateX(300px);
 
   @media screen and (max-width: 768px) {
@@ -102,11 +94,11 @@
   }
 
   .contact-sticker {
-    width: 150px;
+    width: 120px; /* Kleiner als 150px */
+    margin-top: 60px; /* Weiter nach unten verschieben */
     margin-bottom: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    /* Animation hinzufügen */
     animation: rotateSticker 14s linear infinite;
 
     &:hover {
@@ -162,10 +154,15 @@
     .divider {
       background: #ffc107;
       margin-top: 10px;
+      height: 0; /* Falls kein sichtbarer Balken gewünscht */
     }
   }
 
-  /* Entferne die Regel, die zusätzliche Divider ausblendet */
+  /* Hover/Effekt für Inputs/Texts (Fokus) */
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-bottom-color: #fff;
+  }
 
   .consent {
     display: flex;
@@ -213,25 +210,57 @@
       border-color: #e67d60;
     }
   }
-
-  /* Hover-Effekt für Inputs/Texts (Fokus) */
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-bottom-color: #fff;
-  }
 }
 
-/* Footer */
+/* =====================================
+   Footer (unten) => Logo + Links
+===================================== */
 .contact-footer {
   width: 100%;
   padding: 20px 50px;
   display: flex;
-  justify-content: center;
+
+  /* 
+     Alle Items werden nun linksbündig angezeigt:
+     Logo + Copyright + Links 
+  */
+  justify-content: flex-start;
+  align-items: center;
   background: transparent;
+  gap: 40px;
+
+  /* 
+     LOGO + COPYRIGHT ÜBEREINANDER 
+  */
+  .contact-logo-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 5px;
+
+    .contact-logo {
+      width: 80px;
+      transition: filter 0.3s ease-in-out, transform 0.2s;
+
+      &:hover {
+        /* Kein transition auf filter => sofortiger Sprung */
+        transition: none;
+        filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
+  }
 
   .footer-links {
     display: flex;
-    gap: 400px; /* Viel weiter auseinander */
+    gap: 200px; /* Schiebt die Links auseinander */
+    margin-left: 250px; /* Schiebt die Links vom Logo weg */
 
     a {
       font-size: 0.9rem;
@@ -249,7 +278,7 @@
 
 /* -------------------------
    Responsive Anpassungen
-   ------------------------- */
+------------------------- */
 @media screen and (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -260,14 +289,26 @@
   .contact-right {
     padding: 0;
     text-align: center;
+    margin-left: 0; /* Entfernt das 300px left margin in Mobile */
+    margin-top: 20px; /* Kannst du anpassen */
   }
 
   .contact-right {
     align-items: center;
-    transform: none;
+    transform: none; /* Kein translateX in Mobile */
   }
 
   .contact-form {
     max-width: 100%;
+  }
+
+  .contact-footer {
+    flex-direction: column;
+    gap: 20px;
+
+    .footer-links {
+      margin-left: 0;
+      gap: 40px;
+    }
   }
 }

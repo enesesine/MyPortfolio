@@ -35,7 +35,7 @@ p {
 .logo {
   width: 80px;
   /* Nur transform soll smooth sein, NICHT filter: */
-  transition: transform 0.2s;
+  transition: filter 0.3s ease-in-out, transform 0.2s;
 
   &:hover {
     /* Kein transition auf filter => sofortiger Sprung */
