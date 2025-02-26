@@ -193,7 +193,7 @@
   }
 }
 
-/* Sticker – rechts neben den Icons */
+/* === Sticker – per Klick austauschbar + Animation === */
 .sticker {
   position: absolute;
   right: -250px;
@@ -204,6 +204,28 @@
   img {
     width: 200px; /* Größer */
     height: auto;
+    transition: transform 0.3s ease;
+  }
+
+  /* Falls wir eine Animation beim "Pull" wollen */
+  img.pulled {
+    animation: pullAnimation 0.5s forwards;
+  }
+}
+
+/* Beispiel-Keyframe: Wackel-Effekt */
+@keyframes pullAnimation {
+  0% {
+    transform: scale(1) rotate(0deg);
+  }
+  30% {
+    transform: scale(1.1) rotate(-2deg);
+  }
+  60% {
+    transform: scale(0.95) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
   }
 }
 

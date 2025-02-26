@@ -61,7 +61,7 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px; /* Reduzierter Gap statt 40px */
-  margin-bottom: 50px; /* Ggf. etwas verkleinert statt 60px */
+  margin-bottom: 50px; /* etwas verkleinert statt 60px */
 }
 
 .project-card {
@@ -110,23 +110,38 @@
     opacity: 1;
   }
 
+  /* === Button-Stil wie "Get in Touch" (weißer Rand, Hover Orange) === */
   .details-btn {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
+    bottom: 25px;
+    right: 30px;
+
     background: transparent;
     color: #fff;
+    font-size: 16px; /* Entspricht dem "Get in Touch"-Style */
+    font-weight: bold;
     border: 2px solid #fff;
     border-radius: 25px;
-    padding: 5px 10px;
-    font-size: 0.9rem;
+    padding: 10px 25px;
     cursor: pointer;
+    box-shadow: 6px 6px 0 #fff;
+    transition: all 0.3s ease-in-out;
+
+    /* Standardmäßig ausgeblendet, erst bei Hover sichtbar */
     opacity: 0;
-    transition: opacity 0.3s ease;
   }
 
+  /* Beim Hover der Karte: Button sichtbar, 
+     und bei Button-Hover => Orange usw. */
   &:hover .details-btn {
     opacity: 1;
+  }
+
+  .details-btn:hover {
+    box-shadow: none;
+    background: #e67d60;
+    border-color: #e67d60;
+    color: #fff;
   }
 
   .project-info {
@@ -203,11 +218,7 @@
   }
 }
 
-/* 
-   .colleagues-cards => 1600px
-   -> .colleague-card => 100%
-   => Overlap & Rotation
-*/
+/* Kollegen-Karten-Container */
 .colleagues-cards {
   display: flex;
   justify-content: center;
@@ -345,9 +356,9 @@
    Responsive Anpassungen
    ------------------------- */
 
-/* 
-   Ab 768px: Aussehen wie "Desktop" 
-   => Drunter: Evtl. Overlaps entfallen 
+/*
+   Ab 768px: Desktop
+   => Drunter: Evtl. Overlaps entfallen
 */
 @media screen and (max-width: 768px) {
   .projects-section {
@@ -402,9 +413,9 @@
   }
 }
 
-/* 
-   Ab 501px bis 768px: 
-   feintuning, z.B. 
+/*
+   Ab 501px bis 768px:
+   Feintuning
 */
 @media screen and (max-width: 768px) and (min-width: 501px) {
   .projects-grid {
@@ -413,7 +424,7 @@
   }
 }
 
-/* 
+/*
    Bis 500px => nochmal feiner anpassen
 */
 @media screen and (max-width: 500px) {

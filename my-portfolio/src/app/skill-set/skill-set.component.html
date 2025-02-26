@@ -206,9 +206,18 @@
       </div>
     </div>
 
-    <!-- Sticker Image -->
-    <div class="sticker">
-      <img src="assets/Images/SkillSet/PullSticker/Pull.png" alt="Sticker" />
+    <!-- Sticker Image (toggles on click) -->
+    <div class="sticker" (click)="togglePull()">
+      <!-- We wählen das Bild abhängig vom 'pulled'-Flag -->
+      <img
+        [src]="
+          pulled
+            ? 'assets/Images/SkillSet/PullSticker/PulledImage.png'
+            : 'assets/Images/SkillSet/PullSticker/Pull.png'
+        "
+        alt="Sticker"
+        [ngClass]="{ pulled: pulled }"
+      />
     </div>
   </div>
 </section>
