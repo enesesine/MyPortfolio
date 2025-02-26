@@ -8,38 +8,28 @@
   font-family: "Bricolage", sans-serif; /* Schrift explizit setzen */
 }
 
+/* ====== Animierte Kritzel-Linie (alle 5s) ====== */
 .aboutme-line {
   display: block;
   width: 200px; /* anpassen */
   margin: 5px auto; /* zentriert + etwas Abstand */
-  /* Wir brauchen keine Hover mehr => immer animiert */
-
-  /* Optional: du kannst opacity=1 lassen
-     oder am Start =0. 
-     Hier machen wir 1 => wir regeln "Sichtbarkeit" per clip-path:
-  */
   opacity: 1;
-
-  /* WICHTIG: Keyframe => 5s, infinite Wiederholung */
+  /* Keyframe => 5s, infinite Wiederholung */
   animation: aboutMeLineClip 5s infinite ease-in-out;
 }
 
 @keyframes aboutMeLineClip {
   0% {
-    /* komplett verdeckt => line unsichtbar */
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0); /* komplett verdeckt */
   }
   20% {
-    /* voll gezeichnet => line sichtbar */
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0); /* voll gezeichnet */
   }
   80% {
-    /* Linie bleibt sichtbar */
-    clip-path: inset(0 0 0 0);
+    clip-path: inset(0 0 0 0); /* bleibt sichtbar */
   }
   100% {
-    /* wieder verschwinden => Startbedingung fürs nächste Mal */
-    clip-path: inset(0 100% 0 0);
+    clip-path: inset(0 100% 0 0); /* wieder verschwinden */
   }
 }
 
@@ -62,12 +52,15 @@
 
   .info-item {
     position: relative;
-    /* Breiter und größer */
-    width: 550px;
-    /* Dicht aneinander – negative Margin */
-    margin-bottom: -100px;
+    width: 550px; /* Breiter und größer */
+    margin-bottom: -100px; /* Für deine gewünschte Überlappung */
+    z-index: 1; /* Standard: hinterste Ebene */
 
-    /* Reihenfolge: Box 1 (Yellow) oben, Box 2 (Blue) in der Mitte, Box 3 (Orange) unten */
+    /* Stapel-Reihenfolge: 
+       1. (Yellow) => z-index: 3
+       2. (Blue)   => z-index: 2
+       3. (Orange) => z-index: 1
+       aber beim Hover überschreiben wir das (s.u.) */
     &:nth-child(1) {
       z-index: 3;
     }
@@ -79,10 +72,11 @@
       margin-bottom: 0;
     }
 
-    /* Das Ripple-Bild */
+    /* Ripple-Bild */
     .color-ripple {
       width: 100%;
       display: block;
+      transition: transform 0.3s ease;
     }
 
     /* Overlay innerhalb der Box: Inhalte zentriert */
@@ -94,19 +88,33 @@
       height: 100%;
       display: flex;
       align-items: center;
-      justify-content: center; /* Inhalte horizontal zentrieren */
-      background: transparent; /* Damit der Originalton der Ripple-Bilder durchscheint */
+      justify-content: center;
+      background: transparent; /* Damit die Ripple-Farbe durchscheint */
     }
 
     .location-logo {
       width: 40px;
       height: 40px;
       object-fit: contain;
+      margin-right: 10px;
     }
 
     .info-text {
       font-size: 1.2rem;
       color: #ffffff;
+    }
+
+    /* Hover-Effekt => Item hebt sich leicht, rotiert.
+       Kein box-shadow, aber z-index:99, um über andere Items zu liegen */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.03) rotate(1deg);
+      z-index: 99; /* WICHTIG: nach vorn, damit Hoveren einfacher ist */
+    }
+    &:hover .color-ripple {
+      transform: scale(1.06) rotate(2deg);
     }
   }
 
@@ -116,7 +124,7 @@
     padding-top: 65px; /* Passe den Wert an, um es nach oben zu schieben */
   }
 
-  /* Rotation der Info-Texte */
+  /* Rotation der Info-Texte => minimal witzige Neigung */
   .info-item:nth-child(1) .info-text {
     transform: rotate(-3deg);
   }
@@ -133,7 +141,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Text linksbündig */
+  align-items: flex-start;
   text-align: left;
 
   .about-header {
@@ -194,5 +202,21 @@
   }
   .about-left {
     align-items: center;
+
+    .info-item {
+      width: 300px; /* Weniger breit für Mobile */
+      margin-bottom: -50px; /* Minimiert Overlap im Mobile */
+
+      &:nth-child(1) {
+        z-index: 3;
+      }
+      &:nth-child(2) {
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        z-index: 1;
+        margin-bottom: 0;
+      }
+    }
   }
 }

@@ -25,45 +25,94 @@
   max-width: 1200px;
   margin-bottom: 40px;
   text-align: center;
+
+  .paper-ripple {
+    width: 100%;
+    max-width: 600px; /* Passe die Größe nach Bedarf an */
+    display: block;
+    margin: 0 auto;
+  }
+
+  .ripple-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 1.2rem;
+    /* Hintergrund entfernt */
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  /* 
+    Die bisherigen .skillset-title und .my-stack waren absolut positioniert.
+    Wir packen sie jetzt in einen Wrapper, damit wir dort das Kreis-Kritzel
+    platzieren können und animieren.
+  */
+  .my-stack {
+    position: absolute;
+    left: 20px;
+    top: -15%;
+    font-size: 1.2rem; /* Passe an */
+    font-weight: 600;
+    color: #ffffffcf;
+  }
+
+  /* Wrapper für "Skill set" + Kreis-Kritzel */
+  .skillset-title-wrapper {
+    position: absolute;
+    left: -10%;
+    top: 50%;
+    transform: translateY(-50%);
+    /* 
+       => So wie vorher .skillset-title positioniert war,
+          nur jetzt ist es ein Wrapper.
+    */
+
+    /* Hier kommt dein eigentlicher Text */
+    .skillset-title {
+      font-size: 4rem; /* Passe an */
+      font-weight: bold;
+      color: #fff;
+      display: inline-block;
+      position: relative;
+    }
+
+    /* === Kreisförmiges Kritzel: CircleLine.png === */
+    .circle-kritzel {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px; /* Passe an dein PNG an */
+      height: auto;
+
+      /* 
+         Start: verdeckt (clip), und wir machen 5s infinite
+         => Alle 5 Sekunden neu geclippt (gezeichnet).
+      */
+      opacity: 1;
+      clip-path: inset(0 100% 0 0);
+      animation: circleLineLoop 5s infinite ease-in-out;
+    }
+  }
 }
 
-.paper-ripple-container .paper-ripple {
-  width: 100%;
-  max-width: 600px; /* Passe die Größe nach Bedarf an */
-  display: block;
-  margin: 0 auto;
-}
-
-.paper-ripple-container .ripple-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #000;
-  font-size: 1.2rem;
-  /* Hintergrund entfernt */
-  padding: 10px 20px;
-  border-radius: 5px;
-}
-
-/* Neue Textelemente im Paper Ripple Container */
-.skillset-title {
-  position: absolute;
-  left: -10%;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 4rem; /* Passe an */
-  font-weight: bold;
-  color: #fff;
-}
-
-.my-stack {
-  position: absolute;
-  left: 20px;
-  top: -15%;
-  font-size: 1.2rem; /* Passe an */
-  font-weight: 600;
-  color: #ffffffcf;
+/* === Keyframe für Endlos-Animation: 0–20% "zeichnen", 80–100% "verschwinden" === */
+@keyframes circleLineLoop {
+  0% {
+    clip-path: inset(0 100% 0 0);
+  }
+  20% {
+    clip-path: inset(0 0 0 0);
+  }
+  80% {
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    clip-path: inset(0 100% 0 0);
+  }
 }
 
 /* -------------------------
