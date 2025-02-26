@@ -8,6 +8,41 @@
   font-family: "Bricolage", sans-serif; /* Schrift explizit setzen */
 }
 
+.aboutme-line {
+  display: block;
+  width: 200px; /* anpassen */
+  margin: 5px auto; /* zentriert + etwas Abstand */
+  /* Wir brauchen keine Hover mehr => immer animiert */
+
+  /* Optional: du kannst opacity=1 lassen
+     oder am Start =0. 
+     Hier machen wir 1 => wir regeln "Sichtbarkeit" per clip-path:
+  */
+  opacity: 1;
+
+  /* WICHTIG: Keyframe => 5s, infinite Wiederholung */
+  animation: aboutMeLineClip 5s infinite ease-in-out;
+}
+
+@keyframes aboutMeLineClip {
+  0% {
+    /* komplett verdeckt => line unsichtbar */
+    clip-path: inset(0 100% 0 0);
+  }
+  20% {
+    /* voll gezeichnet => line sichtbar */
+    clip-path: inset(0 0 0 0);
+  }
+  80% {
+    /* Linie bleibt sichtbar */
+    clip-path: inset(0 0 0 0);
+  }
+  100% {
+    /* wieder verschwinden => Startbedingung fürs nächste Mal */
+    clip-path: inset(0 100% 0 0);
+  }
+}
+
 /* Container für linke und rechte Spalte */
 .about-container {
   width: 100%;
