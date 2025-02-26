@@ -50,7 +50,9 @@
 
     <!-- Language Switch (Desktop) -->
     <div class="language-switch">
-      <span class="lang-option" id="lang-en">EN</span>
+      <span class="lang-option" id="lang-en" (click)="toggleLanguage()"
+        >EN</span
+      >
       <div class="switch-container" (click)="toggleLanguage()">
         <img
           src="assets/Images/AboveTheFold/LanguageButton/orangeBar.png"
@@ -64,7 +66,11 @@
           [class.active]="isGerman"
         />
       </div>
-      <span class="lang-option" id="lang-de">DE</span>
+
+      <!-- Hier nun zusätzlich (click)="toggleLanguage()" -->
+      <span class="lang-option" id="lang-de" (click)="toggleLanguage()"
+        >DE</span
+      >
     </div>
 
     <!-- Mobile-Overlay-Menü (wird per CSS + TS-Variable .open getoggelt) -->
@@ -103,7 +109,9 @@
             [class.active]="isGerman"
           />
         </div>
-        <span class="lang-option" id="lang-de">DE</span>
+        <span class="lang-option" id="lang-de" (click)="toggleLanguage()"
+          >DE</span
+        >
       </div>
 
       <!-- Mobile Socials -->
