@@ -60,19 +60,19 @@
   max-width: 1400px;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 40px;
-  margin-bottom: 60px;
+  gap: 30px; /* Reduzierter Gap statt 40px */
+  margin-bottom: 50px; /* Ggf. etwas verkleinert statt 60px */
 }
 
 .project-card {
   background: transparent;
-  padding: 20px;
+  padding: 15px; /* etwas weniger Padding statt 20px */
   position: relative;
   overflow: hidden;
   border-radius: 10px;
   transition: transform 0.3s ease;
   cursor: pointer;
-  min-height: 400px;
+  min-height: 350px; /* etwas kleiner als 400px */
 
   &:hover {
     transform: translateY(-5px);
@@ -130,19 +130,19 @@
   }
 
   .project-info {
-    margin-top: 10px;
+    margin-top: 8px; /* Weniger Abstand */
     text-align: left;
 
     .project-title {
-      font-size: 1.4rem;
+      font-size: 1.3rem; /* minimal verkleinert */
       font-weight: bold;
       color: #333;
     }
 
     .project-desc {
-      font-size: 1rem;
+      font-size: 0.95rem; /* minimal verkleinert */
       color: #666;
-      margin-top: 5px;
+      margin-top: 4px;
     }
   }
 }
@@ -203,121 +203,152 @@
   }
 }
 
-/* Colleagues Cards */
+/* 
+   .colleagues-cards => 1600px
+   -> .colleague-card => 100%
+   => Overlap & Rotation
+*/
 .colleagues-cards {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
-}
+  gap: 20px;
+  width: 1600px; /* So wünschst du dir es */
 
-/* Einzelne Kollegen-Karte – Überlappung & Rotation */
-.colleague-card {
-  position: relative;
-  width: 400px;
-  overflow: hidden;
-  border-radius: 10px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    transform: translateY(-5px);
-  }
-
-  img.shield {
+  .colleague-card {
     width: 100%;
-    display: block;
     border-radius: 10px;
-  }
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    z-index: 1;
+    position: relative;
 
-  .scribble-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: url("/assets/Images/MyProjects/Colleagues Thoughts/ScribbleForShield.png")
-      no-repeat center;
-    background-size: cover;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-  }
-
-  &:hover .scribble-overlay {
-    opacity: 1;
-  }
-
-  .colleague-info {
-    position: absolute;
-    bottom: 50px; /* Text weiter unten platzieren */
-    left: 10px;
-    color: #000;
-    transition: color 0.3s ease;
-
-    .name {
-      font-size: 1.2rem;
-      font-weight: bold;
+    img.shield {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+      position: relative;
+      z-index: 1;
     }
 
-    .job {
+    .scribble-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url("/assets/Images/MyProjects/Colleagues Thoughts/ScribbleForShield.png")
+        no-repeat center;
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+    &:hover .scribble-overlay {
+      opacity: 1;
+    }
+
+    .colleague-info {
+      position: absolute;
+      bottom: 60px;
+      left: 20px;
+      color: #000;
+      transition: color 0.3s ease;
+      z-index: 3;
+
+      .name {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .job {
+        font-size: 1.3rem;
+        margin-top: 5px;
+      }
+      .comment {
+        font-size: 1.1rem;
+        margin-top: 8px;
+        max-width: 90%;
+        line-height: 1.4;
+      }
+    }
+    &:hover .colleague-info {
+      color: #fff;
+    }
+
+    .profile-link {
+      position: absolute;
+      bottom: 15px;
+      right: 15px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      text-decoration: none;
+      color: #000;
       font-size: 1rem;
+      transition: color 0.3s ease;
+      z-index: 3;
+
+      img {
+        width: 24px;
+        height: 24px;
+        object-fit: cover;
+      }
     }
-
-    .comment {
-      font-size: 0.9rem;
-      margin-top: 5px;
+    &:hover .profile-link {
+      color: #fff;
     }
-  }
-
-  &:hover .colleague-info {
-    color: #fff;
-  }
-
-  .profile-link {
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
-    text-decoration: none;
-    color: #000;
-    font-size: 0.9rem;
-    transition: color 0.3s ease;
-
-    img {
-      width: 20px;
-      height: 20px;
-      object-fit: cover;
-    }
-  }
-
-  &:hover .profile-link {
-    color: #fff;
   }
 }
 
-/* Überlappende Karten – Rotation & Positionierung */
+/* Overlap & Rotation per nth-child + Hover => scale */
 .colleague-card:nth-child(1) {
-  z-index: 3;
+  z-index: 4;
   transform: rotate(5deg);
 }
 .colleague-card:nth-child(2) {
-  z-index: 2;
-  transform: translateX(-30px) rotate(-5deg);
+  z-index: 3;
+  transform: translateX(-50px) rotate(-5deg);
 }
 .colleague-card:nth-child(3) {
-  z-index: 1;
-  transform: translateX(-60px) rotate(5deg);
+  z-index: 2;
+  transform: translateX(-100px) rotate(5deg);
 }
 .colleague-card:nth-child(4) {
-  z-index: 0;
-  transform: translateX(-90px) rotate(-5deg);
+  z-index: 1;
+  transform: translateX(-150px) rotate(-5deg);
+}
+
+.colleague-card:nth-child(1):hover {
+  transform: rotate(5deg) translateY(-10px) scale(1.1);
+  z-index: 9999;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+.colleague-card:nth-child(2):hover {
+  transform: translateX(-50px) rotate(-5deg) translateY(-10px) scale(1.1);
+  z-index: 9999;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+.colleague-card:nth-child(3):hover {
+  transform: translateX(-100px) rotate(5deg) translateY(-10px) scale(1.1);
+  z-index: 9999;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+}
+.colleague-card:nth-child(4):hover {
+  transform: translateX(-150px) rotate(-5deg) translateY(-10px) scale(1.1);
+  z-index: 9999;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
 }
 
 /* -------------------------
    Responsive Anpassungen
    ------------------------- */
+
+/* 
+   Ab 768px: Aussehen wie "Desktop" 
+   => Drunter: Evtl. Overlaps entfallen 
+*/
 @media screen and (max-width: 768px) {
   .projects-section {
     padding: 40px 20px;
@@ -337,6 +368,13 @@
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 20px; /* noch kleiner, für Mobile */
+    margin-bottom: 40px;
+  }
+
+  .project-card {
+    padding: 10px;
+    min-height: 300px;
   }
 
   .colleagues-header {
@@ -346,15 +384,45 @@
   }
 
   .colleagues-cards {
+    width: 100%; /* Container füllt mobil die Breite */
     flex-direction: column;
     align-items: center;
+
+    .colleague-card {
+      width: 90%;
+      transform: none !important;
+      z-index: 1 !important;
+
+      &:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        z-index: 1 !important;
+      }
+    }
+  }
+}
+
+/* 
+   Ab 501px bis 768px: 
+   feintuning, z.B. 
+*/
+@media screen and (max-width: 768px) and (min-width: 501px) {
+  .projects-grid {
+    gap: 15px;
+    margin-bottom: 30px;
+  }
+}
+
+/* 
+   Bis 500px => nochmal feiner anpassen
+*/
+@media screen and (max-width: 500px) {
+  .projects-grid {
+    gap: 10px;
+    margin-bottom: 20px;
   }
 
-  .sticker {
-    position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    margin-top: 20px;
+  .project-card {
+    padding: 8px;
   }
 }

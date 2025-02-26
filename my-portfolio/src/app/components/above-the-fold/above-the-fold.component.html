@@ -8,7 +8,11 @@
       class="logo"
     />
 
-    <!-- Navigation -->
+    <!-- Burger-Button (nur mobil sichtbar) -->
+    <!-- => Du toggle hier via (click) ein boolean -->
+    <button class="burger-btn" (click)="mobileMenuOpen = true">&#9776;</button>
+
+    <!-- Navigation (Desktop) -->
     <nav class="navbar">
       <div class="nav-item">
         <a (click)="scrollToSection('about')">About me</a>
@@ -18,7 +22,6 @@
           class="nav-underline aboutme-line"
         />
       </div>
-
       <div class="nav-item">
         <a (click)="scrollToSection('skills')">Skills</a>
         <img
@@ -27,7 +30,6 @@
           class="nav-underline skills-line"
         />
       </div>
-
       <div class="nav-item">
         <a (click)="scrollToSection('projects')">Projects</a>
         <img
@@ -36,7 +38,6 @@
           class="nav-underline projects-line"
         />
       </div>
-
       <div class="nav-item">
         <a (click)="scrollToSection('contact')">Contact</a>
         <img
@@ -47,7 +48,7 @@
       </div>
     </nav>
 
-    <!-- Language Switch -->
+    <!-- Language Switch (Desktop) -->
     <div class="language-switch">
       <span class="lang-option" id="lang-en">EN</span>
       <div class="switch-container" (click)="toggleLanguage()">
@@ -65,6 +66,73 @@
       </div>
       <span class="lang-option" id="lang-de">DE</span>
     </div>
+
+    <!-- Mobile-Overlay-Menü (wird per CSS + TS-Variable .open getoggelt) -->
+    <div class="mobile-menu" [class.open]="mobileMenuOpen">
+      <button class="close-btn" (click)="mobileMenuOpen = false">X</button>
+
+      <!-- Mobile Links -->
+      <div class="mobile-nav-items">
+        <a (click)="mobileMenuOpen = false; scrollToSection('about')"
+          >About me</a
+        >
+        <a (click)="mobileMenuOpen = false; scrollToSection('skills')"
+          >Skills</a
+        >
+        <a (click)="mobileMenuOpen = false; scrollToSection('projects')"
+          >Projects</a
+        >
+        <a (click)="mobileMenuOpen = false; scrollToSection('contact')"
+          >Contact</a
+        >
+      </div>
+
+      <!-- Mobile Language Switch -->
+      <div class="mobile-language-switch" (click)="toggleLanguage()">
+        <span class="lang-option" id="lang-en">EN</span>
+        <div class="switch-container">
+          <img
+            src="assets/Images/AboveTheFold/LanguageButton/orangeBar.png"
+            alt="Language Bar"
+            class="lang-bar"
+          />
+          <img
+            src="assets/Images/AboveTheFold/LanguageButton/blueCircle.png"
+            alt="Switch Circle"
+            class="lang-circle"
+            [class.active]="isGerman"
+          />
+        </div>
+        <span class="lang-option" id="lang-de">DE</span>
+      </div>
+
+      <!-- Mobile Socials -->
+      <div class="mobile-socials">
+        <a
+          href="https://github.com/enesesine"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="assets/Images/AboveTheFold/Socials/GitHub.png"
+            alt="GitHub"
+          />
+        </a>
+        <a
+          href="https://www.linkedin.com/in/enes-hadzic-546658307/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <img
+            src="assets/Images/AboveTheFold/Socials/LinkedIn.png"
+            alt="LinkedIn"
+          />
+        </a>
+        <a href="mailto:contacthadzic@gmail.com">
+          <img src="assets/Images/AboveTheFold/Socials/Mail.png" alt="Mail" />
+        </a>
+      </div>
+    </div>
   </header>
 
   <!-- Mittelteil: Fullstack Developer -->
@@ -72,19 +140,13 @@
     <h1>
       <!-- Fullstack + "Hello World"-Button -->
       <span class="fullstack-container">
-        <!-- 
-          Statt "Fullstack" manuell, 
-          nutzen wir splittedFullstack via [innerHTML]
-        -->
         <span class="fullstack" [innerHTML]="splittedFullstack"></span>
 
-        <!-- Button + Textwechsel -->
         <button class="hello-world">
           <span class="hello-world-text">Hello World</span>
           <span class="enes-text">I'm Enes Hadzic</span>
         </button>
 
-        <!-- Winkende Hand (die "Bowling-Kugel") -->
         <img
           src="assets/Images/AboveTheFold/WavingHand/waving_hand.png"
           alt="Waving Hand"
@@ -102,12 +164,7 @@
 
       <!-- Developer + "Get in touch"-Button -->
       <span class="developer-container">
-        <!-- 
-          Statt "Developer" manuell, 
-          nutzen wir splittedDeveloper via [innerHTML]
-        -->
         <span class="developer" [innerHTML]="splittedDeveloper"></span>
-
         <button class="get-in-touch" (click)="scrollToSection('contact')">
           Get in touch
         </button>
@@ -115,9 +172,8 @@
     </h1>
   </div>
 
-  <!-- ✨ SOCIAL ICONS (unten links) -->
+  <!-- Social Icons (unten links, Desktop) -->
   <div class="socials">
-    <!-- GitHub Icon -->
     <a
       href="https://github.com/enesesine"
       target="_blank"
@@ -125,7 +181,6 @@
     >
       <img src="assets/Images/AboveTheFold/Socials/GitHub.png" alt="GitHub" />
     </a>
-    <!-- LinkedIn Icon -->
     <a
       href="https://www.linkedin.com/in/enes-hadzic-546658307/"
       target="_blank"
@@ -136,7 +191,6 @@
         alt="LinkedIn"
       />
     </a>
-    <!-- Mail Icon -->
     <a href="mailto:contacthadzic@gmail.com">
       <img src="assets/Images/AboveTheFold/Socials/Mail.png" alt="Mail" />
     </a>

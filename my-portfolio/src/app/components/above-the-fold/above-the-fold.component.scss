@@ -34,10 +34,13 @@ p {
 // ✅ Logo-Styling
 .logo {
   width: 80px;
-  transition: filter 0.3s ease-in-out, transform 0.2s;
+  /* Nur transform soll smooth sein, NICHT filter: */
+  transition: transform 0.2s;
 
   &:hover {
-    filter: hue-rotate(-50deg) saturate(300%) brightness(1.2);
+    /* Kein transition auf filter => sofortiger Sprung */
+    transition: none;
+    filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
   }
 }
 
@@ -453,4 +456,171 @@ p {
   color: #ffc107;
   font-family: "Bricolage", "Franklin Gothic Medium", "Arial Narrow", Arial,
     sans-serif;
+}
+
+/* === Dein bestehender Code bleibt unverändert === */
+/* (Nur unten kommt noch der Burger + Mobile Overlay) */
+
+/* =========================================
+   Burger Button => standard hidden
+   Mobile Menu => standard hidden
+========================================= */
+
+/* Burger-Button => nur im Mobile-Viewport sichtbar */
+.burger-btn {
+  display: none; /* Desktop: hidden */
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  position: relative; /* optional */
+  z-index: 9999;
+
+  &:hover {
+    color: #e67d60;
+  }
+}
+
+/* Mobile Menu Overlay => verdeckt ganzen Screen */
+.mobile-menu {
+  display: none; /* Desktop: hidden */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.9);
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  z-index: 9998;
+  transform: translateX(-100%); /* standard: unsichtbar links */
+  transition: transform 0.3s ease;
+
+  /* => .open -> shift ins Bild */
+  &.open {
+    display: flex; /* jetzt sichtbar */
+    transform: translateX(0%);
+  }
+
+  /* X-Button oben rechts */
+  .close-btn {
+    align-self: flex-end;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+    &:hover {
+      color: #e67d60;
+    }
+  }
+
+  /* Mobile Nav Items (Abstand, Größe etc.) */
+  .mobile-nav-items {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* z.B. mehr Abstand */
+    margin-top: 20px;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: bold;
+      &:hover {
+        color: #e67d60;
+      }
+    }
+  }
+
+  /* Mobile Language Switch */
+  .mobile-language-switch {
+    margin-top: 40px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .lang-option {
+      font-size: 16px;
+      color: #fff;
+    }
+
+    .switch-container {
+      position: relative;
+      width: 40px;
+      height: 10px;
+      cursor: pointer;
+
+      .lang-bar {
+        width: 100%;
+        height: 100%;
+      }
+      .lang-circle {
+        position: absolute;
+        top: 2%;
+        left: 0;
+        width: 18px;
+        height: 18px;
+        transition: all 0.3s ease-in-out;
+
+        &.active {
+          left: 25px;
+        }
+      }
+    }
+  }
+
+  /* Mobile Social Icons */
+  .mobile-socials {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background: transparent;
+      text-decoration: none;
+      border: 2px solid #fff;
+      transition: background 0.3s ease, transform 0.3s ease,
+        border-color 0.3s ease;
+
+      &:hover {
+        background: #4c66ea;
+        border-color: #4c66ea;
+        transform: scale(1.05);
+      }
+
+      img {
+        width: 25px;
+        height: 25px;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+/* ========= Media Query: ab max-width:768px => Desktop ausgeblendet, Mobile an ======== */
+@media (max-width: 768px) {
+  /* => Desktop .navbar, .language-switch, .socials => none; 
+        => .burger-btn => block
+  */
+  .navbar,
+  .language-switch,
+  .socials {
+    display: none;
+  }
+
+  .burger-btn {
+    display: block;
+  }
 }

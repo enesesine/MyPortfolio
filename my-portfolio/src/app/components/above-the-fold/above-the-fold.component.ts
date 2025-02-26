@@ -48,4 +48,12 @@ export class AboveTheFoldComponent {
       section.scrollIntoView({ behavior: 'smooth' });
     }
   }
+
+  // In deinem AboveTheFoldComponent:
+  // Im AboveTheFoldComponent oder so:
+  mobileMenuOpen = false;
+
+  toggleMobileMenu() {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
+  }
 }
