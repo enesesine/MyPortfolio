@@ -1,0 +1,190 @@
+/* ================================
+   Projects Detail Section
+   ================================ */
+.projects-detail-section {
+  background-image: url("/assets/Images/MyProjects/ProjectDetailBG/DetailViewBG.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  padding: 60px 50px;
+  font-family: "Bricolage", sans-serif;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.detail-container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  gap: 50px;
+}
+
+/* ----- Linke Hälfte ----- */
+.detail-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.go-back {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 5px;
+
+  .back-arrow {
+    width: 20px;
+    height: auto;
+  }
+
+  .go-back-text {
+    font-size: 0.9rem;
+    color: #e67d60;
+  }
+}
+
+.project-name {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #000;
+  margin: 0;
+}
+
+.about-line {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+  animation: lineAnimation 5s infinite alternate;
+}
+
+@keyframes lineAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.description-text,
+.implementation-text {
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+.duration {
+  margin-top: 10px;
+  font-size: 1rem;
+  .duration-label {
+    font-weight: bold;
+  }
+  .duration-value {
+    margin-left: 5px;
+  }
+}
+
+.tech-icons {
+  margin-top: 20px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  img.tech-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+  }
+}
+
+/* ----- Rechte Hälfte ----- */
+.detail-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.project-thumbnail {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  gap: 20px;
+  button.detail-btn {
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #fff;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 #fff;
+    transition: all 0.3s ease-in-out;
+  }
+  button.detail-btn:hover {
+    box-shadow: none;
+    background: #e67d60;
+    border-color: #e67d60;
+    color: #fff;
+  }
+}
+
+.next-project {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .next-text {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .next-arrow {
+    width: 20px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  .next-arrow:hover {
+    transform: scale(1.1);
+  }
+}
+
+/* ----- Responsive Anpassungen ----- */
+@media screen and (max-width: 768px) {
+  .detail-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  .project-name {
+    font-size: 3rem;
+  }
+  .about-line {
+    max-width: 300px;
+  }
+  .project-thumbnail {
+    max-width: 100%;
+  }
+  .buttons-container {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .next-project {
+    flex-direction: column;
+    gap: 5px;
+  }
+}

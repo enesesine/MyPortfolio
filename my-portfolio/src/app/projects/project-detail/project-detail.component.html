@@ -1,0 +1,65 @@
+<section class="projects-detail-section">
+  <div class="detail-container">
+    <!-- Linke Hälfte -->
+    <div class="detail-left">
+      <div class="go-back" (click)="goBack()">
+        <img
+          src="assets/Images/ProjectDetail/go-back-arrow.png"
+          alt="Go Back"
+          class="back-arrow"
+        />
+        <span class="go-back-text">Go back</span>
+      </div>
+      <h1 class="project-name">{{ project.title }}</h1>
+      <!-- Hier verwenden wir nun animatedLineImage statt aboutLine -->
+      <img
+        [src]="project.animatedLineImage"
+        alt="Animated Line"
+        class="about-line"
+      />
+
+      <!-- Statt dynamischem Titel verwenden wir festen Text -->
+      <div class="section-title description-title">Description</div>
+      <p class="description-text">{{ project.description }}</p>
+
+      <div class="section-title implementation-title">
+        Implementation Details
+      </div>
+      <p class="implementation-text">{{ project.implementationDetails }}</p>
+
+      <div class="duration">
+        <span class="duration-label">Duration:</span>
+        <span class="duration-value">{{ project.duration }}</span>
+      </div>
+
+      <div class="tech-icons">
+        <ng-container *ngFor="let icon of project.techIcons">
+          <img [src]="icon" [alt]="icon" class="tech-icon" />
+        </ng-container>
+      </div>
+    </div>
+
+    <!-- Rechte Hälfte -->
+    <div class="detail-right">
+      <!-- Verwende image statt thumbnail -->
+      <img
+        [src]="project.image"
+        alt="Project Thumbnail"
+        class="project-thumbnail"
+      />
+      <div class="buttons-container">
+        <button class="detail-btn" (click)="goBack()">Go back</button>
+        <button class="detail-btn" (click)="nextProject()">Next Project</button>
+      </div>
+      <div class="next-project">
+        <span class="next-text">Next Project</span>
+        <img
+          src="assets/Images/ProjectDetail/next-arrow.png"
+          alt="Next Arrow"
+          class="next-arrow"
+          (click)="nextProject()"
+        />
+      </div>
+    </div>
+  </div>
+</section>

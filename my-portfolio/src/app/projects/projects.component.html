@@ -9,7 +9,7 @@
   <!-- Projekte Grid: 6 Projekte, 2 pro Reihe -->
   <div class="projects-grid">
     <!-- Projekt 1 -->
-    <div class="project-card">
+    <div class="project-card" (click)="viewProject(1)">
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -17,7 +17,12 @@
           alt="Sharkie"
         />
         <div class="vignette"></div>
-        <button class="details-btn">Project details</button>
+        <button
+          class="details-btn"
+          (click)="viewProject(1); $event.stopPropagation()"
+        >
+          Project details
+        </button>
       </div>
       <div class="project-info">
         <div class="project-title">Sharkie</div>
@@ -26,8 +31,9 @@
         </div>
       </div>
     </div>
+
     <!-- Projekt 2 -->
-    <div class="project-card">
+    <div class="project-card" (click)="viewProject(2)">
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -35,7 +41,12 @@
           alt="Join"
         />
         <div class="vignette"></div>
-        <button class="details-btn">Project details</button>
+        <button
+          class="details-btn"
+          (click)="viewProject(2); $event.stopPropagation()"
+        >
+          Project details
+        </button>
       </div>
       <div class="project-info">
         <div class="project-title">Join</div>
@@ -44,8 +55,9 @@
         </div>
       </div>
     </div>
+
     <!-- Projekt 3 -->
-    <div class="project-card">
+    <div class="project-card" (click)="viewProject(3)">
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -53,7 +65,12 @@
           alt="Pokedex API"
         />
         <div class="vignette"></div>
-        <button class="details-btn">Project details</button>
+        <button
+          class="details-btn"
+          (click)="viewProject(3); $event.stopPropagation()"
+        >
+          Project details
+        </button>
       </div>
       <div class="project-info">
         <div class="project-title">Pokedex API</div>
@@ -62,8 +79,9 @@
         </div>
       </div>
     </div>
+
     <!-- Projekt 4 (Placeholder) -->
-    <div class="project-card">
+    <div class="project-card" (click)="viewProject(4)">
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -71,7 +89,12 @@
           alt="Project 4"
         />
         <div class="vignette"></div>
-        <button class="details-btn">Project details</button>
+        <button
+          class="details-btn"
+          (click)="viewProject(4); $event.stopPropagation()"
+        >
+          Project details
+        </button>
       </div>
       <div class="project-info">
         <div class="project-title">DABubble Placeholder</div>
@@ -80,8 +103,9 @@
         </div>
       </div>
     </div>
+
     <!-- Projekt 5 (Placeholder) -->
-    <div class="project-card">
+    <div class="project-card" (click)="viewProject(5)">
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -89,7 +113,12 @@
           alt="Project 5"
         />
         <div class="vignette"></div>
-        <button class="details-btn">Project details</button>
+        <button
+          class="details-btn"
+          (click)="viewProject(5); $event.stopPropagation()"
+        >
+          Project details
+        </button>
       </div>
       <div class="project-info">
         <div class="project-title">Videoflix Placeholder</div>
@@ -98,8 +127,9 @@
         </div>
       </div>
     </div>
+
     <!-- Projekt 6 (Placeholder) -->
-    <div class="project-card">
+    <div class="project-card" (click)="viewProject(6)">
       <div class="thumbnail-container">
         <img
           class="thumbnail"
@@ -107,7 +137,12 @@
           alt="Project 6"
         />
         <div class="vignette"></div>
-        <button class="details-btn">Project details</button>
+        <button
+          class="details-btn"
+          (click)="viewProject(6); $event.stopPropagation()"
+        >
+          Project details
+        </button>
       </div>
       <div class="project-info">
         <div class="project-title">Coderr Placeholder</div>
@@ -117,6 +152,14 @@
       </div>
     </div>
   </div>
+
+  <!-- Modal/Overlay: Project Detail View -->
+  <ng-container *ngIf="showDetail">
+    <app-project-detail
+      [project]="selectedProject!"
+      (closeDialog)="closeDetail()"
+    ></app-project-detail>
+  </ng-container>
 
   <!-- Colleagues' Thoughts Section -->
   <div class="colleagues-section">
