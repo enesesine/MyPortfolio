@@ -1,13 +1,13 @@
 /* ================================
    ContactMe Section
-================================ */
+   ================================ */
 .contact-me-section {
   position: relative;
-  /* Gedrehtes/angepasstes Bild in Photoshop, also kein rotate nötig */
   background-image: url("/assets/Images/ContactMe/BG/Footer.png");
   background-size: cover;
-  background-position: top;
+  background-position: center;
   background-repeat: no-repeat;
+  /* Kein Hintergrundfarbe, nur das Image */
   padding: 60px 50px;
   font-family: "Bricolage", sans-serif;
   color: #fff;
@@ -30,12 +30,7 @@
   flex: 1;
   padding-right: 20px;
   position: relative;
-
-  /* Erhöhte Margin, damit sie so weit vom linken Rand entfernt ist 
-     wie die rechte Hälfte (300px) vom rechten Rand 
-  */
-  margin-left: 300px;
-
+  margin-left: 20px;
   margin-top: 120px; /* Weiter nach unten */
 
   .contact-title {
@@ -70,6 +65,46 @@
     display: block;
     max-width: 300px;
     margin: 0 auto 20px auto;
+    animation: aboutMeLineClip 5s infinite ease-in-out;
+  }
+
+  @keyframes aboutMeLineClip {
+    0% {
+      clip-path: inset(0 100% 0 0);
+    }
+    20% {
+      clip-path: inset(0 0 0 0);
+    }
+    80% {
+      clip-path: inset(0 0 0 0);
+    }
+    100% {
+      clip-path: inset(0 100% 0 0);
+    }
+  }
+
+  .contact-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 40px;
+
+    img {
+      width: 80px;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      transition: filter 0.3s ease-in-out, transform 0.2s;
+      &:hover {
+        filter: hue-rotate(-50deg) saturate(300%) brightness(1.2);
+      }
+    }
+
+    p {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 0;
+    }
   }
 }
 
@@ -83,10 +118,6 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-
-  /* Verschieben nach rechts, 300px 
-     => entspricht margin-left: 300px auf der linken Seite
-  */
   transform: translateX(300px);
 
   @media screen and (max-width: 768px) {
@@ -94,13 +125,11 @@
   }
 
   .contact-sticker {
-    width: 120px; /* Kleiner als 150px */
-    margin-top: 60px; /* Weiter nach unten verschieben */
+    width: 150px;
     margin-bottom: 20px;
     cursor: pointer;
     transition: transform 0.3s ease;
     animation: rotateSticker 14s linear infinite;
-
     &:hover {
       transform: scale(1.05);
     }
@@ -128,8 +157,8 @@
     margin-bottom: 20px;
 
     label {
-      font-size: 1.2rem; /* Größer */
-      font-weight: bold; /* Fett */
+      font-size: 1.2rem;
+      font-weight: bold;
       color: #fff;
       margin-bottom: 5px;
     }
@@ -154,14 +183,14 @@
     .divider {
       background: #ffc107;
       margin-top: 10px;
-      height: 0; /* Falls kein sichtbarer Balken gewünscht */
+      height: 0;
     }
   }
 
-  /* Hover/Effekt für Inputs/Texts (Fokus) */
-  .contact-form input:focus,
-  .contact-form textarea:focus {
-    border-bottom-color: #fff;
+  .error {
+    font-size: 0.9rem;
+    color: #ffc107;
+    margin-top: 5px;
   }
 
   .consent {
@@ -183,7 +212,7 @@
 
     a.privacy-link {
       color: #4c66ea;
-      text-decoration: none; /* Unterstrich entfernen */
+      text-decoration: none;
     }
   }
 
@@ -203,68 +232,48 @@
     cursor: pointer;
     box-shadow: 4px 4px 0 #fff;
     transition: all 0.3s ease-in-out;
+  }
 
-    &:hover {
-      box-shadow: none;
-      background: #e67d60;
-      border-color: #e67d60;
-    }
+  .send-btn:disabled {
+    opacity: 0.3;
+    background: gray;
+    border-color: gray;
+    cursor: not-allowed;
+  }
+
+  .send-btn:hover:not(:disabled) {
+    box-shadow: none;
+    background: #e67d60;
+    border-color: #e67d60;
+  }
+
+  /* Focus-Hover für Inputs */
+  .contact-form input:focus,
+  .contact-form textarea:focus {
+    border-bottom-color: #fff;
   }
 }
 
 /* =====================================
-   Footer (unten) => Logo + Links
+   Footer
 ===================================== */
 .contact-footer {
   width: 100%;
   padding: 20px 50px;
   display: flex;
-
-  /* 
-     Alle Items werden nun linksbündig angezeigt:
-     Logo + Copyright + Links 
-  */
   justify-content: flex-start;
   align-items: center;
   background: transparent;
   gap: 40px;
 
-  /* 
-     LOGO + COPYRIGHT ÜBEREINANDER 
-  */
-  .contact-logo-box {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-
-    .contact-logo {
-      width: 80px;
-      transition: filter 0.3s ease-in-out, transform 0.2s;
-
-      &:hover {
-        /* Kein transition auf filter => sofortiger Sprung */
-        transition: none;
-        filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
-      }
-    }
-
-    p {
-      font-size: 0.9rem;
-      font-weight: 700;
-      color: #fff;
-      margin: 0;
-    }
-  }
-
   .footer-links {
     display: flex;
-    gap: 200px; /* Schiebt die Links auseinander */
-    margin-left: 250px; /* Schiebt die Links vom Logo weg */
+    gap: 200px;
+    margin-left: 250px;
 
     a {
       font-size: 0.9rem;
-      font-weight: bold; /* Dickere Schrift */
+      font-weight: bold;
       color: #fff;
       text-decoration: none;
       transition: color 0.3s ease;
@@ -284,28 +293,21 @@
     flex-direction: column;
     align-items: center;
   }
-
   .contact-left,
   .contact-right {
     padding: 0;
     text-align: center;
-    margin-left: 0; /* Entfernt das 300px left margin in Mobile */
-    margin-top: 20px; /* Kannst du anpassen */
   }
-
   .contact-right {
     align-items: center;
-    transform: none; /* Kein translateX in Mobile */
+    transform: none;
   }
-
   .contact-form {
     max-width: 100%;
   }
-
   .contact-footer {
     flex-direction: column;
     gap: 20px;
-
     .footer-links {
       margin-left: 0;
       gap: 40px;
