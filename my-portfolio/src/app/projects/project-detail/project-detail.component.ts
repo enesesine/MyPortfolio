@@ -25,7 +25,7 @@ export class ProjectDetailComponent {
   }
 
   goBack(): void {
-    this.router.navigate(['/projects']);
+    this.closeDialog.emit();
   }
 
   nextProject(): void {
