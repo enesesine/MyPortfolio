@@ -18,7 +18,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/CSS.png',
       '/assets/Images/SkillSet/Logos/Frontend/JS.png',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie', // <– Falls existiert
+    repoLink: 'https://github.com/enesesine/Sharkie', // <– Falls existiert
     liveDemo: 'https://en.es/Sharkie', // <– Falls existiert
   },
   {
@@ -37,7 +37,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/CSS.png',
       '/assets/Images/SkillSet/Logos/Frontend/JS.png',
     ],
-    repoLink: 'https://github.com/enesesine/join',
+    repoLink: 'https://github.com/enesesine/Join',
     liveDemo: '#',
   },
   {

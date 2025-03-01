@@ -47,10 +47,16 @@
 
 @keyframes lineAnimation {
   0% {
-    transform: translateX(0);
+    clip-path: inset(0 100% 0 0); /* komplett verdeckt */
+  }
+  20% {
+    clip-path: inset(0 0 0 0); /* voll gezeichnet */
+  }
+  80% {
+    clip-path: inset(0 0 0 0); /* bleibt sichtbar */
   }
   100% {
-    transform: translateX(20px);
+    clip-path: inset(0 100% 0 0); /* wieder verschwinden */
   }
 }
 
@@ -360,6 +366,26 @@
    Ab 768px: Desktop
    => Drunter: Evtl. Overlaps entfallen
 */
+
+@media screen and (max-width: 1100px) {
+  .colleagues-cards {
+    width: 100%; /* Container füllt mobil die Breite */
+    flex-direction: column;
+    align-items: center;
+
+    .colleague-card {
+      width: 90%;
+      transform: none !important;
+      z-index: 1 !important;
+
+      &:hover {
+        transform: none !important;
+        box-shadow: none !important;
+        z-index: 1 !important;
+      }
+    }
+  }
+}
 @media screen and (max-width: 768px) {
   .projects-section {
     padding: 40px 20px;
@@ -393,31 +419,13 @@
     flex-direction: column;
     align-items: center;
   }
-
-  .colleagues-cards {
-    width: 100%; /* Container füllt mobil die Breite */
-    flex-direction: column;
-    align-items: center;
-
-    .colleague-card {
-      width: 90%;
-      transform: none !important;
-      z-index: 1 !important;
-
-      &:hover {
-        transform: none !important;
-        box-shadow: none !important;
-        z-index: 1 !important;
-      }
-    }
-  }
 }
 
 /*
    Ab 501px bis 768px:
    Feintuning
 */
-@media screen and (max-width: 768px) and (min-width: 501px) {
+@media screen and (max-width: 1100px) and (min-width: 501px) {
   .projects-grid {
     gap: 15px;
     margin-bottom: 30px;
@@ -427,7 +435,7 @@
 /*
    Bis 500px => nochmal feiner anpassen
 */
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 1100px) {
   .projects-grid {
     gap: 10px;
     margin-bottom: 20px;

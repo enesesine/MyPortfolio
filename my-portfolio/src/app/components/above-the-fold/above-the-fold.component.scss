@@ -38,7 +38,6 @@ p {
   transition: filter 0.3s ease-in-out, transform 0.2s;
 
   &:hover {
-    /* Kein transition auf filter => sofortiger Sprung */
     transition: none;
     filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
   }
@@ -153,7 +152,6 @@ p {
       width: 18px;
       height: 18px;
       transition: all 0.3s ease-in-out;
-
       &.active {
         left: 25px;
       }
@@ -169,6 +167,8 @@ p {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform: scale(1);
+  transform-origin: top center;
 
   h1 {
     font-size: 7rem;
@@ -186,7 +186,6 @@ p {
     position: relative;
     display: inline-block;
   }
-
   .fullstack {
     display: inline-block;
     position: relative;
@@ -194,11 +193,10 @@ p {
   }
 
   /* ************ HELLO WORLD-BUTTON + WAVING HAND ************ */
-
   .hello-world {
     position: absolute;
-    top: -55px; /* tiefer => nicht so hoch */
-    left: -130px; /* horizontal justieren */
+    top: -55px;
+    left: -130px;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -213,26 +211,14 @@ p {
     border-radius: 25px;
     cursor: pointer;
     overflow: hidden;
-    white-space: nowrap; /* "I'm Enes Hadzic" => keine 2. Zeile */
-    /* Entferne diese Zeile:
-  animation: expandOut 0.8s ease-in-out forwards;
-  */
-  }
-
-  .hello-world {
-    /* Standard-Zustand: initiale Breite, keine Animation */
-    width: 140px;
+    white-space: nowrap;
     animation: none;
   }
-
   .hello-world:hover {
     animation: expandIn 0.8s ease-in-out forwards;
     background: #4c66ea;
     border-color: #4c66ea;
   }
-
-  /* Wenn der Button nicht gehovert ist – also unhover – 
-   soll der expandOut-Keyframe greifen */
   .hello-world:not(:hover) {
     animation: expandOut 0.8s ease-in-out forwards;
   }
@@ -264,19 +250,14 @@ p {
     left: -50px;
     width: 35px;
     opacity: 0;
-    z-index: 999; /* => Hand überm Button */
+    z-index: 999;
     pointer-events: none;
     transform-origin: center;
-    /* Standard => waveOut */
     animation: waveOut 0.8s ease-in-out forwards;
   }
-
-  /* => Hover => waveIn, fadeIn + rotate => bounce */
   .hello-world:hover + .waving-hand {
     animation: waveIn 0.8s ease-in-out forwards;
   }
-
-  /* ========== KEYFRAMES: expand, wave ========== */
 
   @keyframes expandIn {
     0% {
@@ -284,10 +265,10 @@ p {
     }
     50% {
       width: 220px;
-    } /* expand */
+    }
     70% {
       width: 200px;
-    } /* bounce back */
+    }
     100% {
       width: 210px;
     }
@@ -300,8 +281,6 @@ p {
       width: 140px;
     }
   }
-
-  /* => waveIn => bowling => 2x rotate + bounce */
   @keyframes waveIn {
     0% {
       opacity: 0;
@@ -321,7 +300,6 @@ p {
       opacity: 1;
     }
   }
-  /* => waveOut => fade out + return to start */
   @keyframes waveOut {
     0% {
       opacity: 1;
@@ -340,14 +318,12 @@ p {
     position: relative;
     display: inline-block;
   }
-
   .developer {
     display: inline-block;
     position: relative;
     left: 140px;
     margin-top: -20px;
   }
-
   .get-in-touch {
     position: absolute;
     top: 150px;
@@ -363,14 +339,13 @@ p {
     cursor: pointer;
     box-shadow: 6px 6px 0 #fff;
     transition: all 0.3s ease-in-out;
-
+    z-index: 10;
     &:hover {
       box-shadow: none;
       background: #e67d60;
       color: #fff;
     }
   }
-
   .polaroid {
     position: absolute;
     top: -120px;
@@ -378,7 +353,6 @@ p {
     width: 200px;
     transition: transform 0.3s ease-in-out;
     transform: rotate(2deg);
-
     &:hover {
       transform: rotate(2deg) scale(1.05);
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
@@ -386,15 +360,9 @@ p {
   }
 }
 
-/* 
-  ============ Neue Social Icons (unten links) ============
-  3 Bilder (GitHub, LinkedIn, Mail), 
-  runde Buttons, Hover => blau und 
-  mit einer weißen Border => wir verstärken 
-  => default => border: 2px solid #fff 
-*/
+// ✅ Social Icons (unten links)
 .socials {
-  position: relative; /* statt absolute */
+  position: relative;
   bottom: 120px;
   left: 30px;
   display: flex;
@@ -413,13 +381,11 @@ p {
     border: 2px solid #fff;
     transition: background 0.3s ease, transform 0.3s ease,
       border-color 0.3s ease;
-
     &:hover {
       background: #4c66ea;
       border-color: #4c66ea;
       transform: scale(1.05);
     }
-
     img {
       width: 25px;
       height: 25px;
@@ -428,18 +394,12 @@ p {
   }
 }
 
-/* 
-  ============ Buchstaben-Hover-Effekt ============
-  Jeder Buchstabe muss einzeln in <span class="letter">B</span> eingepackt werden
-  =>  HOVER => Buchstabe klein, gelb, und von Uppercase -> Lowercase
-*/
-
+// ✅ Buchstaben-Hover-Effekt
 ::ng-deep .letter-wrapper {
   transition: transform 0.3s ease, color 0.3s ease;
   transform-origin: center;
   cursor: pointer;
 }
-
 ::ng-deep .letter {
   display: inline-block;
   transition: transform 0.3s ease, color 0.3s ease, text-transform 0.3s ease;
@@ -449,42 +409,28 @@ p {
   backface-visibility: hidden;
   transform: translateZ(0);
 }
-
 ::ng-deep .letter:hover {
-  transform: scale(0.8);
-  text-transform: lowercase;
+  transform: scale(0.65);
   color: #ffc107;
-  font-family: "Bricolage", "Franklin Gothic Medium", "Arial Narrow", Arial,
-    sans-serif;
 }
 
-/* === Dein bestehender Code bleibt unverändert === */
-/* (Nur unten kommt noch der Burger + Mobile Overlay) */
-
-/* =========================================
-   Burger Button => standard hidden
-   Mobile Menu => standard hidden
-========================================= */
-
-/* Burger-Button => nur im Mobile-Viewport sichtbar */
+// =========================================
+// Burger Button & Mobile Menu (standard hidden)
 .burger-btn {
-  display: none; /* Desktop: hidden */
+  display: none;
   background: none;
   border: none;
   font-size: 2rem;
   color: white;
   cursor: pointer;
-  position: relative; /* optional */
+  position: relative;
   z-index: 9999;
-
   &:hover {
     color: #e67d60;
   }
 }
-
-/* Mobile Menu Overlay => verdeckt ganzen Screen */
 .mobile-menu {
-  display: none; /* Desktop: hidden */
+  display: none;
   position: fixed;
   left: 0;
   top: 0;
@@ -495,16 +441,12 @@ p {
   align-items: center;
   padding: 20px;
   z-index: 9998;
-  transform: translateX(-100%); /* standard: unsichtbar links */
+  transform: translateX(-100%);
   transition: transform 0.3s ease;
-
-  /* => .open -> shift ins Bild */
   &.open {
-    display: flex; /* jetzt sichtbar */
+    display: flex;
     transform: translateX(0%);
   }
-
-  /* X-Button oben rechts */
   .close-btn {
     align-self: flex-end;
     font-size: 2rem;
@@ -513,19 +455,15 @@ p {
     color: #fff;
     cursor: pointer;
     margin-bottom: 20px;
-
     &:hover {
       color: #e67d60;
     }
   }
-
-  /* Mobile Nav Items (Abstand, Größe etc.) */
   .mobile-nav-items {
     display: flex;
     flex-direction: column;
-    gap: 40px; /* z.B. mehr Abstand */
+    gap: 40px;
     margin-top: 20px;
-
     a {
       text-decoration: none;
       color: #fff;
@@ -536,25 +474,20 @@ p {
       }
     }
   }
-
-  /* Mobile Language Switch */
   .mobile-language-switch {
     margin-top: 40px;
     display: flex;
     align-items: center;
     gap: 10px;
-
     .lang-option {
       font-size: 16px;
       color: #fff;
     }
-
     .switch-container {
       position: relative;
       width: 40px;
       height: 10px;
       cursor: pointer;
-
       .lang-bar {
         width: 100%;
         height: 100%;
@@ -566,21 +499,17 @@ p {
         width: 18px;
         height: 18px;
         transition: all 0.3s ease-in-out;
-
         &.active {
           left: 25px;
         }
       }
     }
   }
-
-  /* Mobile Social Icons */
   .mobile-socials {
     margin-top: 40px;
     display: flex;
     flex-direction: row;
     gap: 20px;
-
     a {
       display: flex;
       align-items: center;
@@ -593,13 +522,11 @@ p {
       border: 2px solid #fff;
       transition: background 0.3s ease, transform 0.3s ease,
         border-color 0.3s ease;
-
       &:hover {
         background: #4c66ea;
         border-color: #4c66ea;
         transform: scale(1.05);
       }
-
       img {
         width: 25px;
         height: 25px;
@@ -609,18 +536,85 @@ p {
   }
 }
 
-/* ========= Media Query: ab max-width:768px => Desktop ausgeblendet, Mobile an ======== */
-@media (max-width: 768px) {
-  /* => Desktop .navbar, .language-switch, .socials => none; 
-        => .burger-btn => block
-  */
+// =========================================
+// Media Queries
+
+/* Bei max-width 1330px: Navbar, Sprachumschalter und Social Icons ausblenden, Burger-Button einblenden */
+@media (max-width: 1330px) {
   .navbar,
   .language-switch,
   .socials {
     display: none;
   }
-
   .burger-btn {
     display: block;
+  }
+}
+
+/* Ab 1000px: ATF-Content skalieren und responsive Anpassungen für "Fullstack Developer" */
+@media (max-width: 1000px) {
+  .atf-content {
+    transform: scale(calc(100vw / 1000));
+    transform-origin: top center;
+    margin-top: 150px; // Alles etwas weiter nach unten
+
+    h1 {
+      font-size: 4rem;
+    } // Schrift kleiner
+
+    /* Textelemente zentrieren */
+    .fullstack {
+      left: 0;
+    }
+    .developer {
+      left: 0;
+      margin-top: 0;
+    }
+
+    /* Positionierung der Buttons & Waving Hand im responsiven Modus */
+    .fullstack-container {
+      position: relative;
+    }
+    .fullstack-container .hello-world {
+      position: absolute;
+      top: -50px; // etwas oberhalb von "Fullstack"
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    /* Waving Hand gemeinsam mit Hello World bewegen */
+    .fullstack-container .waving-hand {
+      position: absolute;
+      top: -70px; // weiter oben als Hello World
+      left: calc(
+        50% + 80px
+      ); // rechts vom Hello World Button – passe den Wert nach Bedarf an
+      width: 30px; // etwas kleiner
+    }
+    .developer-container {
+      position: relative;
+    }
+    .developer-container .get-in-touch {
+      position: absolute;
+      top: 85px; // minimal höher
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 10px 15px; // horizontale Polsterung reduziert
+      font-size: 14px;
+    }
+    .polaroid {
+      position: absolute;
+      top: 265px; // etwas weiter höher
+      left: 50%;
+      transform: translateX(-50%) rotate(2deg);
+      width: 150px; // kleiner im responsiven Modus
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .atf-content {
+    h1 {
+      font-size: 3rem;
+    } // Schrift noch kleiner
   }
 }
