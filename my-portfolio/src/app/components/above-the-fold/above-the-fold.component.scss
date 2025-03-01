@@ -448,7 +448,9 @@ p {
     transform: translateX(0%);
   }
   .close-btn {
-    align-self: flex-end;
+    /* X-Button näher an den linken Rand rücken */
+    align-self: flex-start;
+    margin-left: 10px;
     font-size: 2rem;
     background: none;
     border: none;
@@ -536,6 +538,11 @@ p {
   }
 }
 
+/* Dropdown/Hamburger: Wenn das Mobile Menü offen ist, soll der Burger-Button verschwinden */
+.mobile-menu.open ~ .burger-btn {
+  display: none;
+}
+
 // =========================================
 // Media Queries
 
@@ -601,12 +608,18 @@ p {
       padding: 10px 15px; // horizontale Polsterung reduziert
       font-size: 14px;
     }
+    /* Polaroid im Responsive */
     .polaroid {
       position: absolute;
-      top: 265px; // etwas weiter höher
+      top: 280px; // etwas weiter höher
       left: 50%;
       transform: translateX(-50%) rotate(2deg);
       width: 150px; // kleiner im responsiven Modus
+      transition: transform 0.3s ease-in-out;
+      &:hover {
+        transform: translateX(-50%) rotate(2deg) scale(1.05);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      }
     }
   }
 }
