@@ -74,17 +74,16 @@
 
   .ripple-text {
     order: 0;
+    /* Desktop: absolute zentriert, aber etwas weiter unten */
     position: absolute;
-    top: 50%;
+    top: 75%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #000;
     font-size: 1.2rem;
     padding: 10px 20px;
-
     border-radius: 5px;
     box-sizing: border-box;
-    margin-top: 65px;
     max-width: 90%;
   }
 }
@@ -119,37 +118,20 @@
   margin-bottom: 120px;
 }
 
-/* Frontend Icons: Zwei Reihen – jeweils 5 Icons */
+/* Gemeinsame Einstellungen für beide Icon-Gruppen (Frontend & Backend) */
 .icons-row.frontend.top,
-.icons-row.frontend.bottom {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.icons-row.frontend.top .icon-item,
-.icons-row.frontend.bottom .icon-item {
-  flex: 0 0 calc((100% - 4 * 10px) / 5);
-}
-
-/* Backend Icons: Zwei Reihen – obere Reihe 6 Icons, untere Reihe 5 Icons */
-.icons-row.backend.top {
-  display: flex;
-  justify-content: center;
-  gap: 40px;
-  width: 100%;
-  margin-top: 30px;
-}
-.icons-row.backend.top .icon-item {
-  flex: 0 0 calc((100% - 5 * 10px) / 6);
-}
-
+.icons-row.frontend.bottom,
+.icons-row.backend.top,
 .icons-row.backend.bottom {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
 }
+
+/* Alle Icon-Items erhalten denselben flex-Wert */
+.icons-row.frontend.top .icon-item,
+.icons-row.frontend.bottom .icon-item,
+.icons-row.backend.top .icon-item,
 .icons-row.backend.bottom .icon-item {
   flex: 0 0 calc((100% - 4 * 10px) / 5);
 }
@@ -216,23 +198,32 @@
 }
 
 /* -------------------------
-   Responsive Anpassungen
+   Responsive Anpassungen für Mobile (max-width: 768px)
    ------------------------- */
 @media screen and (max-width: 768px) {
-  .icons-container {
-    flex-direction: column;
-    align-items: center;
+  .paper-ripple-container {
+    overflow: hidden;
   }
+  .paper-ripple {
+    max-width: 700px; /* Paper Image Container auf 700px */
+  }
+  /* Ripple-Text: Für mobile Auflösungen positionieren wir ihn als relative Elemente */
+  .paper-ripple-container .ripple-text {
+    position: relative;
+    top: -95px; /* etwas nach unten, aber nicht zu weit */
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 0;
+    font-size: 1rem;
+    padding: 5px 10px;
+  }
+
+  /* Sticker im Mobile: weiter unten, zentriert */
   .sticker {
     position: relative;
-    top: auto;
-    right: auto;
-    transform: none;
-    margin-top: 20px;
-  }
-  .icon-item .tech-icon {
-    width: 40px;
-    height: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 40px;
   }
 }
 
@@ -258,7 +249,6 @@
     .skillset-title {
       font-size: 3rem;
     }
-
     .circle-kritzel {
       width: 200px;
       position: relative;
@@ -278,5 +268,34 @@
   .icon-item .tech-icon {
     width: 45px;
     height: 45px;
+  }
+}
+
+/* ===========================
+   Responsive Anpassungen für größere Bildschirme:
+   Sticker unter den Backend Icons (max-width: 1600px)
+   =========================== */
+@media screen and (max-width: 1600px) {
+  .sticker {
+    /* Um den Sticker unter den Backend Icons mittig zu platzieren,
+       setzen wir ihn relativ und zentrieren ihn per margin */
+    position: relative;
+    left: 0;
+    right: 0;
+    transform: none;
+    margin: 20px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .paper-ripple,
+  .ripple-text {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 355px) {
+  .circle-kritzel {
+    display: none !important;
   }
 }

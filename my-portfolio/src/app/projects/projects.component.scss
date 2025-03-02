@@ -366,7 +366,6 @@
    Ab 768px: Desktop
    => Drunter: Evtl. Overlaps entfallen
 */
-
 @media screen and (max-width: 1100px) {
   .colleagues-cards {
     width: 100%; /* Container füllt mobil die Breite */
@@ -443,5 +442,12 @@
 
   .project-card {
     padding: 8px;
+  }
+}
+
+/* ===== Ab 395px: Colleagues Section ausblenden ===== */
+@media screen and (max-width: 395px) {
+  .colleagues-section {
+    display: none;
   }
 }

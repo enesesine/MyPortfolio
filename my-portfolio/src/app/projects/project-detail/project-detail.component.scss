@@ -18,6 +18,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto; /* Ermöglicht vertikales Scrollen, falls Inhalt zu hoch wird */
 }
 
 .detail-container {
@@ -33,8 +34,8 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
-  padding-right: -200px;
+  gap: 10px; /* engerer Abstand */
+  margin-top: 50px; /* weiter nach unten verschoben */
 }
 
 .go-back {
@@ -42,21 +43,21 @@
   align-items: center;
   cursor: pointer;
   gap: 5px;
+  /* Standardposition (Desktop): oben links */
   position: absolute;
   top: 40px;
   left: 25px;
+}
 
-  .back-arrow {
-    width: 80px;
-    height: auto;
-  }
+.go-back .back-arrow {
+  width: 80px;
+  height: auto;
+}
 
-  .go-back-text {
-    font-size: 1.1rem;
-
-    font-weight: bold;
-    color: #e67d60;
-  }
+.go-back .go-back-text {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #e67d60;
 }
 
 .project-name {
@@ -103,12 +104,14 @@
 .duration {
   margin-top: 10px;
   font-size: 1rem;
-  .duration-label {
-    font-weight: bold;
-  }
-  .duration-value {
-    margin-left: 5px;
-  }
+}
+
+.duration .duration-label {
+  font-weight: bold;
+}
+
+.duration .duration-value {
+  margin-left: 5px;
 }
 
 .tech-icons {
@@ -116,11 +119,12 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-  img.tech-icon {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-  }
+}
+
+.tech-icons img.tech-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
 }
 
 /* ----- Rechte Hälfte ----- */
@@ -136,59 +140,70 @@
   width: 100%;
   max-width: 560px;
   border-radius: 10px;
+  margin: 0 auto; /* zentriert das Thumbnail */
 }
 
 .buttons-container {
   display: flex;
   gap: 20px;
-  button.detail-btn {
-    padding: 12px 25px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background: transparent;
-    border: 2px solid #fff;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 4px 4px 0 #fff;
-    transition: all 0.3s ease-in-out;
-  }
-  button.detail-btn:hover {
-    box-shadow: none;
-    background: #e67d60;
-    border-color: #e67d60;
-    color: #fff;
-  }
 }
 
+.buttons-container button.detail-btn {
+  padding: 12px 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: transparent;
+  border: 2px solid #fff;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #fff;
+  transition: all 0.3s ease-in-out;
+}
+
+.buttons-container button.detail-btn:hover {
+  box-shadow: none;
+  background: #e67d60;
+  border-color: #e67d60;
+  color: #fff;
+}
+
+/* --- Next Project Div ---
+     Es soll unter den GitHub- und Live-Test-Buttons erscheinen.
+     Dabei steht das next arrow Image rechts neben dem "Next Project"-Text. */
 .next-project {
+  cursor: pointer;
   color: white;
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-top: 5px; /* reduziert von 20px auf 5px */
+  flex-direction: row;
+}
 
-  .next-text {
-    font-size: 1rem;
-    font-weight: bold;
-  }
+.next-project .next-text {
+  font-size: 1rem;
+  font-weight: bold;
+}
 
-  .next-arrow {
-    width: 80px;
-    height: auto;
-    cursor: pointer;
-    transition: transform 0.3s ease;
-  }
+.next-project .next-arrow {
+  width: 80px;
+  height: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  margin-left: 10px; /* Abstand zwischen Text und Pfeil */
+}
 
-  .next-arrow:hover {
-    transform: scale(1.1);
-  }
+.next-project .next-arrow:hover {
+  transform: scale(1.1);
 }
 
 /* ----- Responsive Anpassungen ----- */
 @media screen and (max-width: 768px) {
   .detail-container {
     flex-direction: column;
-    align-items: center;
+    align-items: baseline;
+    margin-right: 100px;
     gap: 30px;
   }
   .project-name {
@@ -199,13 +214,29 @@
   }
   .project-thumbnail {
     max-width: 100%;
+    max-height: 300px; /* Begrenze die Höhe des Thumbnails */
+    object-fit: cover; /* Zuschneiden, falls nötig */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
   }
   .buttons-container {
-    flex-direction: column;
-    gap: 10px;
+    /* Buttons bleiben nebeneinander */
+    flex-direction: row;
+    gap: 20px;
   }
+  /* Stelle sicher, dass "Next Project" unter den Buttons bleibt */
   .next-project {
-    flex-direction: column;
-    gap: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-direction: row;
+    margin-top: 5px; /* reduziert auch hier */
+  }
+  /* Positioniere "Go back" in der responsiven Ansicht oben rechts */
+  .go-back {
+    top: 40px;
+    right: 25px;
+    left: auto;
   }
 }
