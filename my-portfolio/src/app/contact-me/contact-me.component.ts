@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { FormsModule, NgForm } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,18 +10,16 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./contact-me.component.scss'],
 })
 export class ContactMeComponent {
-  // Objekt, das die Formulardaten hält:
-  formData = {
-    name: '',
-    email: '',
-    message: '',
-    consent: false,
-  };
+  // Hier lesen wir explizit das native Element, statt den NgForm-Direktivenwert.
+  @ViewChild('contactForm', { read: ElementRef, static: true })
+  contactFormRef!: ElementRef<HTMLFormElement>;
 
-  onSubmit(form: any): void {
+  onSubmit(form: NgForm): void {
+    console.log('onSubmit called, form valid:', form.valid);
     if (form.valid) {
-      // Hier kannst du optional weitere Logik hinzufügen,
-      // wenn das Formular gültig ist.
+      console.log('Native submit wird ausgelöst.');
+      // Jetzt sollte contactFormRef definiert sein und das native Element referenzieren.
+      this.contactFormRef.nativeElement.submit();
     } else {
       alert('Please fill in all required fields.');
     }

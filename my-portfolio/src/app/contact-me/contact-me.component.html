@@ -40,15 +40,9 @@
         method="POST"
         #contactForm="ngForm"
         class="contact-form"
+        (ngSubmit)="onSubmit(contactForm)"
+        novalidate
       >
-        <!-- Verstecktes Input-Feld für Weiterleitung -->
-        <input
-          type="hidden"
-          name="_next"
-          value="https://yourdomain.com/thank-you"
-        />
-        <!-- Optional: Betreff setzen -->
-        <!-- <input type="hidden" name="_subject" value="New Contact Form Submission" /> -->
         <!-- Name-Feld -->
         <div class="form-group">
           <label for="name">What's your name?</label>
@@ -80,6 +74,7 @@
             placeholder="youremail@example.com"
             required
             ngModel
+            pattern=".+@.+"
           />
           <div
             class="error"
@@ -135,7 +130,6 @@
       </form>
     </div>
   </div>
-
   <!-- Footer -->
   <footer class="contact-footer">
     <div class="footer-links">
