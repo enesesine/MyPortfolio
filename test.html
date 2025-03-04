@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formspree Test Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 2rem auto;
+        padding: 1rem;
+      }
+      form div {
+        margin-bottom: 1rem;
+      }
+      label {
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      input,
+      textarea,
+      button {
+        width: 100%;
+        padding: 0.5rem;
+        font-size: 1rem;
+      }
+      button {
+        background: #e67d60;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 0.9;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Contact Form Test</h1>
+    <form action="https://formspree.io/f/movjgkyn" method="POST">
+      <!-- Name-Feld -->
+      <div>
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your name"
+          required
+        />
+      </div>
+      <!-- Email-Feld -->
+      <div>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="youremail@example.com"
+          required
+        />
+      </div>
+      <!-- Nachricht-Feld -->
+      <div>
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Hello, I am interested in..."
+          required
+        ></textarea>
+      </div>
+      <!-- Verstecktes Feld für Weiterleitung (optional) -->
+      <input
+        type="hidden"
+        name="_next"
+        value="https://example.com/thank-you.html"
+      />
+      <!-- Absende-Button -->
+      <button type="submit">Send</button>
+    </form>
+  </body>
+</html>

@@ -538,11 +538,6 @@ p {
   }
 }
 
-/* Dropdown/Hamburger: Wenn das Mobile Menü offen ist, soll der Burger-Button verschwinden */
-.mobile-menu.open ~ .burger-btn {
-  display: none;
-}
-
 // =========================================
 // Media Queries
 
@@ -591,10 +586,8 @@ p {
     /* Waving Hand gemeinsam mit Hello World bewegen */
     .fullstack-container .waving-hand {
       position: absolute;
-      top: -70px; // weiter oben als Hello World
-      left: calc(
-        50% + 80px
-      ); // rechts vom Hello World Button – passe den Wert nach Bedarf an
+      top: -77px; /* etwas höher als zuvor */
+      left: calc(50% + -15px); /* weiter links, also weniger weit rechts */
       width: 30px; // etwas kleiner
     }
     .developer-container {
