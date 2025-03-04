@@ -1,0 +1,11 @@
+{
+  "ATF": {
+    "HELLO": "Hello World",
+    "FULLSTACK": "Fullstack",
+    "DEVELOPER": "Developer"
+  },
+  "ABOUT": {
+    "TITLE": "About me",
+    "DESCRIPTION": "I am a full-stack developer..."
+  }
+}

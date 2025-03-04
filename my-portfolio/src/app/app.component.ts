@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { AboveTheFoldComponent } from './components/above-the-fold/above-the-fold.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
@@ -20,6 +21,18 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
 })
 export class AppComponent {
   title = 'my-portfolio';
+
+  constructor(private translate: TranslateService) {
+    // Standardmäßig auf Englisch setzen
+    translate.setDefaultLang('en');
+    translate.use('en');
+  }
+
+  // Beispiel-Methode, die beim Umschalten der Sprache aufgerufen wird
+  toggleLanguage(): void {
+    const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
+    this.translate.use(newLang);
+  }
 
   scrollToSection(sectionId: string): void {
     const section = document.getElementById(sectionId);

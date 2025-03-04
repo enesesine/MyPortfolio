@@ -12,22 +12,15 @@ body {
 }
 
 @font-face {
-  font-family: "Bricolage";
-  src: url("/assets/fonts/Bricolage-Regular.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Bricolage";
-  src: url("/assets/fonts/Bricolage-Bold.ttf") format("truetype");
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Bold.ttf") format("truetype");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Bricolage";
-  src: url("/assets/fonts/Bricolage-Italic.ttf") format("truetype");
+  font-family: "BricolageGrotesque";
+  src: url("/assets/fonts/BricolageGrotesque-Regular.ttf") format("truetype");
   font-weight: normal;
-  font-style: italic;
+  font-style: normal;
 }

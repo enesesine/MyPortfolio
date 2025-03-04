@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
   templateUrl: './above-the-fold.component.html',
   styleUrls: ['./above-the-fold.component.scss'],
+  imports: [TranslateModule],
 })
 export class AboveTheFoldComponent {
   isGerman = false;
