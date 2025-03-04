@@ -94,7 +94,8 @@
       margin-bottom: 5px;
       transition: filter 0.3s ease-in-out, transform 0.2s;
       &:hover {
-        filter: hue-rotate(-50deg) saturate(300%) brightness(1.2);
+        transition: none;
+        filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
       }
     }
 
