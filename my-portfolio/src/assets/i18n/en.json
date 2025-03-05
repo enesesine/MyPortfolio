@@ -82,5 +82,35 @@
     "CARD4_NAME": "Daniel Löffler",
     "CARD4_JOB": "Frontend Developer",
     "CARD4_COMMENT": "Enes is a visionary developer whose creativity and technical prowess set him apart."
+  },
+
+  "CONTACT": {
+    "TITLE": "CONTACT ME",
+    "HEADING": "Ready to work together?",
+    "DESCRIPTION": "I am convinced that I can help you with your projects and that I am a perfect fit for your team. With extensive experience in both front-end and back-end technologies, as well as a solid background in design and multimedia production, I bring a unique blend of creativity and technical expertise. Let's collaborate and build something remarkable together!",
+    "INVITE": "If I have piqued your interest, I would be delighted if you contact me.",
+    "LINE_ALT": "Decorative Line",
+    "LOGO_ALT": "Enes Logo",
+    "STICKER_ALT": "Sticker",
+    "FORM": {
+      "NAME_LABEL": "What's your name?",
+      "NAME_PLACEHOLDER": "Your name goes here",
+      "NAME_ERROR": "Please write in your name.",
+      "EMAIL_LABEL": "What's your email?",
+      "EMAIL_PLACEHOLDER": "youremail@example.com",
+      "EMAIL_ERROR": "Please write your email address here.",
+      "MESSAGE_LABEL": "How can I help you?",
+      "MESSAGE_PLACEHOLDER": "Hello Enes, I am interested in...",
+      "MESSAGE_ERROR": "Please write your message.",
+      "CONSENT": "I've read the privacy policy and agree to the processing of my data as outlined.",
+      "PRIVACY_LINK": "privacy policy",
+      "SEND": "Send"
+    },
+    "FOOTER": {
+      "LEGAL": "Legal Notice",
+      "GITHUB": "Github",
+      "LINKEDIN": "LinkedIn",
+      "EMAIL": "Email"
+    }
   }
 }

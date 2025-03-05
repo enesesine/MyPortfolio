@@ -2,28 +2,23 @@
   <div class="contact-container">
     <!-- Linke Hälfte -->
     <div class="contact-left">
-      <div class="contact-title">CONTACT ME</div>
-      <h2 class="contact-heading">Ready to work together?</h2>
+      <div class="contact-title">{{ "CONTACT.TITLE" | translate }}</div>
+      <h2 class="contact-heading">{{ "CONTACT.HEADING" | translate }}</h2>
       <p class="contact-description">
-        I am convinced that I can help you with your projects and that I am a
-        perfect fit for your team. With extensive experience in both front-end
-        and back-end technologies, as well as a solid background in design and
-        multimedia production, I bring a unique blend of creativity and
-        technical expertise. Let's collaborate and build something remarkable
-        together!
+        {{ "CONTACT.DESCRIPTION" | translate }}
       </p>
       <p class="contact-invite">
-        If I have piqued your interest, I would be delighted if you contact me.
+        {{ "CONTACT.INVITE" | translate }}
       </p>
       <img
         src="assets/Images/ContactMe/Line.png"
-        alt="Decorative Line"
+        alt="{{ 'CONTACT.LINE_ALT' | translate }}"
         class="contact-line"
       />
       <div class="contact-logo">
         <img
           src="assets/Images/ContactMe/EnesLogo/EHBlau.png"
-          alt="Enes Logo"
+          alt="{{ 'CONTACT.LOGO_ALT' | translate }}"
         />
         <p>&copy; Enes Hadzic 2025</p>
       </div>
@@ -32,7 +27,7 @@
     <div class="contact-right">
       <img
         src="assets/Images/ContactMe/StickerEH.png"
-        alt="Sticker"
+        alt="{{ 'CONTACT.STICKER_ALT' | translate }}"
         class="contact-sticker"
       />
       <form
@@ -45,12 +40,12 @@
       >
         <!-- Name-Feld -->
         <div class="form-group">
-          <label for="name">What's your name?</label>
+          <label for="name">{{ "CONTACT.FORM.NAME_LABEL" | translate }}</label>
           <input
             type="text"
             id="name"
             name="name"
-            placeholder="Your name goes here"
+            placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
             required
             ngModel
           />
@@ -60,18 +55,20 @@
               contactForm.submitted && !contactForm.controls['name']?.value
             "
           >
-            Please write in your name.
+            {{ "CONTACT.FORM.NAME_ERROR" | translate }}
           </div>
           <div class="divider"></div>
         </div>
         <!-- Email-Feld -->
         <div class="form-group">
-          <label for="email">What's your email?</label>
+          <label for="email">{{
+            "CONTACT.FORM.EMAIL_LABEL" | translate
+          }}</label>
           <input
             type="email"
             id="email"
             name="email"
-            placeholder="youremail@example.com"
+            placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
             required
             ngModel
             pattern=".+@.+"
@@ -82,17 +79,19 @@
               contactForm.submitted && contactForm.controls['email']?.invalid
             "
           >
-            Please write your email address here.
+            {{ "CONTACT.FORM.EMAIL_ERROR" | translate }}
           </div>
           <div class="divider"></div>
         </div>
         <!-- Message-Feld -->
         <div class="form-group">
-          <label for="message">How can I help you?</label>
+          <label for="message">{{
+            "CONTACT.FORM.MESSAGE_LABEL" | translate
+          }}</label>
           <textarea
             id="message"
             name="message"
-            placeholder="Hello Enes, I am interested in..."
+            placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
             required
             ngModel
           ></textarea>
@@ -102,7 +101,7 @@
               contactForm.submitted && !contactForm.controls['message']?.value
             "
           >
-            Please write your message.
+            {{ "CONTACT.FORM.MESSAGE_ERROR" | translate }}
           </div>
           <div class="divider"></div>
         </div>
@@ -111,9 +110,10 @@
           <input type="checkbox" id="consent" name="consent" required ngModel />
           <label for="consent">
             <span class="consent-text">
-              I've read the
-              <a href="#" class="privacy-link">privacy policy</a> and agree to
-              the processing of my data as outlined.
+              {{ "CONTACT.FORM.CONSENT" | translate }}
+              <a href="#" class="privacy-link">{{
+                "CONTACT.FORM.PRIVACY_LINK" | translate
+              }}</a>
             </span>
           </label>
         </div>
@@ -124,7 +124,7 @@
             class="send-btn"
             [disabled]="contactForm.invalid"
           >
-            Send
+            {{ "CONTACT.FORM.SEND" | translate }}
           </button>
         </div>
       </form>
@@ -133,10 +133,14 @@
   <!-- Footer -->
   <footer class="contact-footer">
     <div class="footer-links">
-      <a href="#">Legal Notice</a>
-      <a href="https://github.com/enesesine">Github</a>
-      <a href="https://www.linkedin.com/in/enes-hadzic-546658307/">LinkedIn</a>
-      <a href="#">Email</a>
+      <a href="#">{{ "CONTACT.FOOTER.LEGAL" | translate }}</a>
+      <a href="https://github.com/enesesine">{{
+        "CONTACT.FOOTER.GITHUB" | translate
+      }}</a>
+      <a href="https://www.linkedin.com/in/enes-hadzic-546658307/">{{
+        "CONTACT.FOOTER.LINKEDIN" | translate
+      }}</a>
+      <a href="#">{{ "CONTACT.FOOTER.EMAIL" | translate }}</a>
     </div>
   </footer>
 </section>
