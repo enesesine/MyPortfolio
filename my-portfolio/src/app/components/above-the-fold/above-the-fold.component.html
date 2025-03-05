@@ -14,39 +14,45 @@
     <!-- Navigation (Desktop) -->
     <nav class="navbar">
       <div class="nav-item">
-        <a (click)="scrollToSection('about')">About me</a>
+        <a (click)="scrollToSection('about')">{{ "NAV.ABOUT" | translate }}</a>
         <img
           (click)="scrollToSection('about')"
           src="assets/Images/AboveTheFold/LinesNavBar/AboutMeLine.png"
           class="nav-underline aboutme-line"
-          alt="About me underline"
+          alt="{{ 'NAV.ABOUT' | translate }}"
         />
       </div>
       <div class="nav-item">
-        <a (click)="scrollToSection('skills')">Skills</a>
+        <a (click)="scrollToSection('skills')">{{
+          "NAV.SKILLS" | translate
+        }}</a>
         <img
           (click)="scrollToSection('skills')"
           src="assets/Images/AboveTheFold/LinesNavBar/SkillsLine.png"
           class="nav-underline skills-line"
-          alt="Skills underline"
+          alt="{{ 'NAV.SKILLS' | translate }}"
         />
       </div>
       <div class="nav-item">
-        <a (click)="scrollToSection('projects')">Projects</a>
+        <a (click)="scrollToSection('projects')">{{
+          "NAV.PROJECTS" | translate
+        }}</a>
         <img
           (click)="scrollToSection('projects')"
           src="assets/Images/AboveTheFold/LinesNavBar/ProjectsLine.png"
           class="nav-underline projects-line"
-          alt="Projects underline"
+          alt="{{ 'NAV.PROJECTS' | translate }}"
         />
       </div>
       <div class="nav-item">
-        <a (click)="scrollToSection('contact')">Contact</a>
+        <a (click)="scrollToSection('contact')">{{
+          "NAV.CONTACT" | translate
+        }}</a>
         <img
           (click)="scrollToSection('contact')"
           src="assets/Images/AboveTheFold/LinesNavBar/ContactsLine.png"
           class="nav-underline contact-line"
-          alt="Contact underline"
+          alt="{{ 'NAV.CONTACT' | translate }}"
         />
       </div>
     </nav>
@@ -74,24 +80,25 @@
       >
     </div>
 
-    <!-- Mobile-Overlay-Menü (wird per CSS + TS-Variable .open getoggelt) -->
+    <!-- Mobile-Overlay-Menü -->
     <div class="mobile-menu" [class.open]="mobileMenuOpen">
       <button class="close-btn" (click)="mobileMenuOpen = false">X</button>
       <!-- Mobile Links -->
       <div class="mobile-nav-items">
-        <a (click)="mobileMenuOpen = false; scrollToSection('about')"
-          >About me</a
-        >
-        <a (click)="mobileMenuOpen = false; scrollToSection('skills')"
-          >Skills</a
-        >
-        <a (click)="mobileMenuOpen = false; scrollToSection('projects')"
-          >Projects</a
-        >
-        <a (click)="mobileMenuOpen = false; scrollToSection('contact')"
-          >Contact</a
-        >
+        <a (click)="mobileMenuOpen = false; scrollToSection('about')">{{
+          "NAV.ABOUT" | translate
+        }}</a>
+        <a (click)="mobileMenuOpen = false; scrollToSection('skills')">{{
+          "NAV.SKILLS" | translate
+        }}</a>
+        <a (click)="mobileMenuOpen = false; scrollToSection('projects')">{{
+          "NAV.PROJECTS" | translate
+        }}</a>
+        <a (click)="mobileMenuOpen = false; scrollToSection('contact')">{{
+          "NAV.CONTACT" | translate
+        }}</a>
       </div>
+
       <!-- Mobile Language Switch -->
       <div class="mobile-language-switch" (click)="toggleLanguage()">
         <span class="lang-option" id="lang-en">EN</span>
@@ -112,6 +119,7 @@
           >DE</span
         >
       </div>
+
       <!-- Mobile Socials -->
       <div class="mobile-socials">
         <a
@@ -149,7 +157,7 @@
         <span class="fullstack" [innerHTML]="splittedFullstack"></span>
         <button class="hello-world">
           <span class="hello-world-text">{{ "ATF.HELLO" | translate }}</span>
-          <span class="enes-text">I'm Enes Hadzic</span>
+          <span class="enes-text">{{ "ATF.ENAME" | translate }}</span>
         </button>
         <img
           src="assets/Images/AboveTheFold/WavingHand/waving_hand.png"
@@ -168,7 +176,7 @@
       <span class="developer-container">
         <span class="developer" [innerHTML]="splittedDeveloper"></span>
         <button class="get-in-touch" (click)="scrollToSection('contact')">
-          Get in touch
+          {{ "BUTTONS.GET_IN_TOUCH" | translate }}
         </button>
       </span>
     </h1>

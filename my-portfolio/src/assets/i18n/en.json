@@ -1,11 +1,34 @@
 {
+  "NAV": {
+    "ABOUT": "About me",
+    "SKILLS": "Skills",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
   "ATF": {
-    "HELLO": "Salam World",
+    "HELLO": "Hello World",
+    "ENAME": "I'm Enes Hadzic",
     "FULLSTACK": "Fullstack",
     "DEVELOPER": "Developer"
   },
+  "BUTTONS": {
+    "GET_IN_TOUCH": "Get in touch",
+    "LETS_TALK": "Let's talk"
+  },
   "ABOUT": {
     "TITLE": "About me",
-    "DESCRIPTION": "I am a full-stack developer..."
+    "DESCRIPTION": "I am a 24-year-old full-stack developer with a passion for both front-end and back-end technologies. With a background as a self-employed VFX Artist/Cutter/Graphic Designer, I bring a unique blend of creativity and technical expertise.",
+    "COLLABORATION": "Let's collaborate and build something truly remarkable together!",
+    "WHOIS_ENES": "Who's Enes?",
+    "HELLO": "Hey there, I'm Enes.",
+    "LINE_ALT": "About Me Line",
+    "LOCATION_ALT": "Location Icon",
+    "LOCATION_TEXT": "Based in Frankfurt",
+    "BLUE_ALT": "Blue Ripple",
+    "RELOCATION_ALT": "Relocation Icon",
+    "RELOCATION_TEXT": "Open to relocate",
+    "ORANGE_ALT": "Orange Ripple",
+    "REMOTE_ALT": "Remote Icon",
+    "REMOTE_TEXT": "Open to work remote"
   }
 }

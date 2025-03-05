@@ -7,15 +7,15 @@
         <img
           class="color-ripple"
           src="assets/Images/AboutMe/ColorRipple/Yellow.png"
-          alt="Yellow Ripple"
+          alt="{{ 'ABOUT.YELLOW_ALT' | translate }}"
         />
         <div class="info-overlay">
           <img
             class="location-logo"
             src="assets/Images/AboutMe/LocationLogos/Location.png"
-            alt="Location"
+            alt="{{ 'ABOUT.LOCATION_ALT' | translate }}"
           />
-          <span class="info-text">Based in Frankfurt</span>
+          <span class="info-text">{{ "ABOUT.LOCATION_TEXT" | translate }}</span>
         </div>
       </div>
       <!-- Info-Box 2 -->
@@ -23,15 +23,17 @@
         <img
           class="color-ripple"
           src="assets/Images/AboutMe/ColorRipple/Blue.png"
-          alt="Blue Ripple"
+          alt="{{ 'ABOUT.BLUE_ALT' | translate }}"
         />
         <div class="info-overlay">
           <img
             class="location-logo"
             src="assets/Images/AboutMe/LocationLogos/Relocation.png"
-            alt="Relocation"
+            alt="{{ 'ABOUT.RELOCATION_ALT' | translate }}"
           />
-          <span class="info-text">Open to relocate</span>
+          <span class="info-text">{{
+            "ABOUT.RELOCATION_TEXT" | translate
+          }}</span>
         </div>
       </div>
       <!-- Info-Box 3 -->
@@ -39,15 +41,15 @@
         <img
           class="color-ripple"
           src="assets/Images/AboutMe/ColorRipple/Orange.png"
-          alt="Orange Ripple"
+          alt="{{ 'ABOUT.ORANGE_ALT' | translate }}"
         />
         <div class="info-overlay">
           <img
             class="location-logo"
             src="assets/Images/AboutMe/LocationLogos/Remote.png"
-            alt="Remote"
+            alt="{{ 'ABOUT.REMOTE_ALT' | translate }}"
           />
-          <span class="info-text">Open to work remote</span>
+          <span class="info-text">{{ "ABOUT.REMOTE_TEXT" | translate }}</span>
         </div>
       </div>
     </div>
@@ -55,29 +57,24 @@
     <!-- Rechte Spalte: Text & Button -->
     <div class="about-right">
       <div class="about-header">
-        <span class="small-title">Who's Enes?</span>
-        <h2>About me</h2>
-
-        <!-- ✨ Hier das Kritzel-Bild (animiert per CSS, falls gewünscht) ✨ -->
+        <span class="small-title">{{ "ABOUT.WHOIS_ENES" | translate }}</span>
+        <h2>{{ "ABOUT.TITLE" | translate }}</h2>
+        <!-- Kritzel-Linie (animiert per CSS) -->
         <img
           src="assets/Images/AboutMe/AboutMeLine.png"
-          alt="About Me Line"
+          alt="{{ 'ABOUT.LINE_ALT' | translate }}"
           class="aboutme-line"
         />
       </div>
 
       <p class="about-description">
-        <strong>Hey there, I'm Enes.</strong> I'm a 24-year-old full-stack
-        developer with a passion for both front-end and back-end technologies.
-        With a background as a self-employed VFX Artist/Cutter/Graphic Designer,
-        I have extensive experience in 2D/3D animation, Photoshop, Premiere Pro,
-        After Effects, Autodesk Maya, and 3ds Max, which has given me a strong
-        design sense and creative approach to development.
+        <strong>{{ "ABOUT.HELLO" | translate }}</strong>
+        {{ "ABOUT.DESCRIPTION" | translate }}
       </p>
-      <p class="collaboration">
-        Let's collaborate and build something truly remarkable together!
-      </p>
-      <button class="lets-talk" (click)="scrollToContact()">Let's talk</button>
+      <p class="collaboration">{{ "ABOUT.COLLABORATION" | translate }}</p>
+      <button class="lets-talk" (click)="scrollToContact()">
+        {{ "BUTTONS.LETS_TALK" | translate }}
+      </button>
     </div>
   </div>
 </section>

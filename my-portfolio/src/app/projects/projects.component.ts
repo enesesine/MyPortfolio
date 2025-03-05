@@ -4,11 +4,17 @@ import { Router, RouterModule } from '@angular/router';
 import { projects } from '../projects.data';
 import { Project } from '../interfaces/project.model';
 import { ProjectDetailComponent } from './project-detail/project-detail.component';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [CommonModule, RouterModule, ProjectDetailComponent],
+  imports: [
+    CommonModule,
+    RouterModule,
+    ProjectDetailComponent,
+    TranslateModule,
+  ],
   templateUrl: './projects.component.html',
   styleUrls: ['./projects.component.scss'],
 })
