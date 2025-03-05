@@ -1,8 +1,8 @@
 <section id="projects" class="projects-section">
   <!-- Header: MY CRAFT, Projects & animierte Linie -->
   <div class="projects-header">
-    <div class="my-craft">MY CRAFT</div>
-    <div class="projects-title">Projects</div>
+    <div class="my-craft">{{ "PROJECTS.MY_CRAFT" | translate }}</div>
+    <div class="projects-title">{{ "PROJECTS.TITLE" | translate }}</div>
     <div class="animated-line"></div>
   </div>
 
@@ -14,20 +14,22 @@
         <img
           class="thumbnail"
           src="assets/Images/MyProjects/Thumbnails/SharkieThumbnail.webp"
-          alt="Sharkie"
+          alt="{{ 'PROJECTS.PROJECT1_ALT' | translate }}"
         />
         <div class="vignette"></div>
         <button
           class="details-btn"
           (click)="viewProject(1); $event.stopPropagation()"
         >
-          Project details
+          {{ "PROJECTS.BUTTON_DETAILS" | translate }}
         </button>
       </div>
       <div class="project-info">
-        <div class="project-title">Sharkie</div>
+        <div class="project-title">
+          {{ "PROJECTS.PROJECT1_TITLE" | translate }}
+        </div>
         <div class="project-desc">
-          A thrilling video game adventure that challenges your reflexes.
+          {{ "PROJECTS.PROJECT1_DESC" | translate }}
         </div>
       </div>
     </div>
@@ -38,20 +40,22 @@
         <img
           class="thumbnail"
           src="assets/Images/MyProjects/Thumbnails/JoinThumbnail.webp"
-          alt="Join"
+          alt="{{ 'PROJECTS.PROJECT2_ALT' | translate }}"
         />
         <div class="vignette"></div>
         <button
           class="details-btn"
           (click)="viewProject(2); $event.stopPropagation()"
         >
-          Project details
+          {{ "PROJECTS.BUTTON_DETAILS" | translate }}
         </button>
       </div>
       <div class="project-info">
-        <div class="project-title">Join</div>
+        <div class="project-title">
+          {{ "PROJECTS.PROJECT2_TITLE" | translate }}
+        </div>
         <div class="project-desc">
-          A powerful task management tool that streamlines collaboration.
+          {{ "PROJECTS.PROJECT2_DESC" | translate }}
         </div>
       </div>
     </div>
@@ -62,20 +66,22 @@
         <img
           class="thumbnail"
           src="assets/Images/MyProjects/Thumbnails/PokedexAPIThumbnail.webp"
-          alt="Pokedex API"
+          alt="{{ 'PROJECTS.PROJECT3_ALT' | translate }}"
         />
         <div class="vignette"></div>
         <button
           class="details-btn"
           (click)="viewProject(3); $event.stopPropagation()"
         >
-          Project details
+          {{ "PROJECTS.BUTTON_DETAILS" | translate }}
         </button>
       </div>
       <div class="project-info">
-        <div class="project-title">Pokedex API</div>
+        <div class="project-title">
+          {{ "PROJECTS.PROJECT3_TITLE" | translate }}
+        </div>
         <div class="project-desc">
-          An interactive project exploring data from an external API.
+          {{ "PROJECTS.PROJECT3_DESC" | translate }}
         </div>
       </div>
     </div>
@@ -86,20 +92,22 @@
         <img
           class="thumbnail"
           src="assets/Images/MyProjects/Thumbnails/DABubblePlacehjolder.webp"
-          alt="Project 4"
+          alt="{{ 'PROJECTS.PROJECT4_ALT' | translate }}"
         />
         <div class="vignette"></div>
         <button
           class="details-btn"
           (click)="viewProject(4); $event.stopPropagation()"
         >
-          Project details
+          {{ "PROJECTS.BUTTON_DETAILS" | translate }}
         </button>
       </div>
       <div class="project-info">
-        <div class="project-title">DABubble Placeholder</div>
+        <div class="project-title">
+          {{ "PROJECTS.PROJECT4_TITLE" | translate }}
+        </div>
         <div class="project-desc">
-          Placeholder description for a future innovative project.
+          {{ "PROJECTS.PROJECT4_DESC" | translate }}
         </div>
       </div>
     </div>
@@ -110,20 +118,22 @@
         <img
           class="thumbnail"
           src="assets/Images/MyProjects/Thumbnails/DABubblePlacehjolder.webp"
-          alt="Project 5"
+          alt="{{ 'PROJECTS.PROJECT5_ALT' | translate }}"
         />
         <div class="vignette"></div>
         <button
           class="details-btn"
           (click)="viewProject(5); $event.stopPropagation()"
         >
-          Project details
+          {{ "PROJECTS.BUTTON_DETAILS" | translate }}
         </button>
       </div>
       <div class="project-info">
-        <div class="project-title">Videoflix Placeholder</div>
+        <div class="project-title">
+          {{ "PROJECTS.PROJECT5_TITLE" | translate }}
+        </div>
         <div class="project-desc">
-          Placeholder description for a project coming soon.
+          {{ "PROJECTS.PROJECT5_DESC" | translate }}
         </div>
       </div>
     </div>
@@ -134,20 +144,22 @@
         <img
           class="thumbnail"
           src="assets/Images/MyProjects/Thumbnails/DABubblePlacehjolder.webp"
-          alt="Project 6"
+          alt="{{ 'PROJECTS.PROJECT6_ALT' | translate }}"
         />
         <div class="vignette"></div>
         <button
           class="details-btn"
           (click)="viewProject(6); $event.stopPropagation()"
         >
-          Project details
+          {{ "PROJECTS.BUTTON_DETAILS" | translate }}
         </button>
       </div>
       <div class="project-info">
-        <div class="project-title">Coderr Placeholder</div>
+        <div class="project-title">
+          {{ "PROJECTS.PROJECT6_TITLE" | translate }}
+        </div>
         <div class="project-desc">
-          Placeholder description for another upcoming project.
+          {{ "PROJECTS.PROJECT6_DESC" | translate }}
         </div>
       </div>
     </div>
@@ -165,8 +177,12 @@
   <div class="colleagues-section">
     <div class="colleagues-header">
       <div class="header-text">
-        <div class="in-their-words">IN THEIR WORDS:</div>
-        <div class="colleagues-thoughts">Colleagues' Thoughts</div>
+        <div class="in-their-words">
+          {{ "COLLEAGUES.IN_WORDS" | translate }}
+        </div>
+        <div class="colleagues-thoughts">
+          {{ "COLLEAGUES.THOUGHTS" | translate }}
+        </div>
       </div>
       <div class="arrow-line"></div>
     </div>
@@ -176,15 +192,14 @@
         <img
           class="shield"
           src="assets/Images/MyProjects/Colleagues Thoughts/Shield1.png"
-          alt="Colleague 1"
+          alt="{{ 'COLLEAGUES.SHIELD1_ALT' | translate }}"
         />
         <div class="scribble-overlay"></div>
         <div class="colleague-info">
-          <div class="name">Ali Al-Haidary</div>
-          <div class="job">Pentester</div>
+          <div class="name">{{ "COLLEAGUES.CARD1_NAME" | translate }}</div>
+          <div class="job">{{ "COLLEAGUES.CARD1_JOB" | translate }}</div>
           <div class="comment">
-            Enes is a visionary developer who consistently delivers secure and
-            creative solutions.
+            {{ "COLLEAGUES.CARD1_COMMENT" | translate }}
           </div>
         </div>
         <a
@@ -195,9 +210,9 @@
         >
           <img
             src="assets/Images/AboveTheFold/Socials/LinkedIn.png"
-            alt="LinkedIn"
+            alt="{{ 'COLLEAGUES.LINKEDIN_ALT' | translate }}"
           />
-          <span>Profile</span>
+          <span>{{ "COLLEAGUES.PROFILE" | translate }}</span>
         </a>
       </div>
       <!-- Colleague Card 2 -->
@@ -205,15 +220,14 @@
         <img
           class="shield"
           src="assets/Images/MyProjects/Colleagues Thoughts/Shield2.png"
-          alt="Colleague 2"
+          alt="{{ 'COLLEAGUES.SHIELD2_ALT' | translate }}"
         />
         <div class="scribble-overlay"></div>
         <div class="colleague-info">
-          <div class="name">Firat Acar</div>
-          <div class="job">Red Teamer</div>
+          <div class="name">{{ "COLLEAGUES.CARD2_NAME" | translate }}</div>
+          <div class="job">{{ "COLLEAGUES.CARD2_JOB" | translate }}</div>
           <div class="comment">
-            His technical expertise and innovative mindset make him an asset to
-            every team.
+            {{ "COLLEAGUES.CARD2_COMMENT" | translate }}
           </div>
         </div>
         <a
@@ -224,9 +238,9 @@
         >
           <img
             src="assets/Images/AboveTheFold/Socials/LinkedIn.png"
-            alt="LinkedIn"
+            alt="{{ 'COLLEAGUES.LINKEDIN_ALT' | translate }}"
           />
-          <span>Profile</span>
+          <span>{{ "COLLEAGUES.PROFILE" | translate }}</span>
         </a>
       </div>
       <!-- Colleague Card 3 -->
@@ -234,15 +248,14 @@
         <img
           class="shield"
           src="assets/Images/MyProjects/Colleagues Thoughts/Shield1.png"
-          alt="Colleague 3"
+          alt="{{ 'COLLEAGUES.SHIELD1_ALT' | translate }}"
         />
         <div class="scribble-overlay"></div>
         <div class="colleague-info">
-          <div class="name">Emin Hadzic</div>
-          <div class="job">Fullstack Developer</div>
+          <div class="name">{{ "COLLEAGUES.CARD3_NAME" | translate }}</div>
+          <div class="job">{{ "COLLEAGUES.CARD3_JOB" | translate }}</div>
           <div class="comment">
-            Enes combines design finesse with solid technical skills, always
-            pushing boundaries.
+            {{ "COLLEAGUES.CARD3_COMMENT" | translate }}
           </div>
         </div>
         <a
@@ -253,25 +266,24 @@
         >
           <img
             src="assets/Images/AboveTheFold/Socials/LinkedIn.png"
-            alt="LinkedIn"
+            alt="{{ 'COLLEAGUES.LINKEDIN_ALT' | translate }}"
           />
-          <span>Profile</span>
+          <span>{{ "COLLEAGUES.PROFILE" | translate }}</span>
         </a>
       </div>
-      <!-- Colleague Card 4: Daniel Löffler -->
+      <!-- Colleague Card 4: Daniel Löffler – Kommentar über deine Person -->
       <div class="colleague-card">
         <img
           class="shield"
           src="assets/Images/MyProjects/Colleagues Thoughts/Shield2.png"
-          alt="Colleague 4"
+          alt="{{ 'COLLEAGUES.SHIELD2_ALT' | translate }}"
         />
         <div class="scribble-overlay"></div>
         <div class="colleague-info">
-          <div class="name">Daniel Löffler</div>
-          <div class="job">Frontend Developer</div>
+          <div class="name">{{ "COLLEAGUES.CARD4_NAME" | translate }}</div>
+          <div class="job">{{ "COLLEAGUES.CARD4_JOB" | translate }}</div>
           <div class="comment">
-            Daniel’s creative eye and expertise in user experience elevate every
-            project he works on.
+            {{ "COLLEAGUES.CARD4_COMMENT" | translate }}
           </div>
         </div>
         <a
@@ -282,9 +294,9 @@
         >
           <img
             src="assets/Images/AboveTheFold/Socials/LinkedIn.png"
-            alt="LinkedIn"
+            alt="{{ 'COLLEAGUES.LINKEDIN_ALT' | translate }}"
           />
-          <span>Profile</span>
+          <span>{{ "COLLEAGUES.PROFILE" | translate }}</span>
         </a>
       </div>
     </div>

@@ -30,5 +30,57 @@
     "ORANGE_ALT": "Oranger Ripple",
     "REMOTE_ALT": "Remote Symbol",
     "REMOTE_TEXT": "Offen, remote zu arbeiten"
+  },
+
+  "SKILLSET": {
+    "PAPER_RIPPLE_ALT": "Fähigkeiten Papier-Ripple",
+    "DESCRIPTION": "Ich verfüge über umfassendes Wissen in Frontend- und Backend-Technologien, das kreatives Design mit technischem Know-how vereint.",
+    "MY_STACK": "MEIN STACK",
+    "TITLE": "Skills",
+    "CIRCLE_ALT": "Kreis Kritzel"
+  },
+
+  "PROJECTS": {
+    "MY_CRAFT": "MEINE ARBEIT",
+    "TITLE": "Projekte",
+    "BUTTON_DETAILS": "Projektdetails",
+    "PROJECT1_ALT": "Sharkie Miniaturansicht",
+    "PROJECT1_TITLE": "Sharkie",
+    "PROJECT1_DESC": "Ein packendes Videospielabenteuer, das Ihre Reaktionsfähigkeit herausfordert.",
+    "PROJECT2_ALT": "Join Miniaturansicht",
+    "PROJECT2_TITLE": "Join",
+    "PROJECT2_DESC": "Ein leistungsstarkes Aufgabenverwaltungstool, das die Zusammenarbeit optimiert.",
+    "PROJECT3_ALT": "Pokedex API Miniaturansicht",
+    "PROJECT3_TITLE": "Pokedex API",
+    "PROJECT3_DESC": "Ein interaktives Projekt, das Daten von einer externen API erkundet.",
+    "PROJECT4_ALT": "DABubble Platzhalter Miniaturansicht",
+    "PROJECT4_TITLE": "DABubble Platzhalter",
+    "PROJECT4_DESC": "Platzhalterbeschreibung für ein zukünftiges innovatives Projekt.",
+    "PROJECT5_ALT": "Videoflix Platzhalter Miniaturansicht",
+    "PROJECT5_TITLE": "Videoflix Platzhalter",
+    "PROJECT5_DESC": "Platzhalterbeschreibung für ein bald kommendes Projekt.",
+    "PROJECT6_ALT": "Coderr Platzhalter Miniaturansicht",
+    "PROJECT6_TITLE": "Coderr Platzhalter",
+    "PROJECT6_DESC": "Platzhalterbeschreibung für ein weiteres kommendes Projekt."
+  },
+  "COLLEAGUES": {
+    "IN_WORDS": "IN IHREN WORTEN:",
+    "THOUGHTS": "Gedanken der Kollegen",
+    "SHIELD1_ALT": "Kollege 1 Miniaturansicht",
+    "SHIELD2_ALT": "Kollege 2 Miniaturansicht",
+    "LINKEDIN_ALT": "LinkedIn-Symbol",
+    "PROFILE": "Profil",
+    "CARD1_NAME": "Ali Al-Haidary",
+    "CARD1_JOB": "Pentester",
+    "CARD1_COMMENT": "Enes ist ein visionärer Entwickler, der konsequent sichere und kreative Lösungen liefert.",
+    "CARD2_NAME": "Firat Acar",
+    "CARD2_JOB": "Red Teamer",
+    "CARD2_COMMENT": "Seine technische Expertise und sein innovativer Denkansatz machen ihn zu einem Gewinn für jedes Team.",
+    "CARD3_NAME": "Emin Hadzic",
+    "CARD3_JOB": "Fullstack Entwickler",
+    "CARD3_COMMENT": "Enes verbindet Designfeinheit mit soliden technischen Fähigkeiten und setzt stets neue Maßstäbe.",
+    "CARD4_NAME": "Daniel Löffler",
+    "CARD4_JOB": "Frontend Entwickler",
+    "CARD4_COMMENT": "Enes ist ein visionärer Entwickler, dessen Kreativität und technisches Können ihn von anderen abheben."
   }
 }

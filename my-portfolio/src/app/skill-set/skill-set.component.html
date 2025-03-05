@@ -1,28 +1,23 @@
 <section id="skills" class="skillset-section">
-  <!-- Paper Torn Image mit Text-Overlay -->
+  <!-- Paper Ripple & Text Overlay -->
   <div class="paper-ripple-container">
     <img
       src="assets/Images/SkillSet/SkillSetPaperRipple/SkillsPaperRipple.webp"
-      alt="Skills Paper Ripple"
+      alt="{{ 'SKILLSET.PAPER_RIPPLE_ALT' | translate }}"
       class="paper-ripple"
     />
     <div class="ripple-text">
       <p>
-        I bring a diverse knowledge of both front-end and back-end technologies,
-        blending creative design with technical expertise.
+        {{ "SKILLSET.DESCRIPTION" | translate }}
       </p>
     </div>
     <!-- Neue Textelemente -->
-    <div class="my-stack">MY STACK</div>
-
-    <!-- skillset-title WRAPPER mit Kreis-Kritzel -->
+    <div class="my-stack">{{ "SKILLSET.MY_STACK" | translate }}</div>
     <div class="skillset-title-wrapper">
-      <span class="skillset-title">Skill set</span>
-
-      <!-- Kreisförmiges Kritzel, animiertes Clip-Path -->
+      <span class="skillset-title">{{ "SKILLSET.TITLE" | translate }}</span>
       <img
         src="assets/Images/SkillSet/CircleLine.png"
-        alt="Circle Kritzel"
+        alt="{{ 'SKILLSET.CIRCLE_ALT' | translate }}"
         class="circle-kritzel"
       />
     </div>
@@ -195,7 +190,6 @@
         />
         <span class="tech-label">Redis</span>
       </div>
-
       <div class="icon-item">
         <img
           src="assets/Images/SkillSet/Logos/Backend/Heroku.png"
@@ -206,9 +200,8 @@
       </div>
     </div>
 
-    <!-- Sticker Image (toggles on click) -->
+    <!-- Sticker Image -->
     <div class="sticker" (click)="togglePull()">
-      <!-- We wählen das Bild abhängig vom 'pulled'-Flag -->
       <img
         [src]="
           pulled
