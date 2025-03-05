@@ -9,7 +9,6 @@
     />
 
     <!-- Burger-Button (nur mobil sichtbar) -->
-    <!-- => Du toggle hier via (click) ein boolean -->
     <button class="burger-btn" (click)="mobileMenuOpen = true">&#9776;</button>
 
     <!-- Navigation (Desktop) -->
@@ -20,6 +19,7 @@
           (click)="scrollToSection('about')"
           src="assets/Images/AboveTheFold/LinesNavBar/AboutMeLine.png"
           class="nav-underline aboutme-line"
+          alt="About me underline"
         />
       </div>
       <div class="nav-item">
@@ -28,6 +28,7 @@
           (click)="scrollToSection('skills')"
           src="assets/Images/AboveTheFold/LinesNavBar/SkillsLine.png"
           class="nav-underline skills-line"
+          alt="Skills underline"
         />
       </div>
       <div class="nav-item">
@@ -36,6 +37,7 @@
           (click)="scrollToSection('projects')"
           src="assets/Images/AboveTheFold/LinesNavBar/ProjectsLine.png"
           class="nav-underline projects-line"
+          alt="Projects underline"
         />
       </div>
       <div class="nav-item">
@@ -44,6 +46,7 @@
           (click)="scrollToSection('contact')"
           src="assets/Images/AboveTheFold/LinesNavBar/ContactsLine.png"
           class="nav-underline contact-line"
+          alt="Contact underline"
         />
       </div>
     </nav>
@@ -66,8 +69,6 @@
           [class.active]="isGerman"
         />
       </div>
-
-      <!-- Hier nun zusätzlich (click)="toggleLanguage()" -->
       <span class="lang-option" id="lang-de" (click)="toggleLanguage()"
         >DE</span
       >
@@ -76,7 +77,6 @@
     <!-- Mobile-Overlay-Menü (wird per CSS + TS-Variable .open getoggelt) -->
     <div class="mobile-menu" [class.open]="mobileMenuOpen">
       <button class="close-btn" (click)="mobileMenuOpen = false">X</button>
-
       <!-- Mobile Links -->
       <div class="mobile-nav-items">
         <a (click)="mobileMenuOpen = false; scrollToSection('about')"
@@ -92,7 +92,6 @@
           >Contact</a
         >
       </div>
-
       <!-- Mobile Language Switch -->
       <div class="mobile-language-switch" (click)="toggleLanguage()">
         <span class="lang-option" id="lang-en">EN</span>
@@ -113,7 +112,6 @@
           >DE</span
         >
       </div>
-
       <!-- Mobile Socials -->
       <div class="mobile-socials">
         <a
@@ -149,12 +147,10 @@
       <!-- Fullstack + "Hello World"-Button -->
       <span class="fullstack-container">
         <span class="fullstack" [innerHTML]="splittedFullstack"></span>
-
         <button class="hello-world">
           <span class="hello-world-text">{{ "ATF.HELLO" | translate }}</span>
           <span class="enes-text">I'm Enes Hadzic</span>
         </button>
-
         <img
           src="assets/Images/AboveTheFold/WavingHand/waving_hand.png"
           alt="Waving Hand"
@@ -167,9 +163,7 @@
           class="polaroid"
         />
       </span>
-
       <br />
-
       <!-- Developer + "Get in touch"-Button -->
       <span class="developer-container">
         <span class="developer" [innerHTML]="splittedDeveloper"></span>

@@ -1,5 +1,6 @@
+// src/app/app.component.ts
 import { Component } from '@angular/core';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 import { AboveTheFoldComponent } from './components/above-the-fold/above-the-fold.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { SkillSetComponent } from './skill-set/skill-set.component';
@@ -17,6 +18,7 @@ import { ContactMeComponent } from './contact-me/contact-me.component';
     SkillSetComponent,
     ProjectsComponent,
     ContactMeComponent,
+    TranslateModule, // TranslateModule hinzufügen!
   ],
 })
 export class AppComponent {
@@ -31,6 +33,7 @@ export class AppComponent {
   // Beispiel-Methode, die beim Umschalten der Sprache aufgerufen wird
   toggleLanguage(): void {
     const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
+    console.log('Switching to:', newLang);
     this.translate.use(newLang);
   }
 

@@ -1,37 +1,40 @@
 import { Component } from '@angular/core';
-import { TranslateModule } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-above-the-fold',
   standalone: true,
   templateUrl: './above-the-fold.component.html',
   styleUrls: ['./above-the-fold.component.scss'],
-  imports: [TranslateModule],
+  imports: [TranslateModule], // <-- Hier hinzufügen!
 })
 export class AboveTheFoldComponent {
   isGerman = false;
-
-  // Gesplittete "Fullstack" und "Developer":
   splittedFullstack!: string;
   splittedDeveloper!: string;
+  mobileMenuOpen = false;
 
-  constructor() {
-    // Vollautomatisch jeden Buchstaben in <span class="letter">...</span> hüllen:
+  constructor(private translate: TranslateService) {
     this.splittedFullstack = this.wrapInLetterSpans('Fullstack');
     this.splittedDeveloper = this.wrapInLetterSpans('Developer');
   }
 
-  toggleLanguage() {
-    this.isGerman = !this.isGerman;
-    const langEN = document.getElementById('lang-en');
-    const langDE = document.getElementById('lang-de');
-    if (this.isGerman) {
-      langDE!.style.color = '#e67d60';
-      langEN!.style.color = 'white';
-    } else {
-      langDE!.style.color = 'white';
-      langEN!.style.color = '#e67d60';
+  toggleLanguage(): void {
+    const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
+    this.translate.use(newLang);
+    this.isGerman = newLang === 'de';
+    console.log('Language switched to:', newLang);
+  }
+
+  scrollToSection(sectionId: string): void {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
     }
+  }
+
+  toggleMobileMenu(): void {
+    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 
   private wrapInLetterSpans(word: string): string {
@@ -42,20 +45,5 @@ export class AboveTheFoldComponent {
           `<span class="letter-wrapper"><span class="letter">${char}</span></span>`
       )
       .join('');
-  }
-
-  scrollToSection(sectionId: string): void {
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  // In deinem AboveTheFoldComponent:
-  // Im AboveTheFoldComponent oder so:
-  mobileMenuOpen = false;
-
-  toggleMobileMenu() {
-    this.mobileMenuOpen = !this.mobileMenuOpen;
   }
 }
