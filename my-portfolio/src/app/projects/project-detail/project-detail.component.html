@@ -5,31 +5,39 @@
       <div class="go-back" (click)="goBack()">
         <img
           src="assets/Images/MyProjects/ProjectDetailBG/arrow-left.png"
-          alt="Go Back"
+          alt="{{ 'PROJECT_DETAIL.GO_BACK' | translate }}"
           class="back-arrow"
         />
-        <span class="go-back-text">Go back</span>
+        <span class="go-back-text">{{
+          "PROJECT_DETAIL.GO_BACK" | translate
+        }}</span>
       </div>
-      <h1 class="project-name">{{ project.title }}</h1>
+      <h1 class="project-name">{{ project.title | translate }}</h1>
       <!-- Hier verwenden wir nun animatedLineImage statt aboutLine -->
       <img
         [src]="project.animatedLineImage"
-        alt="Animated Line"
+        alt="{{ 'PROJECT_DETAIL.LINE_ALT' | translate }}"
         class="about-line"
       />
 
-      <!-- Statt dynamischem Titel verwenden wir festen Text -->
-      <div class="section-title description-title">Description</div>
-      <p class="description-text">{{ project.description }}</p>
+      <!-- Überschriftsbereiche mit translate-Pipe -->
+      <div class="section-title description-title">
+        {{ "PROJECT_DETAIL.DESCRIPTION" | translate }}
+      </div>
+      <p class="description-text">{{ project.description | translate }}</p>
 
       <div class="section-title implementation-title">
-        Implementation Details
+        {{ "PROJECT_DETAIL.IMPLEMENTATION_DETAILS" | translate }}
       </div>
-      <p class="implementation-text">{{ project.implementationDetails }}</p>
+      <p class="implementation-text">
+        {{ project.implementationDetails | translate }}
+      </p>
 
       <div class="duration">
-        <span class="duration-label">Duration:</span>
-        <span class="duration-value">{{ project.duration }}</span>
+        <span class="duration-label"
+          >{{ "PROJECT_DETAIL.DURATION_LABEL" | translate }}:</span
+        >
+        <span class="duration-value">{{ project.duration | translate }}</span>
       </div>
 
       <div class="tech-icons">
@@ -41,21 +49,26 @@
 
     <!-- Rechte Hälfte -->
     <div class="detail-right">
-      <!-- Verwende image statt thumbnail -->
       <img
         [src]="project.image"
-        alt="Project Thumbnail"
+        alt="{{ 'PROJECT_DETAIL.THUMBNAIL_ALT' | translate }}"
         class="project-thumbnail"
       />
       <div class="buttons-container">
-        <button class="detail-btn">GitHub</button>
-        <button class="detail-btn">Live Test</button>
+        <button class="detail-btn" (click)="openLink(project.repoLink)">
+          {{ "PROJECT_DETAIL.GITHUB" | translate }}
+        </button>
+        <button class="detail-btn" (click)="openLink(project.liveDemo)">
+          {{ "PROJECT_DETAIL.LIVE_TEST" | translate }}
+        </button>
       </div>
       <div class="next-project">
-        <span class="next-text" (click)="nextProject()">Next Project</span>
+        <span class="next-text" (click)="nextProject()">
+          {{ "PROJECT_DETAIL.NEXT_PROJECT" | translate }}
+        </span>
         <img
           src="assets/Images/MyProjects/ProjectDetailBG/arrow-right.png"
-          alt="Next Arrow"
+          alt="{{ 'PROJECT_DETAIL.NEXT_ARROW_ALT' | translate }}"
           class="next-arrow"
           (click)="nextProject()"
         />

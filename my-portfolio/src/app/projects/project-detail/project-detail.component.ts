@@ -1,5 +1,7 @@
+// src/app/projects/project-detail/project-detail.component.ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { TranslateModule } from '@ngx-translate/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Project } from '../../interfaces/project.model';
 import { projects } from '../../projects.data';
@@ -7,7 +9,7 @@ import { projects } from '../../projects.data';
 @Component({
   selector: 'app-project-detail',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, TranslateModule],
   templateUrl: './project-detail.component.html',
   styleUrls: ['./project-detail.component.scss'],
 })
@@ -25,7 +27,7 @@ export class ProjectDetailComponent {
   }
 
   goBack(): void {
-    this.closeDialog.emit();
+    this.router.navigate(['/projects']);
   }
 
   nextProject(): void {
@@ -37,8 +39,11 @@ export class ProjectDetailComponent {
     this.project = projects[nextIndex];
   }
 
+  openLink(link: string): void {
+    window.open(link, '_blank');
+  }
+
   getTechIconPath(tech: string): string {
-    // Beispiel: Icons befinden sich in "assets/Images/TechIcons/" (Passe ggf. den Pfad an)
     return `assets/Images/TechIcons/${tech}.png`;
   }
 }

@@ -112,5 +112,18 @@
       "LINKEDIN": "LinkedIn",
       "EMAIL": "Email"
     }
+  },
+
+  "PROJECT_DETAIL": {
+    "GO_BACK": "Go back",
+    "LINE_ALT": "Animated Line",
+    "DESCRIPTION": "Description",
+    "IMPLEMENTATION_DETAILS": "Implementation Details",
+    "DURATION_LABEL": "Duration",
+    "GITHUB": "GitHub",
+    "LIVE_TEST": "Live Test",
+    "NEXT_PROJECT": "Next Project",
+    "NEXT_ARROW_ALT": "Next Arrow",
+    "THUMBNAIL_ALT": "Project Thumbnail"
   }
 }
