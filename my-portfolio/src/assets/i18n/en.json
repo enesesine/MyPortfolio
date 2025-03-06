@@ -43,11 +43,17 @@
     "TITLE": "Projects",
     "BUTTON_DETAILS": "Project details",
     "PROJECT1_TITLE": "Sharkie",
+    "PROJECT1_DESC": "A thrilling video game adventure that challenges your reflexes.",
     "PROJECT2_TITLE": "Join",
+    "PROJECT2_DESC": "A powerful task management tool that optimizes collaboration.",
     "PROJECT3_TITLE": "Pokedex API",
+    "PROJECT3_DESC": "An interactive project exploring data from an external API.",
     "PROJECT4_TITLE": "DABubble Placeholder",
+    "PROJECT4_DESC": "Placeholder description for a future innovative project.",
     "PROJECT5_TITLE": "Videoflix Placeholder",
-    "PROJECT6_TITLE": "Coderr Placeholder"
+    "PROJECT5_DESC": "Placeholder description for a project coming soon.",
+    "PROJECT6_TITLE": "Coderr Placeholder",
+    "PROJECT6_DESC": "Placeholder description for another upcoming project."
   },
   "PROJECT_DETAIL": {
     "GO_BACK": "Go back",
