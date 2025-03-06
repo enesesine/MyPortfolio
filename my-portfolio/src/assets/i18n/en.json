@@ -31,37 +31,53 @@
     "REMOTE_ALT": "Remote Icon",
     "REMOTE_TEXT": "Open to work remote"
   },
-
   "SKILLSET": {
     "PAPER_RIPPLE_ALT": "Skills Paper Ripple",
-    "DESCRIPTION": "I bring a diverse knowledge of both front-end and back-end technologies, blending creative design with technical expertise.",
+    "DESCRIPTION": "I have extensive knowledge in both front-end and back-end technologies, blending creative design with technical expertise.",
     "MY_STACK": "MY STACK",
     "TITLE": "Skill set",
-    "CIRCLE_ALT": "Circle Kritzel"
+    "CIRCLE_ALT": "Circle Scribble"
   },
-
   "PROJECTS": {
-    "MY_CRAFT": "MY CRAFT",
+    "MY_CRAFT": "MY WORK",
     "TITLE": "Projects",
     "BUTTON_DETAILS": "Project details",
-    "PROJECT1_ALT": "Sharkie Thumbnail",
     "PROJECT1_TITLE": "Sharkie",
-    "PROJECT1_DESC": "A thrilling video game adventure that challenges your reflexes.",
-    "PROJECT2_ALT": "Join Thumbnail",
     "PROJECT2_TITLE": "Join",
-    "PROJECT2_DESC": "A powerful task management tool that streamlines collaboration.",
-    "PROJECT3_ALT": "Pokedex API Thumbnail",
     "PROJECT3_TITLE": "Pokedex API",
-    "PROJECT3_DESC": "An interactive project exploring data from an external API.",
-    "PROJECT4_ALT": "DABubble Placeholder Thumbnail",
     "PROJECT4_TITLE": "DABubble Placeholder",
-    "PROJECT4_DESC": "Placeholder description for a future innovative project.",
-    "PROJECT5_ALT": "Videoflix Placeholder Thumbnail",
     "PROJECT5_TITLE": "Videoflix Placeholder",
-    "PROJECT5_DESC": "Placeholder description for a project coming soon.",
-    "PROJECT6_ALT": "Coderr Placeholder Thumbnail",
-    "PROJECT6_TITLE": "Coderr Placeholder",
-    "PROJECT6_DESC": "Placeholder description for another upcoming project."
+    "PROJECT6_TITLE": "Coderr Placeholder"
+  },
+  "PROJECT_DETAIL": {
+    "GO_BACK": "Go back",
+    "LINE_ALT": "Animated Line",
+    "DESCRIPTION": "Description",
+    "IMPLEMENTATION_DETAILS": "Implementation Details",
+    "DURATION_LABEL": "Duration",
+    "GITHUB": "GitHub",
+    "LIVE_TEST": "Live Test",
+    "NEXT_PROJECT": "Next Project",
+    "NEXT_ARROW_ALT": "Next Arrow",
+    "THUMBNAIL_ALT": "Project Thumbnail",
+    "PROJECT1_DESC": "A thrilling video game adventure that challenges your reflexes.",
+    "PROJECT1_IMPL": "Built with plain JavaScript and a custom game engine...",
+    "PROJECT1_DURATION": "2 months",
+    "PROJECT2_DESC": "A powerful task management tool that streamlines collaboration.",
+    "PROJECT2_IMPL": "In a team of 4, I was responsible for the registration and login...",
+    "PROJECT2_DURATION": "3 months",
+    "PROJECT3_DESC": "An interactive project exploring data from an external API.",
+    "PROJECT3_IMPL": "Built with plain JavaScript and a custom game engine...",
+    "PROJECT3_DURATION": "1 month",
+    "PROJECT4_DESC": "Placeholder description for a future innovative project.",
+    "PROJECT4_IMPL": "Built with plain JavaScript and a custom game engine...",
+    "PROJECT4_DURATION": "2 months",
+    "PROJECT5_DESC": "Placeholder description for an upcoming project.",
+    "PROJECT5_IMPL": "Built with plain JavaScript and a custom game engine...",
+    "PROJECT5_DURATION": "2 months",
+    "PROJECT6_DESC": "Placeholder description for another upcoming project.",
+    "PROJECT6_IMPL": "Built with plain JavaScript and a custom game engine...",
+    "PROJECT6_DURATION": "2 months"
   },
   "COLLEAGUES": {
     "IN_WORDS": "IN THEIR WORDS:",
@@ -75,7 +91,7 @@
     "CARD1_COMMENT": "Enes is a visionary developer who consistently delivers secure and creative solutions.",
     "CARD2_NAME": "Firat Acar",
     "CARD2_JOB": "Red Teamer",
-    "CARD2_COMMENT": "His technical expertise and innovative mindset make him an asset to every team.",
+    "CARD2_COMMENT": "His technical expertise and innovative mindset make him an asset to any team.",
     "CARD3_NAME": "Emin Hadzic",
     "CARD3_JOB": "Fullstack Developer",
     "CARD3_COMMENT": "Enes combines design finesse with solid technical skills, always pushing boundaries.",
@@ -83,11 +99,10 @@
     "CARD4_JOB": "Frontend Developer",
     "CARD4_COMMENT": "Enes is a visionary developer whose creativity and technical prowess set him apart."
   },
-
   "CONTACT": {
     "TITLE": "CONTACT ME",
     "HEADING": "Ready to work together?",
-    "DESCRIPTION": "I am convinced that I can help you with your projects and that I am a perfect fit for your team. With extensive experience in both front-end and back-end technologies, as well as a solid background in design and multimedia production, I bring a unique blend of creativity and technical expertise. Let's collaborate and build something remarkable together!",
+    "DESCRIPTION": "I am convinced that I can help you with your projects and that I am a perfect fit for your team. With extensive experience in both front-end and back-end technologies as well as a solid background in design and multimedia production, I bring a unique blend of creativity and technical expertise. Let's collaborate and build something remarkable together!",
     "INVITE": "If I have piqued your interest, I would be delighted if you contact me.",
     "LINE_ALT": "Decorative Line",
     "LOGO_ALT": "Enes Logo",
@@ -95,10 +110,10 @@
     "FORM": {
       "NAME_LABEL": "What's your name?",
       "NAME_PLACEHOLDER": "Your name goes here",
-      "NAME_ERROR": "Please write in your name.",
+      "NAME_ERROR": "Please enter your name.",
       "EMAIL_LABEL": "What's your email?",
       "EMAIL_PLACEHOLDER": "youremail@example.com",
-      "EMAIL_ERROR": "Please write your email address here.",
+      "EMAIL_ERROR": "Please enter your email address.",
       "MESSAGE_LABEL": "How can I help you?",
       "MESSAGE_PLACEHOLDER": "Hello Enes, I am interested in...",
       "MESSAGE_ERROR": "Please write your message.",
@@ -112,18 +127,5 @@
       "LINKEDIN": "LinkedIn",
       "EMAIL": "Email"
     }
-  },
-
-  "PROJECT_DETAIL": {
-    "GO_BACK": "Go back",
-    "LINE_ALT": "Animated Line",
-    "DESCRIPTION": "Description",
-    "IMPLEMENTATION_DETAILS": "Implementation Details",
-    "DURATION_LABEL": "Duration",
-    "GITHUB": "GitHub",
-    "LIVE_TEST": "Live Test",
-    "NEXT_PROJECT": "Next Project",
-    "NEXT_ARROW_ALT": "Next Arrow",
-    "THUMBNAIL_ALT": "Project Thumbnail"
   }
 }

@@ -1,15 +1,12 @@
-// src/app/projects/projects.data.ts
 import { Project } from './interfaces/project.model';
 
 export const projects: Project[] = [
   {
     id: 1,
-    title: 'Sharkie',
-    description:
-      'A thrilling video game adventure that challenges your reflexes.',
-    implementationDetails:
-      'Built with plain JavaScript and a custom game engine...',
-    duration: '2 months',
+    title: 'PROJECTS.PROJECT1_TITLE',
+    description: 'PROJECT_DETAIL.PROJECT1_DESC',
+    implementationDetails: 'PROJECT_DETAIL.PROJECT1_IMPL',
+    duration: 'PROJECT_DETAIL.PROJECT1_DURATION',
     used_tech: ['HTML', 'CSS', 'JavaScript'],
     image: '/assets/Images/MyProjects/Thumbnails/SharkieThumbnail.png',
     animatedLineImage: '/assets/Images/AboutMe/AboutMeLine.png',
@@ -18,17 +15,15 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/CSS.png',
       '/assets/Images/SkillSet/Logos/Frontend/JS.png',
     ],
-    repoLink: 'https://github.com/enesesine/Sharkie', // <– Falls existiert
-    liveDemo: 'https://en.es/Sharkie', // <– Falls existiert
+    repoLink: 'https://github.com/enesesine/Sharkie',
+    liveDemo: 'https://en.es/Sharkie',
   },
   {
     id: 2,
-    title: 'Join',
-    description:
-      'A powerful task management tool that streamlines collaboration.',
-    implementationDetails:
-      'In a team of 4, I was responsible for the registration/login...',
-    duration: '3 months',
+    title: 'PROJECTS.PROJECT2_TITLE',
+    description: 'PROJECT_DETAIL.PROJECT2_DESC',
+    implementationDetails: 'PROJECT_DETAIL.PROJECT2_IMPL',
+    duration: 'PROJECT_DETAIL.PROJECT2_DURATION',
     used_tech: ['HTML', 'CSS', 'JavaScript'],
     image: '/assets/Images/MyProjects/Thumbnails/JoinThumbnail.png',
     animatedLineImage: '/assets/Images/AboutMe/AboutMeLine.png',
@@ -42,12 +37,10 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    title: 'Pokedex',
-    description:
-      'A thrilling video game adventure that challenges your reflexes.',
-    implementationDetails:
-      'Built with plain JavaScript and a custom game engine...',
-    duration: '1 month',
+    title: 'PROJECTS.PROJECT3_TITLE',
+    description: 'PROJECT_DETAIL.PROJECT3_DESC',
+    implementationDetails: 'PROJECT_DETAIL.PROJECT3_IMPL',
+    duration: 'PROJECT_DETAIL.PROJECT3_DURATION',
     used_tech: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
     image: '/assets/Images/MyProjects/Thumbnails/PokedexAPIThumbnail.png',
     animatedLineImage: '/assets/Images/AboutMe/AboutMeLine.png',
@@ -57,17 +50,15 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/JS.png',
       '/assets/Images/SkillSet/Logos/Frontend/Firebase.png',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie', // <– Falls existiert
-    liveDemo: 'https://en.es/Sharkie', // <– Falls existiert
+    repoLink: 'https://github.com/enesesine/sharkie',
+    liveDemo: 'https://en.es/Sharkie',
   },
   {
     id: 4,
-    title: 'DABubble',
-    description:
-      'A thrilling video game adventure that challenges your reflexes.',
-    implementationDetails:
-      'Built with plain JavaScript and a custom game engine...',
-    duration: '2 months',
+    title: 'PROJECTS.PROJECT4_TITLE',
+    description: 'PROJECT_DETAIL.PROJECT4_DESC',
+    implementationDetails: 'PROJECT_DETAIL.PROJECT4_IMPL',
+    duration: 'PROJECT_DETAIL.PROJECT4_DURATION',
     used_tech: ['Angular', 'CSS', 'Firebase'],
     image: '/assets/Images/MyProjects/Thumbnails/DABubblePlacehjolder.png',
     animatedLineImage: '/assets/Images/AboutMe/AboutMeLine.png',
@@ -76,17 +67,15 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/CSS.png',
       '/assets/Images/SkillSet/Logos/Frontend/Firebase.png',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie', // <– Falls existiert
-    liveDemo: 'https://en.es/Sharkie', // <– Falls existiert
+    repoLink: 'https://github.com/enesesine/sharkie',
+    liveDemo: 'https://en.es/Sharkie',
   },
   {
     id: 5,
-    title: 'Coderr',
-    description:
-      'A thrilling video game adventure that challenges your reflexes.',
-    implementationDetails:
-      'Built with plain JavaScript and a custom game engine...',
-    duration: '2 months',
+    title: 'PROJECTS.PROJECT5_TITLE',
+    description: 'PROJECT_DETAIL.PROJECT5_DESC',
+    implementationDetails: 'PROJECT_DETAIL.PROJECT5_IMPL',
+    duration: 'PROJECT_DETAIL.PROJECT5_DURATION',
     used_tech: ['Angular', 'CSS', 'Firebase'],
     image: '/assets/Images/MyProjects/Thumbnails/DABubblePlacehjolder.png',
     animatedLineImage: '/assets/Images/AboutMe/AboutMeLine.png',
@@ -94,17 +83,15 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Backend/Python.png',
       '/assets/Images/SkillSet/Logos/Backend/Django.png',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie', // <– Falls existiert
-    liveDemo: 'https://en.es/Sharkie', // <– Falls existiert
+    repoLink: 'https://github.com/enesesine/sharkie',
+    liveDemo: 'https://en.es/Sharkie',
   },
   {
     id: 6,
-    title: 'Videoflix',
-    description:
-      'A thrilling video game adventure that challenges your reflexes.',
-    implementationDetails:
-      'Built with plain JavaScript and a custom game engine...',
-    duration: '2 months',
+    title: 'PROJECTS.PROJECT6_TITLE',
+    description: 'PROJECT_DETAIL.PROJECT6_DESC',
+    implementationDetails: 'PROJECT_DETAIL.PROJECT6_IMPL',
+    duration: 'PROJECT_DETAIL.PROJECT6_DURATION',
     used_tech: ['Angular', 'CSS', 'Firebase'],
     image: '/assets/Images/MyProjects/Thumbnails/DABubblePlacehjolder.png',
     animatedLineImage: '/assets/Images/AboutMe/AboutMeLine.png',
@@ -113,7 +100,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Backend/Django.png',
       '/assets/Images/SkillSet/Logos/Backend/Linux.png',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie', // <– Falls existiert
-    liveDemo: 'https://en.es/Sharkie', // <– Falls existiert
+    repoLink: 'https://github.com/enesesine/sharkie',
+    liveDemo: 'https://en.es/Sharkie',
   },
 ];

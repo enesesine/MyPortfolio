@@ -31,7 +31,6 @@
     "REMOTE_ALT": "Remote Symbol",
     "REMOTE_TEXT": "Offen, remote zu arbeiten"
   },
-
   "SKILLSET": {
     "PAPER_RIPPLE_ALT": "Fähigkeiten Papier-Ripple",
     "DESCRIPTION": "Ich verfüge über umfassendes Wissen in Frontend- und Backend-Technologien, das kreatives Design mit technischem Know-how vereint.",
@@ -39,29 +38,46 @@
     "TITLE": "Skills",
     "CIRCLE_ALT": "Kreis Kritzel"
   },
-
   "PROJECTS": {
     "MY_CRAFT": "MEINE ARBEIT",
     "TITLE": "Projekte",
     "BUTTON_DETAILS": "Projektdetails",
-    "PROJECT1_ALT": "Sharkie Miniaturansicht",
     "PROJECT1_TITLE": "Sharkie",
     "PROJECT1_DESC": "Ein packendes Videospielabenteuer, das Ihre Reaktionsfähigkeit herausfordert.",
-    "PROJECT2_ALT": "Join Miniaturansicht",
     "PROJECT2_TITLE": "Join",
     "PROJECT2_DESC": "Ein leistungsstarkes Aufgabenverwaltungstool, das die Zusammenarbeit optimiert.",
-    "PROJECT3_ALT": "Pokedex API Miniaturansicht",
     "PROJECT3_TITLE": "Pokedex API",
     "PROJECT3_DESC": "Ein interaktives Projekt, das Daten von einer externen API erkundet.",
-    "PROJECT4_ALT": "DABubble Platzhalter Miniaturansicht",
     "PROJECT4_TITLE": "DABubble Platzhalter",
     "PROJECT4_DESC": "Platzhalterbeschreibung für ein zukünftiges innovatives Projekt.",
-    "PROJECT5_ALT": "Videoflix Platzhalter Miniaturansicht",
     "PROJECT5_TITLE": "Videoflix Platzhalter",
     "PROJECT5_DESC": "Platzhalterbeschreibung für ein bald kommendes Projekt.",
-    "PROJECT6_ALT": "Coderr Platzhalter Miniaturansicht",
     "PROJECT6_TITLE": "Coderr Platzhalter",
     "PROJECT6_DESC": "Platzhalterbeschreibung für ein weiteres kommendes Projekt."
+  },
+  "PROJECT_DETAIL": {
+    "GO_BACK": "Zurück",
+    "LINE_ALT": "Animierte Linie",
+    "DESCRIPTION": "Beschreibung",
+    "IMPLEMENTATION_DETAILS": "Implementierungsdetails",
+    "DURATION_LABEL": "Dauer",
+    "GITHUB": "GitHub",
+    "LIVE_TEST": "Live Test",
+    "NEXT_PROJECT": "Nächstes Projekt",
+    "NEXT_ARROW_ALT": "Nächster Pfeil",
+    "THUMBNAIL_ALT": "Projekt Miniaturansicht",
+    "PROJECT1_IMPL": "Erstellt mit Plain JavaScript und einer benutzerdefinierten Game-Engine...",
+    "PROJECT1_DURATION": "2 Monate",
+    "PROJECT2_IMPL": "In einem Team von 4 war ich verantwortlich für die Registrierung/Anmeldung...",
+    "PROJECT2_DURATION": "3 Monate",
+    "PROJECT3_IMPL": "Erstellt mit Plain JavaScript und einer benutzerdefinierten Game-Engine...",
+    "PROJECT3_DURATION": "1 Monat",
+    "PROJECT4_IMPL": "Erstellt mit Plain JavaScript und einer benutzerdefinierten Game-Engine...",
+    "PROJECT4_DURATION": "2 Monate",
+    "PROJECT5_IMPL": "Erstellt mit Plain JavaScript und einer benutzerdefinierten Game-Engine...",
+    "PROJECT5_DURATION": "2 Monate",
+    "PROJECT6_IMPL": "Erstellt mit Plain JavaScript und einer benutzerdefinierten Game-Engine...",
+    "PROJECT6_DURATION": "2 Monate"
   },
   "COLLEAGUES": {
     "IN_WORDS": "IN IHREN WORTEN:",
@@ -83,7 +99,6 @@
     "CARD4_JOB": "Frontend Entwickler",
     "CARD4_COMMENT": "Enes ist ein visionärer Entwickler, dessen Kreativität und technisches Können ihn von anderen abheben."
   },
-
   "CONTACT": {
     "TITLE": "KONTAKT",
     "HEADING": "Bereit?",
@@ -112,18 +127,5 @@
       "LINKEDIN": "LinkedIn",
       "EMAIL": "Email"
     }
-  },
-
-  "PROJECT_DETAIL": {
-    "GO_BACK": "Zurück",
-    "LINE_ALT": "Animierte Linie",
-    "DESCRIPTION": "Beschreibung",
-    "IMPLEMENTATION_DETAILS": "Implementierungsdetails",
-    "DURATION_LABEL": "Dauer",
-    "GITHUB": "GitHub",
-    "LIVE_TEST": "Live Test",
-    "NEXT_PROJECT": "Nächstes Projekt",
-    "NEXT_ARROW_ALT": "Nächster Pfeil",
-    "THUMBNAIL_ALT": "Projekt Miniaturansicht"
   }
 }
