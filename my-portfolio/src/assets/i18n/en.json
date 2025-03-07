@@ -133,5 +133,16 @@
       "LINKEDIN": "LinkedIn",
       "EMAIL": "Email"
     }
+  },
+
+  "LEGAL_NOTICE": {
+    "TITLE": "Legal Notice",
+    "CONTENT": "The information provided on this website is for general informational purposes only. All content is provided 'as is' without any representations or warranties, express or implied. The owner makes no representations or warranties in relation to the accuracy or completeness of the information found on this website. Any reliance you place on such information is therefore strictly at your own risk. In no event will the owner be liable for any loss or damage including without limitation, indirect or consequential loss or damage, or any loss or damage whatsoever arising from loss of data or profits arising out of, or in connection with, the use of this website.",
+    "CLOSE": "Close"
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Privacy Policy",
+    "CONTENT": "We respect your privacy and are committed to protecting your personal data. This Privacy Policy outlines how we collect, use, and safeguard your information when you visit our website. By using this website, you consent to the collection and use of your information in accordance with this policy. We implement industry-standard security measures to protect your data. If you have any questions or concerns regarding our privacy practices, please contact us for further information.",
+    "CLOSE": "Close"
   }
 }

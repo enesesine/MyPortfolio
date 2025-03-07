@@ -127,5 +127,16 @@
       "LINKEDIN": "LinkedIn",
       "EMAIL": "Email"
     }
+  },
+
+  "LEGAL_NOTICE": {
+    "TITLE": "Impressum",
+    "CONTENT": "Die Informationen auf dieser Website dienen ausschließlich allgemeinen Informationszwecken. Alle Inhalte werden 'wie besehen' ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Der Betreiber übernimmt keinerlei Verantwortung für die Richtigkeit, Vollständigkeit oder Aktualität der bereitgestellten Informationen. Jegliches Vertrauen in diese Angaben erfolgt auf eigene Gefahr. Für Schäden oder Verluste, ob direkt oder indirekt, die sich aus der Nutzung dieser Website ergeben, haftet der Betreiber nicht.",
+    "CLOSE": "Schließen"
+  },
+  "PRIVACY_POLICY": {
+    "TITLE": "Datenschutzbestimmungen",
+    "CONTENT": "Wir legen großen Wert auf den Schutz Ihrer personenbezogenen Daten und verpflichten uns, Ihre Privatsphäre zu respektieren. Diese Datenschutzerklärung erläutert, wie wir Ihre Daten erheben, verwenden und sichern, wenn Sie unsere Website besuchen. Mit der Nutzung dieser Website stimmen Sie der Erhebung und Verwendung Ihrer Daten gemäß dieser Erklärung zu. Wir setzen branchenübliche Sicherheitsmaßnahmen ein, um Ihre Daten zu schützen. Bei Fragen oder Bedenken zu unseren Datenschutzpraktiken kontaktieren Sie uns bitte.",
+    "CLOSE": "Schließen"
   }
 }

@@ -111,9 +111,13 @@
           <label for="consent">
             <span class="consent-text">
               {{ "CONTACT.FORM.CONSENT" | translate }}
-              <a href="#" class="privacy-link">{{
-                "CONTACT.FORM.PRIVACY_LINK" | translate
-              }}</a>
+              <a
+                href="#"
+                class="privacy-link"
+                (click)="$event.preventDefault(); openPrivacyPolicy()"
+              >
+                {{ "CONTACT.FORM.PRIVACY_LINK" | translate }}
+              </a>
             </span>
           </label>
         </div>
@@ -133,16 +137,44 @@
   <!-- Footer -->
   <footer class="contact-footer">
     <div class="footer-links">
-      <a href="#">{{ "CONTACT.FOOTER.LEGAL" | translate }}</a>
-      <a href="https://github.com/enesesine">{{
-        "CONTACT.FOOTER.GITHUB" | translate
-      }}</a>
-      <a href="https://www.linkedin.com/in/enes-hadzic-546658307/">{{
-        "CONTACT.FOOTER.LINKEDIN" | translate
-      }}</a>
-      <a href="mailto:contacthadzic@gmail.com">{{
-        "CONTACT.FOOTER.EMAIL" | translate
-      }}</a>
+      <a href="#" (click)="$event.preventDefault(); openLegalNotice()">
+        {{ "CONTACT.FOOTER.LEGAL" | translate }}
+      </a>
+      <a href="https://github.com/enesesine">
+        {{ "CONTACT.FOOTER.GITHUB" | translate }}
+      </a>
+      <a href="https://www.linkedin.com/in/enes-hadzic-546658307/">
+        {{ "CONTACT.FOOTER.LINKEDIN" | translate }}
+      </a>
+      <a href="mailto:contacthadzic@gmail.com">
+        {{ "CONTACT.FOOTER.EMAIL" | translate }}
+      </a>
     </div>
   </footer>
+
+  <!-- Modal für Legal Notice -->
+  <div
+    class="modal-overlay"
+    *ngIf="showLegalNotice"
+    (click)="closeLegalNotice()"
+  >
+    <div class="modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closeLegalNotice()">X</button>
+      <h2>{{ "LEGAL_NOTICE.TITLE" | translate }}</h2>
+      <p>{{ "LEGAL_NOTICE.CONTENT" | translate }}</p>
+    </div>
+  </div>
+
+  <!-- Modal für Privacy Policy -->
+  <div
+    class="modal-overlay"
+    *ngIf="showPrivacyPolicy"
+    (click)="closePrivacyPolicy()"
+  >
+    <div class="modal" (click)="$event.stopPropagation()">
+      <button class="modal-close" (click)="closePrivacyPolicy()">X</button>
+      <h2>{{ "PRIVACY_POLICY.TITLE" | translate }}</h2>
+      <p>{{ "PRIVACY_POLICY.CONTENT" | translate }}</p>
+    </div>
+  </div>
 </section>

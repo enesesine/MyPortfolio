@@ -11,18 +11,34 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrls: ['./contact-me.component.scss'],
 })
 export class ContactMeComponent {
-  // Hier lesen wir explizit das native Element, statt den NgForm-Direktivenwert.
   @ViewChild('contactForm', { read: ElementRef, static: true })
   contactFormRef!: ElementRef<HTMLFormElement>;
 
+  showPrivacyPolicy: boolean = false;
+  showLegalNotice: boolean = false;
+
   onSubmit(form: NgForm): void {
-    console.log('onSubmit called, form valid:', form.valid);
+    console.log('Form valid:', form.valid);
     if (form.valid) {
-      console.log('Native submit wird ausgelöst.');
-      // Jetzt sollte contactFormRef definiert sein und das native Element referenzieren.
       this.contactFormRef.nativeElement.submit();
     } else {
-      alert('Please fill in all required fields.');
+      alert('Bitte füllen Sie alle erforderlichen Felder aus.');
     }
+  }
+
+  openPrivacyPolicy(): void {
+    this.showPrivacyPolicy = true;
+  }
+
+  closePrivacyPolicy(): void {
+    this.showPrivacyPolicy = false;
+  }
+
+  openLegalNotice(): void {
+    this.showLegalNotice = true;
+  }
+
+  closeLegalNotice(): void {
+    this.showLegalNotice = false;
   }
 }
