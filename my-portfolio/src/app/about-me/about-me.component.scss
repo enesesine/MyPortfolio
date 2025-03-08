@@ -1,39 +1,35 @@
-/* Hintergrundfarbe und Grundlayout der About me Sektion */
 .about-me-section {
   background-color: #fff;
   padding: 60px 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: "Bricolage", sans-serif; /* Schrift explizit setzen */
+  font-family: "Bricolage", sans-serif;
 }
 
-/* ====== Animierte Kritzel-Linie (alle 5s) ====== */
 .aboutme-line {
   display: block;
-  width: 200px; /* anpassen */
-  margin: 5px auto; /* zentriert + etwas Abstand */
+  width: 200px;
+  margin: 5px auto;
   opacity: 1;
-  /* Keyframe => 5s, infinite Wiederholung */
   animation: aboutMeLineClip 5s infinite ease-in-out;
 }
 
 @keyframes aboutMeLineClip {
   0% {
-    clip-path: inset(0 100% 0 0); /* komplett verdeckt */
+    clip-path: inset(0 100% 0 0);
   }
   20% {
-    clip-path: inset(0 0 0 0); /* voll gezeichnet */
+    clip-path: inset(0 0 0 0);
   }
   80% {
-    clip-path: inset(0 0 0 0); /* bleibt sichtbar */
+    clip-path: inset(0 0 0 0);
   }
   100% {
-    clip-path: inset(0 100% 0 0); /* wieder verschwinden */
+    clip-path: inset(0 100% 0 0);
   }
 }
 
-/* Container für linke und rechte Spalte */
 .about-container {
   width: 100%;
   max-width: 1200px;
@@ -41,7 +37,6 @@
   gap: 50px;
 }
 
-/* Linke Spalte: Info-Boxen */
 .about-left {
   flex: 1;
   position: relative;
@@ -49,158 +44,149 @@
   flex-direction: column;
   gap: 30px;
   align-items: flex-start;
-
-  .info-item {
-    position: relative;
-    width: 550px; /* Breiter und größer */
-    margin-bottom: -100px; /* Für deine gewünschte Überlappung */
-    z-index: 1; /* Standard: hinterste Ebene */
-
-    /* Stapel-Reihenfolge: 
-       1. (Yellow) => z-index: 3
-       2. (Blue)   => z-index: 2
-       3. (Orange) => z-index: 1
-       aber beim Hover überschreiben wir das (s.u.) */
-    &:nth-child(1) {
-      z-index: 3;
-    }
-    &:nth-child(2) {
-      z-index: 2;
-    }
-    &:nth-child(3) {
-      z-index: 1;
-      margin-bottom: 0;
-    }
-
-    /* Ripple-Bild */
-    .color-ripple {
-      width: 100%;
-      display: block;
-      transition: transform 0.3s ease;
-    }
-
-    /* Overlay innerhalb der Box: Inhalte zentriert */
-    .info-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: transparent; /* Damit die Ripple-Farbe durchscheint */
-    }
-
-    .location-logo {
-      width: 40px;
-      height: 40px;
-      object-fit: contain;
-      margin-right: 10px;
-    }
-
-    .info-text {
-      font-size: 1.2rem;
-      color: #ffffff;
-    }
-
-    /* Hover-Effekt => Item hebt sich leicht, rotiert.
-       Kein box-shadow, aber z-index:99, um über andere Items zu liegen */
-    cursor: pointer;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.03) rotate(1deg);
-      z-index: 99; /* WICHTIG: nach vorn, damit Hoveren einfacher ist */
-    }
-    &:hover .color-ripple {
-      transform: scale(1.06) rotate(2deg);
-    }
-  }
-
-  /* Erste Info-Box: Inhalte etwas weiter oben ausrichten */
-  .info-item:nth-child(1) .info-overlay {
-    align-items: flex-start;
-    padding-top: 65px; /* Passe den Wert an, um es nach oben zu schieben */
-  }
-
-  /* Rotation der Info-Texte => minimal witzige Neigung */
-  .info-item:nth-child(1) .info-text {
-    transform: rotate(-3deg);
-  }
-  .info-item:nth-child(2) .info-text {
-    transform: rotate(0deg);
-  }
-  .info-item:nth-child(3) .info-text {
-    transform: rotate(4deg);
-  }
 }
 
-/* Rechte Spalte: Text & Button */
+.about-left .info-item {
+  position: relative;
+  width: 550px;
+  margin-bottom: -100px;
+  z-index: 1;
+}
+
+.about-left .info-item:nth-child(1) {
+  z-index: 3;
+}
+
+.about-left .info-item:nth-child(2) {
+  z-index: 2;
+}
+
+.about-left .info-item:nth-child(3) {
+  z-index: 1;
+  margin-bottom: 0;
+}
+
+.about-left .info-item .color-ripple {
+  width: 100%;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.about-left .info-item .info-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+}
+
+.about-left .info-item .location-logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 10px;
+}
+
+.about-left .info-item .info-text {
+  font-size: 1.2rem;
+  color: #ffffff;
+}
+
+.about-left .info-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.about-left .info-item:hover {
+  transform: scale(1.03) rotate(1deg);
+  z-index: 99;
+}
+
+.about-left .info-item:hover .color-ripple {
+  transform: scale(1.06) rotate(2deg);
+}
+
+.about-left .info-item:nth-child(1) .info-overlay {
+  align-items: flex-start;
+  padding-top: 65px;
+}
+
+.about-left .info-item:nth-child(1) .info-text {
+  transform: rotate(-3deg);
+}
+
+.about-left .info-item:nth-child(2) .info-text {
+  transform: rotate(0deg);
+}
+
+.about-left .info-item:nth-child(3) .info-text {
+  transform: rotate(4deg);
+}
+
 .about-right {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   text-align: left;
-
-  .about-header {
-    margin-bottom: 20px;
-
-    .small-title {
-      font-size: 1.1rem;
-      color: #555;
-      text-transform: uppercase;
-    }
-
-    h2 {
-      font-size: 2.5rem;
-      margin: 5px 0;
-      color: #333;
-    }
-  }
-
-  .about-description,
-  .collaboration {
-    font-size: 1.1rem;
-    color: #555;
-    margin-bottom: 15px;
-    font-family: "Bricolage", sans-serif;
-    font-weight: 300;
-  }
-
-  .lets-talk {
-    align-self: flex-end; /* Button rechtsbündig */
-    padding: 12px 30px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #000; /* Text schwarz */
-    background: transparent;
-    border: 2px solid #000;
-    border-radius: 25px;
-    cursor: pointer;
-    box-shadow: 4px 4px 0 #000;
-    transition: all 0.3s ease-in-out;
-
-    &:hover {
-      box-shadow: none;
-      background: #e67d60;
-      border-color: #e67d60;
-    }
-  }
 }
 
-/* Responsive Anpassung */
+.about-right .about-header {
+  margin-bottom: 20px;
+}
+
+.about-right .about-header .small-title {
+  font-size: 1.1rem;
+  color: #555;
+  text-transform: uppercase;
+}
+
+.about-right .about-header h2 {
+  font-size: 2.5rem;
+  margin: 5px 0;
+  color: #333;
+}
+
+.about-right .about-description,
+.about-right .collaboration {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+  font-family: "Bricolage", sans-serif;
+  font-weight: 300;
+}
+
+.about-right .lets-talk {
+  align-self: flex-end;
+  padding: 12px 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #000;
+  background: transparent;
+  border: 2px solid #000;
+  border-radius: 25px;
+  cursor: pointer;
+  box-shadow: 4px 4px 0 #000;
+  transition: all 0.3s ease-in-out;
+}
+
+.about-right .lets-talk:hover {
+  box-shadow: none;
+  background: #e67d60;
+  border-color: #e67d60;
+}
+
 @media screen and (max-width: 865px) {
   .about-container {
     flex-direction: column;
     align-items: center;
   }
-
-  .about-right {
-    .lets-talk {
-      align-self: center;
-    }
+  .about-right .lets-talk {
+    align-self: center;
   }
   .about-right {
     align-items: center;
@@ -208,22 +194,20 @@
   }
   .about-left {
     align-items: center;
-
-    .info-item {
-      width: 300px; /* Weniger breit für Mobile */
-      margin-bottom: -50px; /* Minimiert Overlap im Mobile */
-
-      &:nth-child(1) {
-        padding-top: 35px;
-        z-index: 3;
-      }
-      &:nth-child(2) {
-        z-index: 2;
-      }
-      &:nth-child(3) {
-        z-index: 1;
-        margin-bottom: 0;
-      }
-    }
+  }
+  .about-left .info-item {
+    width: 300px;
+    margin-bottom: -50px;
+  }
+  .about-left .info-item:nth-child(1) {
+    padding-top: 35px;
+    z-index: 3;
+  }
+  .about-left .info-item:nth-child(2) {
+    z-index: 2;
+  }
+  .about-left .info-item:nth-child(3) {
+    z-index: 1;
+    margin-bottom: 0;
   }
 }

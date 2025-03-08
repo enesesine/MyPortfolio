@@ -7,6 +7,5 @@ export const routes: Routes = [
   { path: '', redirectTo: '', pathMatch: 'full' },
   { path: '', component: ProjectsComponent },
   { path: 'project/:id', component: ProjectDetailComponent },
-  // Wildcard (optional):
   { path: '**', redirectTo: 'projects' },
 ];

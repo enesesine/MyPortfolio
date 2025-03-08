@@ -1,17 +1,11 @@
 <section class="atf-section">
-  <!-- Obere Leiste: Logo + Navbar + Language Switch -->
   <header class="atf-header">
-    <!-- Logo -->
     <img
       src="assets/Images/AboveTheFold/EnesLogo/EHBlau.webp"
       alt="Enes Logo"
       class="logo"
     />
-
-    <!-- Burger-Button (nur mobil sichtbar) -->
     <button class="burger-btn" (click)="mobileMenuOpen = true">&#9776;</button>
-
-    <!-- Navigation (Desktop) -->
     <nav class="navbar">
       <div class="nav-item">
         <a (click)="scrollToSection('about')">{{ "NAV.ABOUT" | translate }}</a>
@@ -56,8 +50,6 @@
         />
       </div>
     </nav>
-
-    <!-- Language Switch (Desktop) -->
     <div class="language-switch">
       <span class="lang-option" id="lang-en" (click)="toggleLanguage()"
         >EN</span
@@ -79,11 +71,8 @@
         >DE</span
       >
     </div>
-
-    <!-- Mobile-Overlay-Menü -->
     <div class="mobile-menu" [class.open]="mobileMenuOpen">
       <button class="close-btn" (click)="mobileMenuOpen = false">X</button>
-      <!-- Mobile Links -->
       <div class="mobile-nav-items">
         <a (click)="mobileMenuOpen = false; scrollToSection('about')">{{
           "NAV.ABOUT" | translate
@@ -98,8 +87,6 @@
           "NAV.CONTACT" | translate
         }}</a>
       </div>
-
-      <!-- Mobile Language Switch -->
       <div class="mobile-language-switch" (click)="toggleLanguage()">
         <span class="lang-option" id="lang-en">EN</span>
         <div class="switch-container">
@@ -119,8 +106,6 @@
           >DE</span
         >
       </div>
-
-      <!-- Mobile Socials -->
       <div class="mobile-socials">
         <a
           href="https://github.com/enesesine"
@@ -148,11 +133,8 @@
       </div>
     </div>
   </header>
-
-  <!-- Mittelteil: Fullstack Developer -->
   <div class="atf-content">
     <h1>
-      <!-- Fullstack + "Hello World"-Button -->
       <span class="fullstack-container">
         <span class="fullstack" [innerHTML]="splittedFullstack"></span>
         <button class="hello-world">
@@ -164,7 +146,6 @@
           alt="Waving Hand"
           class="waving-hand"
         />
-        <!-- Polaroid -->
         <img
           src="assets/Images/AboveTheFold/Polaroid/Polaroid.webp"
           alt="Polaroid"
@@ -172,7 +153,6 @@
         />
       </span>
       <br />
-      <!-- Developer + "Get in touch"-Button -->
       <span class="developer-container">
         <span class="developer" [innerHTML]="splittedDeveloper"></span>
         <button class="get-in-touch" (click)="scrollToSection('contact')">
@@ -181,8 +161,6 @@
       </span>
     </h1>
   </div>
-
-  <!-- Social Icons (unten links, Desktop) -->
   <div class="socials">
     <a
       href="https://github.com/enesesine"

@@ -10,7 +10,7 @@ import { TranslateModule } from '@ngx-translate/core';
   styleUrl: './skill-set.component.scss',
 })
 export class SkillSetComponent {
-  pulled: boolean = false; // Zustand: false => Pull.png, true => PulledImage.png
+  pulled: boolean = false;
 
   togglePull() {
     this.pulled = !this.pulled;

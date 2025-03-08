@@ -6,7 +6,7 @@ import { TranslateModule, TranslateService } from '@ngx-translate/core';
   standalone: true,
   templateUrl: './above-the-fold.component.html',
   styleUrls: ['./above-the-fold.component.scss'],
-  imports: [TranslateModule], // <-- Hier hinzufügen!
+  imports: [TranslateModule],
 })
 export class AboveTheFoldComponent {
   isGerman = false;

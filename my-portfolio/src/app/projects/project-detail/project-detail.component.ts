@@ -1,4 +1,3 @@
-// src/app/projects/project-detail/project-detail.component.ts
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TranslateModule } from '@ngx-translate/core';
@@ -18,7 +17,6 @@ export class ProjectDetailComponent {
   @Output() closeDialog = new EventEmitter<void>();
 
   constructor(private router: Router, private route: ActivatedRoute) {
-    // Optional: Lade anhand der URL den richtigen Projektdatensatz:
     const projectId = this.route.snapshot.paramMap.get('id');
     const proj = projects.find((p) => p.id.toString() === projectId);
     if (proj) {
@@ -34,7 +32,7 @@ export class ProjectDetailComponent {
     const currentIndex = projects.findIndex((p) => p.id === this.project.id);
     let nextIndex = currentIndex + 1;
     if (nextIndex >= projects.length) {
-      nextIndex = 0; // Start von vorne
+      nextIndex = 0;
     }
     this.project = projects[nextIndex];
   }

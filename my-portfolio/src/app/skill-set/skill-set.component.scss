@@ -1,13 +1,10 @@
-/* ================================
-   SkillSet Section
-   ================================ */
 .skillset-section {
   position: relative;
   background-image: url("/assets/Images/SkillSet/SkillSetBG/SkillsBG.webp");
   background-size: cover;
   background-position: center bottom;
   background-repeat: no-repeat;
-  background-color: #fff; /* Fallback */
+  background-color: #fff;
   padding: 60px 50px;
   font-family: "Bricolage", sans-serif;
   color: #333;
@@ -16,22 +13,15 @@
   align-items: center;
 }
 
-/* -------------------------
-   Paper Ripple & Text
-   ------------------------- */
 .paper-ripple-container {
   position: relative;
   width: 100%;
   max-width: 1200px;
   margin-bottom: 40px;
   text-align: center;
-
-  /* Container als Flex-Container, um die Reihenfolge der Elemente zu steuern */
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  /* Elemente, die über dem Ripple-Bild erscheinen sollen */
   .my-stack {
     order: -1;
     font-size: 1.2rem;
@@ -39,7 +29,6 @@
     color: #ffffffcf;
     margin-bottom: 10px;
   }
-
   .skillset-title-wrapper {
     order: -1;
     margin-bottom: 20px;
@@ -51,7 +40,6 @@
       position: relative;
     }
     .circle-kritzel {
-      /* Standard (Desktop): absolut in der Mitte des Wrappers */
       position: absolute;
       top: 28%;
       left: 50%;
@@ -63,7 +51,6 @@
       animation: circleLineLoop 5s infinite ease-in-out;
     }
   }
-
   .paper-ripple {
     order: 0;
     width: 100%;
@@ -71,10 +58,8 @@
     display: block;
     margin: 0 auto;
   }
-
   .ripple-text {
     order: 0;
-    /* Desktop: absolute zentriert, aber etwas weiter unten */
     position: absolute;
     top: 75%;
     left: 50%;
@@ -88,7 +73,6 @@
   }
 }
 
-/* Keyframe für Kreis-Kritzel */
 @keyframes circleLineLoop {
   0% {
     clip-path: inset(0 100% 0 0);
@@ -104,9 +88,6 @@
   }
 }
 
-/* -------------------------
-   Icons Container & Sticker
-   ------------------------- */
 .icons-container {
   position: relative;
   width: 100%;
@@ -118,7 +99,6 @@
   margin-bottom: 120px;
 }
 
-/* Gemeinsame Einstellungen für beide Icon-Gruppen (Frontend & Backend) */
 .icons-row.frontend.top,
 .icons-row.frontend.bottom,
 .icons-row.backend.top,
@@ -128,7 +108,6 @@
   width: 100%;
 }
 
-/* Alle Icon-Items erhalten denselben flex-Wert */
 .icons-row.frontend.top .icon-item,
 .icons-row.frontend.bottom .icon-item,
 .icons-row.backend.top .icon-item,
@@ -136,13 +115,11 @@
   flex: 0 0 calc((100% - 4 * 10px) / 5);
 }
 
-/* Einzelne Icon-Box */
 .icon-item {
   display: flex;
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
-
   .tech-icon {
     width: 55px;
     height: 55px;
@@ -150,33 +127,28 @@
     filter: grayscale(100%);
     transition: filter 0.3s ease, transform 0.3s ease;
   }
-
   .tech-label {
     margin-top: 6px;
     font-size: 0.9rem;
     color: #ffffff;
   }
-
   &:hover .tech-icon {
     filter: grayscale(0%);
     transform: scale(0.95);
   }
 }
 
-/* Sticker – per Klick austauschbar + Animation */
 .sticker {
   position: absolute;
   right: -250px;
   top: 50%;
   transform: translateY(-50%);
   cursor: pointer;
-
   img {
     width: 200px;
     height: auto;
     transition: transform 0.3s ease;
   }
-
   img.pulled {
     animation: pullAnimation 0.5s forwards;
   }
@@ -197,28 +169,22 @@
   }
 }
 
-/* -------------------------
-   Responsive Anpassungen für Mobile (max-width: 768px)
-   ------------------------- */
 @media screen and (max-width: 768px) {
   .paper-ripple-container {
     overflow: hidden;
   }
   .paper-ripple {
-    max-width: 700px; /* Paper Image Container auf 700px */
+    max-width: 700px;
   }
-  /* Ripple-Text: Für mobile Auflösungen positionieren wir ihn als relative Elemente */
   .paper-ripple-container .ripple-text {
     position: relative;
-    top: -95px; /* etwas nach unten, aber nicht zu weit */
+    top: -95px;
     left: 50%;
     transform: translateX(-50%);
     margin: 0;
     font-size: 1rem;
     padding: 5px 10px;
   }
-
-  /* Sticker im Mobile: weiter unten, zentriert */
   .sticker {
     position: relative;
     left: 50%;
@@ -227,9 +193,6 @@
   }
 }
 
-/* ===========================
-   Responsive Anpassungen ab 1300px
-   =========================== */
 @media screen and (max-width: 1300px) {
   .paper-ripple-container {
     display: flex;
@@ -271,14 +234,8 @@
   }
 }
 
-/* ===========================
-   Responsive Anpassungen für größere Bildschirme:
-   Sticker unter den Backend Icons (max-width: 1600px)
-   =========================== */
 @media screen and (max-width: 1600px) {
   .sticker {
-    /* Um den Sticker unter den Backend Icons mittig zu platzieren,
-       setzen wir ihn relativ und zentrieren ihn per margin */
     position: relative;
     left: 0;
     right: 0;

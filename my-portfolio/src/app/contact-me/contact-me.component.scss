@@ -1,37 +1,28 @@
-/* ================================
-   ContactMe Section
-   ================================ */
 .contact-me-section {
   position: relative;
   background-image: url("/assets/Images/ContactMe/BG/Footer.webp");
   background-size: cover;
   background-position: revert;
   background-repeat: no-repeat;
-  /* Kein Hintergrundfarbe, nur das Image */
   padding: 60px 50px;
   font-family: "Bricolage", sans-serif;
   color: #fff;
 }
 
-/* Container: Linke & Rechte Hälfte – jetzt zentriert */
 .contact-container {
   display: flex;
-  justify-content: space-evenly; /* sorgt für gleiche Abstände */
+  justify-content: space-evenly;
   align-items: flex-start;
   max-width: 1200px;
   width: 100%;
   margin: 0 auto 40px auto;
 }
 
-/* =====================================
-   Linke Hälfte
-===================================== */
 .contact-left {
   flex: 1;
   padding-right: 20px;
   position: relative;
   margin: 120px 20px 0 20px;
-
   .contact-title {
     font-size: 1rem;
     font-weight: bold;
@@ -39,34 +30,29 @@
     color: #fff;
     margin-bottom: 10px;
   }
-
   .contact-heading {
     font-size: 3rem;
     font-weight: bold;
     color: #fff;
     margin-bottom: 20px;
   }
-
   .contact-description {
     font-size: 1.1rem;
     color: #fff;
     margin-bottom: 20px;
     line-height: 1.5;
   }
-
   .contact-invite {
     font-size: 1rem;
     color: #fff;
     margin-bottom: 30px;
   }
-
   .contact-line {
     display: block;
     max-width: 300px;
     margin: 0 auto 20px auto;
     animation: aboutMeLineClip 5s infinite ease-in-out;
   }
-
   @keyframes aboutMeLineClip {
     0% {
       clip-path: inset(0 100% 0 0);
@@ -81,13 +67,11 @@
       clip-path: inset(0 100% 0 0);
     }
   }
-
   .contact-logo {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 40px;
-
     img {
       width: 80px;
       margin-top: 20px;
@@ -98,7 +82,6 @@
         filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
       }
     }
-
     p {
       font-size: 0.9rem;
       font-weight: 700;
@@ -108,9 +91,6 @@
   }
 }
 
-/* =====================================
-   Rechte Hälfte
-===================================== */
 .contact-right {
   flex: 1;
   padding-left: 20px;
@@ -119,7 +99,6 @@
   flex-direction: column;
   align-items: center;
   margin: 120px 20px 0 20px;
-
   .contact-sticker {
     width: 150px;
     margin-bottom: 20px;
@@ -130,7 +109,6 @@
       transform: scale(1.05);
     }
   }
-
   @keyframes rotateSticker {
     0% {
       transform: rotate(0deg);
@@ -139,26 +117,22 @@
       transform: rotate(360deg);
     }
   }
-
   .contact-form {
     width: 100%;
     max-width: 500px;
     display: flex;
     flex-direction: column;
   }
-
   .form-group {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-
     label {
       font-size: 1.2rem;
       font-weight: bold;
       color: #fff;
       margin-bottom: 5px;
     }
-
     input,
     textarea {
       font-size: 1rem;
@@ -170,53 +144,44 @@
       background: transparent;
       color: #fff;
     }
-
     input::placeholder,
     textarea::placeholder {
       color: #aaa;
     }
-
     .divider {
       background: #ffc107;
       margin-top: 10px;
       height: 0;
     }
   }
-
   .error {
     font-size: 0.9rem;
     color: #ffc107;
     margin-top: 5px;
   }
-
   .consent {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-
     input[type="checkbox"] {
       width: 20px;
       height: 20px;
       margin-right: 10px;
       cursor: pointer;
     }
-
     .consent-text {
       font-size: 0.9rem;
       color: #fff;
     }
-
     a.privacy-link {
       color: #4c66ea;
       text-decoration: none;
     }
   }
-
   .send-button-container {
     display: flex;
     justify-content: center;
   }
-
   .send-btn {
     padding: 12px 25px;
     font-size: 1rem;
@@ -229,39 +194,32 @@
     box-shadow: 4px 4px 0 #fff;
     transition: all 0.3s ease-in-out;
   }
-
   .send-btn:disabled {
     opacity: 0.3;
     background: gray;
     border-color: gray;
     cursor: not-allowed;
   }
-
   .send-btn:hover:not(:disabled) {
     box-shadow: none;
     background: #e67d60;
     border-color: #e67d60;
   }
-
   .contact-form input:focus,
   .contact-form textarea:focus {
     border-bottom-color: #fff;
   }
 }
 
-/* =====================================
-   Footer
-===================================== */
 .contact-footer {
   width: 100%;
   padding: 20px 50px;
   display: flex;
-  justify-content: space-between; /* Logo links, Links rechts */
+  justify-content: space-between;
   align-items: center;
   background: transparent;
 }
 
-/* Footer Logo- und Copyright-Box (unten links) */
 .contact-logo-bottom {
   display: flex;
   flex-direction: column;
@@ -270,7 +228,6 @@
   position: absolute;
   bottom: 20px;
   left: 50px;
-
   img {
     width: 80px;
     transition: filter 0.3s ease-in-out, transform 0.2s;
@@ -278,7 +235,6 @@
       filter: hue-rotate(-50deg) saturate(300%) brightness(1.2);
     }
   }
-
   p {
     font-size: 0.9rem;
     font-weight: 700;
@@ -287,7 +243,6 @@
   }
 }
 
-/* Footer Links (mittig ausgerichtet) */
 .footer-links {
   display: flex;
   gap: 140px;
@@ -304,9 +259,6 @@
   }
 }
 
-/* -------------------------
-   Responsive Anpassungen
-------------------------- */
 @media screen and (max-width: 768px) {
   .contact-container {
     flex-direction: column;
@@ -346,24 +298,18 @@
   }
 }
 
-/* ---------------------------
-   Modale Popups
---------------------------- */
-/* ---------------------------
-   Modale Popups
---------------------------- */
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.5); /* Schwarzer Hintergrund mit 50% Deckkraft */
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 10000;
-  cursor: pointer; /* Zeigt an, dass man auf das Overlay klicken kann */
+  cursor: pointer;
 }
 
 .modal {
@@ -373,12 +319,11 @@
   max-width: 600px;
   width: 90%;
   position: relative;
-  font-family: "BricolageGrotesque", sans-serif; /* Schriftart geändert */
-  line-height: 1.6; /* Zeilenabstand erhöht */
-  cursor: auto; /* Innerhalb des Popups normaler Cursor */
+  font-family: "BricolageGrotesque", sans-serif;
+  line-height: 1.6;
+  cursor: auto;
 }
 
-/* Verhindern, dass Klicks im Modal (Inhalt) das Overlay schließen */
 .modal * {
   pointer-events: auto;
 }

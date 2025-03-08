@@ -1,6 +1,3 @@
-/* ================================
-   Projects Detail Section
-   ================================ */
 .projects-detail-section {
   position: fixed;
   top: 0;
@@ -18,7 +15,7 @@
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow-y: auto; /* Ermöglicht vertikales Scrollen, falls Inhalt zu hoch wird */
+  overflow-y: auto;
 }
 
 .detail-container {
@@ -28,14 +25,13 @@
   gap: 50px;
 }
 
-/* ----- Linke Hälfte ----- */
 .detail-left {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px; /* engerer Abstand */
-  margin-top: 50px; /* weiter nach unten verschoben */
+  gap: 10px;
+  margin-top: 50px;
 }
 
 .go-back {
@@ -43,7 +39,6 @@
   align-items: center;
   cursor: pointer;
   gap: 5px;
-  /* Standardposition (Desktop): oben links */
   position: absolute;
   top: 40px;
   left: 25px;
@@ -67,25 +62,24 @@
   margin: 0;
 }
 
-/* Angepasste About-Line */
 .about-line {
-  width: 260px; /* Feste Breite */
-  margin: -23px 0; /* Reduzierter Abstand – näher am Projekttitel */
+  width: 260px;
+  margin: -23px 0;
   animation: aboutMeLineClip 5s infinite ease-in-out;
 }
 
 @keyframes aboutMeLineClip {
   0% {
-    clip-path: inset(0 100% 0 0); /* vollständig verdeckt */
+    clip-path: inset(0 100% 0 0);
   }
   20% {
-    clip-path: inset(0 0 0 0); /* voll sichtbar */
+    clip-path: inset(0 0 0 0);
   }
   80% {
-    clip-path: inset(0 0 0 0); /* sichtbar */
+    clip-path: inset(0 0 0 0);
   }
   100% {
-    clip-path: inset(0 100% 0 0); /* wieder verdeckt */
+    clip-path: inset(0 100% 0 0);
   }
 }
 
@@ -127,7 +121,6 @@
   object-fit: contain;
 }
 
-/* ----- Rechte Hälfte ----- */
 .detail-right {
   flex: 1;
   display: flex;
@@ -140,7 +133,7 @@
   width: 100%;
   max-width: 560px;
   border-radius: 10px;
-  margin: 0 auto; /* zentriert das Thumbnail */
+  margin: 0 auto;
 }
 
 .buttons-container {
@@ -168,16 +161,13 @@
   color: #fff;
 }
 
-/* --- Next Project Div ---
-     Es soll unter den GitHub- und Live-Test-Buttons erscheinen.
-     Dabei steht das next arrow Image rechts neben dem "Next Project"-Text. */
 .next-project {
   cursor: pointer;
   color: white;
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 5px; /* reduziert von 20px auf 5px */
+  margin-top: 5px;
   flex-direction: row;
 }
 
@@ -191,14 +181,13 @@
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
-  margin-left: 10px; /* Abstand zwischen Text und Pfeil */
+  margin-left: 10px;
 }
 
 .next-project .next-arrow:hover {
   transform: scale(1.1);
 }
 
-/* ----- Responsive Anpassungen ----- */
 @media screen and (max-width: 768px) {
   .detail-container {
     flex-direction: column;
@@ -214,26 +203,23 @@
   }
   .project-thumbnail {
     max-width: 100%;
-    max-height: 300px; /* Begrenze die Höhe des Thumbnails */
-    object-fit: cover; /* Zuschneiden, falls nötig */
+    max-height: 300px;
+    object-fit: cover;
     display: block;
     margin-left: auto;
     margin-right: auto;
   }
   .buttons-container {
-    /* Buttons bleiben nebeneinander */
     flex-direction: row;
     gap: 20px;
   }
-  /* Stelle sicher, dass "Next Project" unter den Buttons bleibt */
   .next-project {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-direction: row;
-    margin-top: 5px; /* reduziert auch hier */
+    margin-top: 5px;
   }
-  /* Positioniere "Go back" in der responsiven Ansicht oben rechts */
   .go-back {
     top: 40px;
     right: 25px;

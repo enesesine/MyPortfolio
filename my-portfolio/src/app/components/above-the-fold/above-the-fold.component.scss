@@ -1,4 +1,3 @@
-// ✅ Hintergrundbild für die ATF-Sektion
 .atf-section {
   width: 100%;
   height: 100vh;
@@ -22,7 +21,6 @@ p {
   font-weight: normal;
 }
 
-// ✅ Header-Styling
 .atf-header {
   display: flex;
   justify-content: space-between;
@@ -31,29 +29,23 @@ p {
   background: transparent;
 }
 
-// ✅ Logo-Styling
 .logo {
   width: 80px;
-  /* Nur transform soll smooth sein, NICHT filter: */
   transition: filter 0.3s ease-in-out, transform 0.2s;
-
   &:hover {
     transition: none;
     filter: sepia(1) hue-rotate(10deg) saturate(600%) brightness(1.6);
   }
 }
 
-// ✅ Navbar-Styling mit Kritzel-Animationen
 .navbar {
   display: flex;
   gap: 250px;
-
   .nav-item {
     position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
-
     a {
       text-decoration: none;
       color: white;
@@ -61,15 +53,12 @@ p {
       font-weight: bold;
       transition: color 0.3s ease-in-out;
     }
-
     .nav-underline {
       position: absolute;
       opacity: 0;
       transition: opacity 0.3s ease-in-out;
     }
   }
-
-  // ✅ About Me (clip-path)
   .aboutme-line {
     width: 120px;
     bottom: -10px;
@@ -87,8 +76,6 @@ p {
       clip-path: inset(0 0 0 0);
     }
   }
-
-  // ✅ Skills, Projects, Contact
   .skills-line,
   .projects-line,
   .contact-line {
@@ -104,7 +91,6 @@ p {
   .contact-line {
     bottom: -10px;
   }
-
   .nav-item:hover .skills-line,
   .nav-item:hover .projects-line,
   .nav-item:hover .contact-line {
@@ -121,30 +107,25 @@ p {
   }
 }
 
-// ✅ Sprachumschalter
 .language-switch {
   display: flex;
   align-items: center;
   gap: 8px;
-
   .lang-option {
     font-size: 16px;
     color: white;
     transition: color 0.3s ease-in-out;
   }
-
   .switch-container {
     position: relative;
     width: 40px;
     height: 10px;
     cursor: pointer;
     top: -5px;
-
     .lang-bar {
       width: 100%;
       height: 100%;
     }
-
     .lang-circle {
       position: absolute;
       top: 2%;
@@ -159,7 +140,6 @@ p {
   }
 }
 
-// ✅ Text-Bereich für "Fullstack Developer"
 .atf-content {
   text-align: center;
   margin-top: 100px;
@@ -169,7 +149,6 @@ p {
   justify-content: center;
   transform: scale(1);
   transform-origin: top center;
-
   h1 {
     font-size: 7rem;
     font-weight: bold;
@@ -178,10 +157,6 @@ p {
     position: relative;
     text-align: center;
   }
-
-  /* **********************************
-   * FULLSTACK-BEREICH
-   ********************************** */
   .fullstack-container {
     position: relative;
     display: inline-block;
@@ -191,8 +166,6 @@ p {
     position: relative;
     left: -140px;
   }
-
-  /* ************ HELLO WORLD-BUTTON + WAVING HAND ************ */
   .hello-world {
     position: absolute;
     top: -55px;
@@ -222,8 +195,6 @@ p {
   .hello-world:not(:hover) {
     animation: expandOut 0.8s ease-in-out forwards;
   }
-
-  /* => Text-Wechsel => fade + blur */
   .hello-world-text,
   .enes-text {
     display: inline-block;
@@ -242,8 +213,6 @@ p {
     opacity: 1;
     filter: blur(0);
   }
-
-  /* Die winkende Hand => "Bowling" */
   .waving-hand {
     position: absolute;
     bottom: 186px;
@@ -258,7 +227,6 @@ p {
   .hello-world:hover + .waving-hand {
     animation: waveIn 0.8s ease-in-out forwards;
   }
-
   @keyframes expandIn {
     0% {
       width: 140px;
@@ -310,10 +278,6 @@ p {
       transform: translateX(-50px) rotate(0);
     }
   }
-
-  /* **********************************
-   * DEVELOPER-BEREICH
-   ********************************** */
   .developer-container {
     position: relative;
     display: inline-block;
@@ -341,7 +305,6 @@ p {
     box-shadow: 6px 6px 0 #fff;
     transition: all 0.3s ease-in-out;
     z-index: 9999;
-
     &:hover {
       box-shadow: none;
       background: #e67d60;
@@ -362,7 +325,6 @@ p {
   }
 }
 
-// ✅ Social Icons (unten links)
 .socials {
   position: relative;
   bottom: 35px;
@@ -370,7 +332,6 @@ p {
   display: flex;
   flex-direction: column;
   gap: 15px;
-
   a {
     display: flex;
     align-items: center;
@@ -396,7 +357,6 @@ p {
   }
 }
 
-// ✅ Buchstaben-Hover-Effekt
 ::ng-deep .letter-wrapper {
   transition: transform 0.3s ease, color 0.3s ease;
   transform-origin: center;
@@ -416,8 +376,6 @@ p {
   color: #ffc107;
 }
 
-// =========================================
-// Burger Button & Mobile Menu (standard hidden)
 .burger-btn {
   display: none;
   background: none;
@@ -450,7 +408,6 @@ p {
     transform: translateX(0%);
   }
   .close-btn {
-    /* X-Button näher an den linken Rand rücken */
     align-self: flex-start;
     margin-left: 10px;
     font-size: 2rem;
@@ -540,10 +497,6 @@ p {
   }
 }
 
-// =========================================
-// Media Queries
-
-/* Bei max-width 1330px: Navbar, Sprachumschalter und Social Icons ausblenden, Burger-Button einblenden */
 @media (max-width: 1330px) {
   .navbar,
   .language-switch,
@@ -555,18 +508,14 @@ p {
   }
 }
 
-/* Ab 1000px: ATF-Content skalieren und responsive Anpassungen für "Fullstack Developer" */
 @media (max-width: 1000px) {
   .atf-content {
     transform: scale(calc(100vw / 1000));
     transform-origin: top center;
-    margin-top: 150px; // Alles etwas weiter nach unten
-
+    margin-top: 150px;
     h1 {
       font-size: 4rem;
-    } // Schrift kleiner
-
-    /* Textelemente zentrieren */
+    }
     .fullstack {
       left: 0;
     }
@@ -574,42 +523,38 @@ p {
       left: 0;
       margin-top: 0;
     }
-
-    /* Positionierung der Buttons & Waving Hand im responsiven Modus */
     .fullstack-container {
       position: relative;
     }
     .fullstack-container .hello-world {
       position: absolute;
-      top: -50px; // etwas oberhalb von "Fullstack"
+      top: -50px;
       left: 50%;
       transform: translateX(-50%);
     }
-    /* Waving Hand gemeinsam mit Hello World bewegen */
     .fullstack-container .waving-hand {
       position: absolute;
-      top: -77px; /* etwas höher als zuvor */
-      left: calc(50% + -15px); /* weiter links, also weniger weit rechts */
-      width: 30px; // etwas kleiner
+      top: -77px;
+      left: calc(50% + -15px);
+      width: 30px;
     }
     .developer-container {
       position: relative;
     }
     .developer-container .get-in-touch {
       position: absolute;
-      top: 85px; // minimal höher
+      top: 85px;
       left: 50%;
       transform: translateX(-50%);
-      padding: 10px 15px; // horizontale Polsterung reduziert
+      padding: 10px 15px;
       font-size: 14px;
     }
-    /* Polaroid im Responsive */
     .polaroid {
       position: absolute;
-      top: 235px; // etwas weiter höher
+      top: 235px;
       left: 50%;
       transform: translateX(-50%) rotate(2deg);
-      width: 150px; // kleiner im responsiven Modus
+      width: 150px;
       transition: transform 0.3s ease-in-out;
       &:hover {
         transform: translateX(-50%) rotate(2deg) scale(1.05);
@@ -623,6 +568,6 @@ p {
   .atf-content {
     h1 {
       font-size: 3rem;
-    } // Schrift noch kleiner
+    }
   }
 }

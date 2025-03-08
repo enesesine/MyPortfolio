@@ -26,14 +26,12 @@ export class ProjectsComponent {
   constructor(private router: Router) {}
 
   viewProject(projectId: number): void {
-    // Finde das Projekt anhand der ID und zeige die Detailansicht als Overlay an
     this.selectedProject =
       this.projects.find((p) => p.id === projectId) || null;
     this.showDetail = true;
   }
 
   closeDetail(): void {
-    // Schließt die Detailansicht (Modal/Overlay)
     this.showDetail = false;
     this.selectedProject = null;
   }

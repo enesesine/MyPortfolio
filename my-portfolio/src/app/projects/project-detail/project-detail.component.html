@@ -1,6 +1,5 @@
 <section class="projects-detail-section">
   <div class="detail-container">
-    <!-- Linke Hälfte -->
     <div class="detail-left">
       <div class="go-back" (click)="goBack()">
         <img
@@ -13,14 +12,13 @@
         }}</span>
       </div>
       <h1 class="project-name">{{ project.title | translate }}</h1>
-      <!-- Hier verwenden wir nun animatedLineImage statt aboutLine -->
+
       <img
         [src]="project.animatedLineImage"
         alt="{{ 'PROJECT_DETAIL.LINE_ALT' | translate }}"
         class="about-line"
       />
 
-      <!-- Überschriftsbereiche mit translate-Pipe -->
       <div class="section-title description-title">
         {{ "PROJECT_DETAIL.DESCRIPTION" | translate }}
       </div>
@@ -47,7 +45,6 @@
       </div>
     </div>
 
-    <!-- Rechte Hälfte -->
     <div class="detail-right">
       <img
         [src]="project.image"

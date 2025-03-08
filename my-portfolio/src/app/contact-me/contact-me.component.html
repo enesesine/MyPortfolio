@@ -1,6 +1,5 @@
 <section id="contact" class="contact-me-section">
   <div class="contact-container">
-    <!-- Linke Hälfte -->
     <div class="contact-left">
       <div class="contact-title">{{ "CONTACT.TITLE" | translate }}</div>
       <h2 class="contact-heading">{{ "CONTACT.HEADING" | translate }}</h2>
@@ -23,7 +22,7 @@
         <p>&copy; Enes Hadzic 2025</p>
       </div>
     </div>
-    <!-- Rechte Hälfte -->
+
     <div class="contact-right">
       <img
         src="assets/Images/ContactMe/StickerEH.webp"
@@ -38,7 +37,6 @@
         (ngSubmit)="onSubmit(contactForm)"
         novalidate
       >
-        <!-- Name-Feld -->
         <div class="form-group">
           <label for="name">{{ "CONTACT.FORM.NAME_LABEL" | translate }}</label>
           <input
@@ -59,7 +57,7 @@
           </div>
           <div class="divider"></div>
         </div>
-        <!-- Email-Feld -->
+
         <div class="form-group">
           <label for="email">{{
             "CONTACT.FORM.EMAIL_LABEL" | translate
@@ -83,7 +81,7 @@
           </div>
           <div class="divider"></div>
         </div>
-        <!-- Message-Feld -->
+
         <div class="form-group">
           <label for="message">{{
             "CONTACT.FORM.MESSAGE_LABEL" | translate
@@ -105,7 +103,7 @@
           </div>
           <div class="divider"></div>
         </div>
-        <!-- Checkbox -->
+
         <div class="consent">
           <input type="checkbox" id="consent" name="consent" required ngModel />
           <label for="consent">
@@ -121,7 +119,7 @@
             </span>
           </label>
         </div>
-        <!-- Send Button -->
+
         <div class="send-button-container">
           <button
             type="submit"
@@ -134,7 +132,7 @@
       </form>
     </div>
   </div>
-  <!-- Footer -->
+
   <footer class="contact-footer">
     <div class="footer-links">
       <a href="#" (click)="$event.preventDefault(); openLegalNotice()">
@@ -152,7 +150,6 @@
     </div>
   </footer>
 
-  <!-- Modal für Legal Notice -->
   <div
     class="modal-overlay"
     *ngIf="showLegalNotice"
@@ -165,7 +162,6 @@
     </div>
   </div>
 
-  <!-- Modal für Privacy Policy -->
   <div
     class="modal-overlay"
     *ngIf="showPrivacyPolicy"
