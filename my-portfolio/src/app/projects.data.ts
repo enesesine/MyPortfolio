@@ -16,7 +16,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/JS.webp',
     ],
     repoLink: 'https://github.com/enesesine/Sharkie',
-    liveDemo: 'https://en.es/Sharkie',
+    liveDemo: 'https://sharkie.eneshadzic.com',
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/Firebase.webp',
     ],
     repoLink: 'https://github.com/enesesine/sharkie',
-    liveDemo: 'https://en.es/Sharkie',
+    liveDemo: 'https://pokedex.eneshadzic.com',
   },
   {
     id: 4,
