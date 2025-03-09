@@ -33,7 +33,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/JS.webp',
     ],
     repoLink: 'https://github.com/enesesine/Join',
-    liveDemo: '#',
+    liveDemo: 'https://join.eneshadzic.com',
   },
   {
     id: 3,
@@ -50,7 +50,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/JS.webp',
       '/assets/Images/SkillSet/Logos/Frontend/Firebase.webp',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie',
+    repoLink: 'https://github.com/enesesine/Pokedex',
     liveDemo: 'https://pokedex.eneshadzic.com',
   },
   {
@@ -67,8 +67,8 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Frontend/CSS.webp',
       '/assets/Images/SkillSet/Logos/Frontend/Firebase.webp',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie',
-    liveDemo: 'https://en.es/Sharkie',
+    repoLink: 'https://github.com/enesesine',
+    liveDemo: '#',
   },
   {
     id: 5,
@@ -83,8 +83,8 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Backend/Python.webp',
       '/assets/Images/SkillSet/Logos/Backend/Django.webp',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie',
-    liveDemo: 'https://en.es/Sharkie',
+    repoLink: 'https://github.com/enesesine',
+    liveDemo: '#',
   },
   {
     id: 6,
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       '/assets/Images/SkillSet/Logos/Backend/Django.webp',
       '/assets/Images/SkillSet/Logos/Backend/Linux.webp',
     ],
-    repoLink: 'https://github.com/enesesine/sharkie',
-    liveDemo: 'https://en.es/Sharkie',
+    repoLink: 'https://github.com/enesesine',
+    liveDemo: '#',
   },
 ];

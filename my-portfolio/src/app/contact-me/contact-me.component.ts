@@ -18,7 +18,6 @@ export class ContactMeComponent {
   showLegalNotice: boolean = false;
 
   onSubmit(form: NgForm): void {
-    console.log('Form valid:', form.valid);
     if (form.valid) {
       this.contactFormRef.nativeElement.submit();
     } else {
