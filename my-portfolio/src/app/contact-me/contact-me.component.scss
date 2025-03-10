@@ -133,6 +133,9 @@
       color: #fff;
       margin-bottom: 5px;
     }
+    .input-wrapper {
+      position: relative;
+    }
     input,
     textarea {
       font-size: 1rem;
@@ -143,11 +146,30 @@
       transition: border-color 0.3s ease;
       background: transparent;
       color: #fff;
+      width: 100%;
     }
     input::placeholder,
     textarea::placeholder {
       color: #aaa;
     }
+    /* Blende den Placeholder aus, wenn das Feld ungültig und berührt ist */
+    input.ng-invalid.ng-touched::placeholder,
+    textarea.ng-invalid.ng-touched::placeholder {
+      color: transparent;
+    }
+    .input-error {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      transform: translateY(-50%);
+      color: red;
+      opacity: 0.8;
+      font-size: 1rem;
+      font-weight: bold;
+      font-family: inherit;
+      pointer-events: none;
+    }
+
     .divider {
       background: #ffc107;
       margin-top: 10px;
@@ -194,13 +216,14 @@
     box-shadow: 4px 4px 0 #fff;
     transition: all 0.3s ease-in-out;
   }
-  .send-btn:disabled {
+  /* Statt dem nativen disabled wird hier die CSS-Klasse "disabled" genutzt */
+  .send-btn.disabled {
     opacity: 0.3;
     background: gray;
     border-color: gray;
     cursor: not-allowed;
   }
-  .send-btn:hover:not(:disabled) {
+  .send-btn:hover:not(.disabled) {
     box-shadow: none;
     background: #e67d60;
     border-color: #e67d60;

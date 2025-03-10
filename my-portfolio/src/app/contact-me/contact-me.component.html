@@ -37,73 +37,86 @@
         (ngSubmit)="onSubmit(contactForm)"
         novalidate
       >
+        <!-- Name-Feld -->
         <div class="form-group">
           <label for="name">{{ "CONTACT.FORM.NAME_LABEL" | translate }}</label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
-            required
-            ngModel
-          />
-          <div
-            class="error"
-            *ngIf="
-              contactForm.submitted && !contactForm.controls['name']?.value
-            "
-          >
-            {{ "CONTACT.FORM.NAME_ERROR" | translate }}
+          <div class="input-wrapper">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
+              required
+              ngModel
+            />
+            <span
+              class="input-error"
+              *ngIf="
+                contactForm.submitted && contactForm.controls['name']?.invalid
+              "
+            >
+              {{ "CONTACT.FORM.NAME_ERROR" | translate }}
+            </span>
           </div>
           <div class="divider"></div>
         </div>
 
+        <!-- Email-Feld -->
         <div class="form-group">
           <label for="email">{{
             "CONTACT.FORM.EMAIL_LABEL" | translate
           }}</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
-            required
-            ngModel
-            pattern=".+@.+"
-          />
-          <div
-            class="error"
-            *ngIf="
-              contactForm.submitted && contactForm.controls['email']?.invalid
-            "
-          >
-            {{ "CONTACT.FORM.EMAIL_ERROR" | translate }}
+          <div class="input-wrapper">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
+              required
+              ngModel
+              pattern=".*@.*"
+              (input)="contactForm.controls['email'].updateValueAndValidity()"
+            />
+            <!-- Hier wird der Fehler nur angezeigt, wenn das Feld leer ist -->
+            <span
+              class="input-error"
+              *ngIf="
+                contactForm.submitted && !contactForm.controls['email']?.value
+              "
+            >
+              {{ "CONTACT.FORM.EMAIL_ERROR" | translate }}
+            </span>
           </div>
           <div class="divider"></div>
         </div>
 
+        <!-- Nachricht-Feld -->
         <div class="form-group">
           <label for="message">{{
             "CONTACT.FORM.MESSAGE_LABEL" | translate
           }}</label>
-          <textarea
-            id="message"
-            name="message"
-            placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
-            required
-            ngModel
-          ></textarea>
-          <div
-            class="error"
-            *ngIf="
-              contactForm.submitted && !contactForm.controls['message']?.value
-            "
-          >
-            {{ "CONTACT.FORM.MESSAGE_ERROR" | translate }}
+          <div class="input-wrapper">
+            <textarea
+              id="message"
+              name="message"
+              placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
+              required
+              ngModel
+            ></textarea>
+            <span
+              class="input-error"
+              *ngIf="
+                contactForm.submitted &&
+                contactForm.controls['message']?.invalid
+              "
+            >
+              {{ "CONTACT.FORM.MESSAGE_ERROR" | translate }}
+            </span>
           </div>
           <div class="divider"></div>
         </div>
 
+        <!-- Consent -->
         <div class="consent">
           <input type="checkbox" id="consent" name="consent" required ngModel />
           <label for="consent">
@@ -120,11 +133,12 @@
           </label>
         </div>
 
+        <!-- Send-Button (kein natives disabled, sondern CSS-Klasse "disabled" bei ungültigen Feldern) -->
         <div class="send-button-container">
           <button
             type="submit"
             class="send-btn"
-            [disabled]="contactForm.invalid"
+            [ngClass]="{ disabled: contactForm.invalid }"
           >
             {{ "CONTACT.FORM.SEND" | translate }}
           </button>
@@ -150,6 +164,7 @@
     </div>
   </footer>
 
+  <!-- Modale Fenster für Impressum -->
   <div
     class="modal-overlay"
     *ngIf="showLegalNotice"
@@ -162,6 +177,7 @@
     </div>
   </div>
 
+  <!-- Modale Fenster für Datenschutz -->
   <div
     class="modal-overlay"
     *ngIf="showPrivacyPolicy"

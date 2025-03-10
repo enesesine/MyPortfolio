@@ -21,7 +21,9 @@ export class ContactMeComponent {
     if (form.valid) {
       this.contactFormRef.nativeElement.submit();
     } else {
-      alert('Bitte füllen Sie alle erforderlichen Felder aus.');
+      // Felder als "touched" markieren, sodass Error-Messages angezeigt werden
+      form.control.markAllAsTouched();
+      // Kein Alert mehr
     }
   }
 
