@@ -11,6 +11,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow-x: hidden; // verhindert horizontales Überlaufen
 }
 
 .paper-ripple-container {
@@ -22,6 +23,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
   .my-stack {
     order: -1;
     font-size: 1.2rem;
@@ -92,13 +94,15 @@
   position: relative;
   width: 100%;
   max-width: 1200px;
+  overflow-x: hidden; // verhindert den horizontalen Überlauf
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 35px;
   margin-bottom: 120px;
 }
 
+/* Standard: 5 Icons pro Zeile */
 .icons-row.frontend.top,
 .icons-row.frontend.bottom,
 .icons-row.backend.top,
@@ -120,6 +124,7 @@
   flex-direction: column;
   align-items: center;
   transition: transform 0.3s ease;
+
   .tech-icon {
     width: 55px;
     height: 55px;
@@ -138,6 +143,23 @@
   }
 }
 
+/* Media Query: Bei max-width:480px sollen pro Zeile 2 Icons angezeigt werden */
+@media screen and (max-width: 480px) {
+  .icons-row.frontend.top,
+  .icons-row.frontend.bottom,
+  .icons-row.backend.top,
+  .icons-row.backend.bottom {
+    flex-wrap: wrap;
+  }
+  .icons-row.frontend.top .icon-item,
+  .icons-row.frontend.bottom .icon-item,
+  .icons-row.backend.top .icon-item,
+  .icons-row.backend.bottom .icon-item {
+    flex: 0 0 calc((100% - 10px) / 3) !important;
+  }
+}
+
+/* Sticker */
 .sticker {
   position: absolute;
   right: -250px;
@@ -169,6 +191,7 @@
   }
 }
 
+/* Responsive Anpassungen */
 @media screen and (max-width: 768px) {
   .paper-ripple-container {
     overflow: hidden;
@@ -231,16 +254,6 @@
   .icon-item .tech-icon {
     width: 45px;
     height: 45px;
-  }
-}
-
-@media screen and (max-width: 1600px) {
-  .sticker {
-    position: relative;
-    left: 0;
-    right: 0;
-    transform: none;
-    margin: 20px auto 0 auto;
   }
 }
 

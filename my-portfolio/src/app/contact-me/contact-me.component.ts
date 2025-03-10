@@ -20,10 +20,10 @@ export class ContactMeComponent {
   onSubmit(form: NgForm): void {
     if (form.valid) {
       this.contactFormRef.nativeElement.submit();
+      form.resetForm(); // Alle Felder leeren
     } else {
       // Felder als "touched" markieren, sodass Error-Messages angezeigt werden
       form.control.markAllAsTouched();
-      // Kein Alert mehr
     }
   }
 

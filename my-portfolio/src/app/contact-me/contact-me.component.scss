@@ -343,8 +343,12 @@
   width: 90%;
   position: relative;
   font-family: "BricolageGrotesque", sans-serif;
-  line-height: 1.6;
+  line-height: 2; /* erhöhte Zeilenhöhe */
   cursor: auto;
+}
+
+.modal p {
+  margin-bottom: 1em; /* Abstand zwischen den Absätzen */
 }
 
 .modal * {

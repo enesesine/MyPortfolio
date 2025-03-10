@@ -1,7 +1,7 @@
 .atf-section {
   width: 100%;
   height: 100vh;
-  /* Den max-width-Wert hier entfernen, damit der Hintergrund vollflächig bleibt */
+  /* Hintergrund bleibt vollflächig */
   background-image: url("/assets/Images/AboveTheFold/BackgroundATF/bgATF.webp");
   background-size: cover;
   background-position: center bottom;
@@ -12,6 +12,7 @@
   color: white;
 }
 
+/* Globale Überschriften */
 h1 {
   font-family: "Bricolage", sans-serif;
   font-weight: bold;
@@ -22,16 +23,26 @@ p {
   font-weight: normal;
 }
 
+/* Neuer Wrapper für den Content, begrenzt auf max. Breite */
+.atf-inner-container {
+  max-width: 1200px; // Anpassen nach Bedarf (z. B. 1200px oder 1400px)
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Header */
 .atf-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
+  padding: 20px 0; // horizontal den Abstand reduziert
   background: transparent;
 }
 
+/* Logo – weiter von der Navigation entfernt */
 .logo {
   width: 80px;
+  margin-right: 100px; // Erhöhter Abstand
   transition: filter 0.3s ease-in-out, transform 0.2s;
   &:hover {
     transition: none;
@@ -39,9 +50,10 @@ p {
   }
 }
 
+/* Navigation – Abstand verringert */
 .navbar {
   display: flex;
-  gap: 250px;
+  gap: 80px; // Weniger Abstand zwischen den Items
   .nav-item {
     position: relative;
     display: flex;
@@ -108,10 +120,12 @@ p {
   }
 }
 
+/* Sprache- und Switch-Elemente – weiter von der Navbar entfernt */
 .language-switch {
   display: flex;
   align-items: center;
   gap: 8px;
+  margin-left: 100px; // Erhöhter Abstand
   .lang-option {
     font-size: 16px;
     color: white;
@@ -141,18 +155,14 @@ p {
   }
 }
 
-/* ATF-Inhalt wird nun in einen inneren Wrapper (.atf-content-inner) gekapselt */
+/* ATF-Content */
 .atf-content {
   text-align: center;
   margin-top: 100px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
   transform: scale(1);
   transform-origin: top center;
-
-  /* Inhalt bleibt wie gehabt, wird aber über den inneren Wrapper zentriert */
   h1 {
     font-size: 7rem;
     font-weight: bold;
@@ -329,25 +339,29 @@ p {
   }
 }
 
-/* Neuer Wrapper für den ATF-Content, begrenzt auf max. 1400px */
+/* Innerer Wrapper für den ATF-Content */
 .atf-content-inner {
   max-width: 1400px;
   width: 100%;
 }
 
+/* Social Icons – wie ursprünglich positioniert, aber ohne unerwünschte Padding/Margin */
 .socials {
   position: relative;
-  bottom: 35px;
-  left: 30px;
+  bottom: 5px;
+  left: 790px;
   display: flex;
-  flex-direction: column;
+  flex-direction: inherit;
   gap: 15px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: transparent;
     text-decoration: none;
@@ -367,6 +381,7 @@ p {
   }
 }
 
+/* Buchstaben-Animationen */
 ::ng-deep .letter-wrapper {
   transition: transform 0.3s ease, color 0.3s ease;
   transform-origin: center;
@@ -386,6 +401,7 @@ p {
   color: #ffc107;
 }
 
+/* Burger-Button (für kleinere Screens) */
 .burger-btn {
   display: none;
   background: none;
@@ -399,6 +415,8 @@ p {
     color: #e67d60;
   }
 }
+
+/* Mobile Menu */
 .mobile-menu {
   display: none;
   position: fixed;
@@ -507,10 +525,10 @@ p {
   }
 }
 
+/* Media Queries */
 @media (max-width: 1330px) {
   .navbar,
-  .language-switch,
-  .socials {
+  .language-switch {
     display: none;
   }
   .burger-btn {
@@ -545,7 +563,7 @@ p {
     .fullstack-container .waving-hand {
       position: absolute;
       top: -77px;
-      left: calc(50% + -15px);
+      left: calc(50% - 15px);
       width: 30px;
     }
     .developer-container {
@@ -571,6 +589,9 @@ p {
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
       }
     }
+  }
+  .socials {
+    display: none;
   }
 }
 

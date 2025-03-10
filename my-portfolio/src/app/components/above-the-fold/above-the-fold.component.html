@@ -1,98 +1,64 @@
 <section class="atf-section">
-  <header class="atf-header">
-    <img
-      src="assets/Images/AboveTheFold/EnesLogo/EHBlau.webp"
-      alt="Enes Logo"
-      class="logo"
-    />
-    <!-- Burger-Button: öffnet/schließt das Menü -->
-    <button class="burger-btn" (click)="toggleMobileMenu()">&#9776;</button>
-    <nav class="navbar">
-      <div class="nav-item">
-        <a (click)="scrollToSection('about')">
-          {{ "NAV.ABOUT" | translate }}
-        </a>
-        <img
-          (click)="scrollToSection('about')"
-          src="assets/Images/AboveTheFold/LinesNavBar/AboutMeLine.webp"
-          class="nav-underline aboutme-line"
-          alt="{{ 'NAV.ABOUT' | translate }}"
-        />
-      </div>
-      <div class="nav-item">
-        <a (click)="scrollToSection('skills')">
-          {{ "NAV.SKILLS" | translate }}
-        </a>
-        <img
-          (click)="scrollToSection('skills')"
-          src="assets/Images/AboveTheFold/LinesNavBar/SkillsLine.webp"
-          class="nav-underline skills-line"
-          alt="{{ 'NAV.SKILLS' | translate }}"
-        />
-      </div>
-      <div class="nav-item">
-        <a (click)="scrollToSection('projects')">
-          {{ "NAV.PROJECTS" | translate }}
-        </a>
-        <img
-          (click)="scrollToSection('projects')"
-          src="assets/Images/AboveTheFold/LinesNavBar/ProjectsLine.webp"
-          class="nav-underline projects-line"
-          alt="{{ 'NAV.PROJECTS' | translate }}"
-        />
-      </div>
-      <div class="nav-item">
-        <a (click)="scrollToSection('contact')">
-          {{ "NAV.CONTACT" | translate }}
-        </a>
-        <img
-          (click)="scrollToSection('contact')"
-          src="assets/Images/AboveTheFold/LinesNavBar/ContactsLine.webp"
-          class="nav-underline contact-line"
-          alt="{{ 'NAV.CONTACT' | translate }}"
-        />
-      </div>
-    </nav>
-    <div class="language-switch">
-      <span class="lang-option" id="lang-en" (click)="toggleLanguage()"
-        >EN</span
-      >
-      <div class="switch-container" (click)="toggleLanguage()">
-        <img
-          src="assets/Images/AboveTheFold/LanguageButton/orangeBar.webp"
-          alt="Language Bar"
-          class="lang-bar"
-        />
-        <img
-          src="assets/Images/AboveTheFold/LanguageButton/blueCircle.webp"
-          alt="Switch Circle"
-          class="lang-circle"
-          [class.active]="isGerman"
-        />
-      </div>
-      <span class="lang-option" id="lang-de" (click)="toggleLanguage()"
-        >DE</span
-      >
-    </div>
-
-    <div class="mobile-menu" [class.open]="mobileMenuOpen">
-      <div class="mobile-nav-items">
-        <a (click)="toggleMobileMenu(); scrollToSection('about')">
-          {{ "NAV.ABOUT" | translate }}
-        </a>
-        <a (click)="toggleMobileMenu(); scrollToSection('skills')">
-          {{ "NAV.SKILLS" | translate }}
-        </a>
-        <a (click)="toggleMobileMenu(); scrollToSection('projects')">
-          {{ "NAV.PROJECTS" | translate }}
-        </a>
-        <a (click)="toggleMobileMenu(); scrollToSection('contact')">
-          {{ "NAV.CONTACT" | translate }}
-        </a>
-      </div>
-      <div class="mobile-language-switch" (click)="toggleLanguage()">
-        <span class="lang-option" id="lang-en">EN</span>
-        <div class="switch-container">
+  <div class="atf-inner-container">
+    <header class="atf-header">
+      <img
+        src="assets/Images/AboveTheFold/EnesLogo/EHBlau.webp"
+        alt="Enes Logo"
+        class="logo"
+      />
+      <!-- Burger-Button bleibt unverändert -->
+      <button class="burger-btn" (click)="toggleMobileMenu()">&#9776;</button>
+      <nav class="navbar">
+        <div class="nav-item">
+          <a (click)="scrollToSection('about')">
+            {{ "NAV.ABOUT" | translate }}
+          </a>
+          <img
+            (click)="scrollToSection('about')"
+            src="assets/Images/AboveTheFold/LinesNavBar/AboutMeLine.webp"
+            class="nav-underline aboutme-line"
+            alt="{{ 'NAV.ABOUT' | translate }}"
+          />
+        </div>
+        <div class="nav-item">
+          <a (click)="scrollToSection('skills')">
+            {{ "NAV.SKILLS" | translate }}
+          </a>
+          <img
+            (click)="scrollToSection('skills')"
+            src="assets/Images/AboveTheFold/LinesNavBar/SkillsLine.webp"
+            class="nav-underline skills-line"
+            alt="{{ 'NAV.SKILLS' | translate }}"
+          />
+        </div>
+        <div class="nav-item">
+          <a (click)="scrollToSection('projects')">
+            {{ "NAV.PROJECTS" | translate }}
+          </a>
+          <img
+            (click)="scrollToSection('projects')"
+            src="assets/Images/AboveTheFold/LinesNavBar/ProjectsLine.webp"
+            class="nav-underline projects-line"
+            alt="{{ 'NAV.PROJECTS' | translate }}"
+          />
+        </div>
+        <div class="nav-item">
+          <a (click)="scrollToSection('contact')">
+            {{ "NAV.CONTACT" | translate }}
+          </a>
+          <img
+            (click)="scrollToSection('contact')"
+            src="assets/Images/AboveTheFold/LinesNavBar/ContactsLine.webp"
+            class="nav-underline contact-line"
+            alt="{{ 'NAV.CONTACT' | translate }}"
+          />
+        </div>
+      </nav>
+      <div class="language-switch">
+        <span class="lang-option" id="lang-en" (click)="toggleLanguage()"
+          >EN</span
+        >
+        <div class="switch-container" (click)="toggleLanguage()">
           <img
             src="assets/Images/AboveTheFold/LanguageButton/orangeBar.webp"
             alt="Language Bar"
@@ -105,89 +71,133 @@
             [class.active]="isGerman"
           />
         </div>
-        <span class="lang-option" id="lang-de">DE</span>
+        <span class="lang-option" id="lang-de" (click)="toggleLanguage()"
+          >DE</span
+        >
       </div>
-      <div class="mobile-socials">
-        <a
-          href="https://github.com/enesesine"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="assets/Images/AboveTheFold/Socials/GitHub.webp"
-            alt="GitHub"
-          />
-        </a>
-        <a
-          href="https://www.linkedin.com/in/enes-hadzic-546658307/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img
-            src="assets/Images/AboveTheFold/Socials/LinkedIn.webp"
-            alt="LinkedIn"
-          />
-        </a>
-        <a href="mailto:contacthadzic@gmail.com">
-          <img src="assets/Images/AboveTheFold/Socials/Mail.webp" alt="Mail" />
-        </a>
+
+      <div class="mobile-menu" [class.open]="mobileMenuOpen">
+        <div class="mobile-nav-items">
+          <a (click)="toggleMobileMenu(); scrollToSection('about')">
+            {{ "NAV.ABOUT" | translate }}
+          </a>
+          <a (click)="toggleMobileMenu(); scrollToSection('skills')">
+            {{ "NAV.SKILLS" | translate }}
+          </a>
+          <a (click)="toggleMobileMenu(); scrollToSection('projects')">
+            {{ "NAV.PROJECTS" | translate }}
+          </a>
+          <a (click)="toggleMobileMenu(); scrollToSection('contact')">
+            {{ "NAV.CONTACT" | translate }}
+          </a>
+        </div>
+        <div class="mobile-language-switch" (click)="toggleLanguage()">
+          <span class="lang-option" id="lang-en">EN</span>
+          <div class="switch-container">
+            <img
+              src="assets/Images/AboveTheFold/LanguageButton/orangeBar.webp"
+              alt="Language Bar"
+              class="lang-bar"
+            />
+            <img
+              src="assets/Images/AboveTheFold/LanguageButton/blueCircle.webp"
+              alt="Switch Circle"
+              class="lang-circle"
+              [class.active]="isGerman"
+            />
+          </div>
+          <span class="lang-option" id="lang-de">DE</span>
+        </div>
+        <div class="mobile-socials">
+          <a
+            href="https://github.com/enesesine"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/Images/AboveTheFold/Socials/GitHub.webp"
+              alt="GitHub"
+            />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/enes-hadzic-546658307/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src="assets/Images/AboveTheFold/Socials/LinkedIn.webp"
+              alt="LinkedIn"
+            />
+          </a>
+          <a href="mailto:contacthadzic@gmail.com">
+            <img
+              src="assets/Images/AboveTheFold/Socials/Mail.webp"
+              alt="Mail"
+            />
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="atf-content">
+      <div class="atf-content-inner">
+        <h1>
+          <span class="fullstack-container">
+            <span class="fullstack" [innerHTML]="splittedFullstack"></span>
+            <button class="hello-world">
+              <span class="hello-world-text">
+                {{ "ATF.HELLO" | translate }}
+              </span>
+              <span class="enes-text">
+                {{ "ATF.ENAME" | translate }}
+              </span>
+            </button>
+            <img
+              src="assets/Images/AboveTheFold/WavingHand/waving_hand.webp"
+              alt="Waving Hand"
+              class="waving-hand"
+            />
+            <img
+              src="assets/Images/AboveTheFold/Polaroid/Polaroid.webp"
+              alt="Polaroid"
+              class="polaroid"
+            />
+          </span>
+          <br />
+          <span class="developer-container">
+            <span class="developer" [innerHTML]="splittedDeveloper"></span>
+            <button class="get-in-touch" (click)="scrollToSection('contact')">
+              {{ "BUTTONS.GET_IN_TOUCH" | translate }}
+            </button>
+          </span>
+        </h1>
       </div>
     </div>
-  </header>
-  <div class="atf-content">
-    <div class="atf-content-inner">
-      <h1>
-        <span class="fullstack-container">
-          <span class="fullstack" [innerHTML]="splittedFullstack"></span>
-          <button class="hello-world">
-            <span class="hello-world-text">
-              {{ "ATF.HELLO" | translate }}
-            </span>
-            <span class="enes-text">
-              {{ "ATF.ENAME" | translate }}
-            </span>
-          </button>
-          <img
-            src="assets/Images/AboveTheFold/WavingHand/waving_hand.webp"
-            alt="Waving Hand"
-            class="waving-hand"
-          />
-          <img
-            src="assets/Images/AboveTheFold/Polaroid/Polaroid.webp"
-            alt="Polaroid"
-            class="polaroid"
-          />
-        </span>
-        <br />
-        <span class="developer-container">
-          <span class="developer" [innerHTML]="splittedDeveloper"></span>
-          <button class="get-in-touch" (click)="scrollToSection('contact')">
-            {{ "BUTTONS.GET_IN_TOUCH" | translate }}
-          </button>
-        </span>
-      </h1>
+
+    <div class="socials">
+      <a
+        href="https://github.com/enesesine"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="assets/Images/AboveTheFold/Socials/GitHub.webp"
+          alt="GitHub"
+        />
+      </a>
+      <a
+        href="https://www.linkedin.com/in/enes-hadzic-546658307/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img
+          src="assets/Images/AboveTheFold/Socials/LinkedIn.webp"
+          alt="LinkedIn"
+        />
+      </a>
+      <a href="mailto:contacthadzic@gmail.com">
+        <img src="assets/Images/AboveTheFold/Socials/Mail.webp" alt="Mail" />
+      </a>
     </div>
-  </div>
-  <div class="socials">
-    <a
-      href="https://github.com/enesesine"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img src="assets/Images/AboveTheFold/Socials/GitHub.webp" alt="GitHub" />
-    </a>
-    <a
-      href="https://www.linkedin.com/in/enes-hadzic-546658307/"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src="assets/Images/AboveTheFold/Socials/LinkedIn.webp"
-        alt="LinkedIn"
-      />
-    </a>
-    <a href="mailto:contacthadzic@gmail.com">
-      <img src="assets/Images/AboveTheFold/Socials/Mail.webp" alt="Mail" />
-    </a>
   </div>
 </section>

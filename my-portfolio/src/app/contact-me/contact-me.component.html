@@ -69,10 +69,11 @@
               type="email"
               id="email"
               name="email"
-              placeholder="{{ 'CONTACT.FORM.EMAIL_PLACEHOLDER' | translate }}"
+              placeholder="yourEmail@example.com"
               required
               ngModel
-              pattern=".*@.*"
+              email
+              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               (input)="contactForm.controls['email'].updateValueAndValidity()"
             />
 
