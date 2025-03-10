@@ -30,7 +30,7 @@ export class AppComponent {
 
   toggleLanguage(): void {
     const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
-    console.log('Switching to:', newLang);
+
     this.translate.use(newLang);
   }
 

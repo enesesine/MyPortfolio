@@ -23,7 +23,6 @@ export class AboveTheFoldComponent {
     const newLang = this.translate.currentLang === 'en' ? 'de' : 'en';
     this.translate.use(newLang);
     this.isGerman = newLang === 'de';
-    console.log('Language switched to:', newLang);
   }
 
   scrollToSection(sectionId: string): void {
@@ -33,6 +32,7 @@ export class AboveTheFoldComponent {
     }
   }
 
+  // Toggle-Methode für das mobile Menü
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }

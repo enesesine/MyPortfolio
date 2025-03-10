@@ -5,10 +5,13 @@
       alt="Enes Logo"
       class="logo"
     />
-    <button class="burger-btn" (click)="mobileMenuOpen = true">&#9776;</button>
+    <!-- Burger-Button: öffnet/schließt das Menü -->
+    <button class="burger-btn" (click)="toggleMobileMenu()">&#9776;</button>
     <nav class="navbar">
       <div class="nav-item">
-        <a (click)="scrollToSection('about')">{{ "NAV.ABOUT" | translate }}</a>
+        <a (click)="scrollToSection('about')">
+          {{ "NAV.ABOUT" | translate }}
+        </a>
         <img
           (click)="scrollToSection('about')"
           src="assets/Images/AboveTheFold/LinesNavBar/AboutMeLine.webp"
@@ -17,9 +20,9 @@
         />
       </div>
       <div class="nav-item">
-        <a (click)="scrollToSection('skills')">{{
-          "NAV.SKILLS" | translate
-        }}</a>
+        <a (click)="scrollToSection('skills')">
+          {{ "NAV.SKILLS" | translate }}
+        </a>
         <img
           (click)="scrollToSection('skills')"
           src="assets/Images/AboveTheFold/LinesNavBar/SkillsLine.webp"
@@ -28,9 +31,9 @@
         />
       </div>
       <div class="nav-item">
-        <a (click)="scrollToSection('projects')">{{
-          "NAV.PROJECTS" | translate
-        }}</a>
+        <a (click)="scrollToSection('projects')">
+          {{ "NAV.PROJECTS" | translate }}
+        </a>
         <img
           (click)="scrollToSection('projects')"
           src="assets/Images/AboveTheFold/LinesNavBar/ProjectsLine.webp"
@@ -39,9 +42,9 @@
         />
       </div>
       <div class="nav-item">
-        <a (click)="scrollToSection('contact')">{{
-          "NAV.CONTACT" | translate
-        }}</a>
+        <a (click)="scrollToSection('contact')">
+          {{ "NAV.CONTACT" | translate }}
+        </a>
         <img
           (click)="scrollToSection('contact')"
           src="assets/Images/AboveTheFold/LinesNavBar/ContactsLine.webp"
@@ -71,21 +74,22 @@
         >DE</span
       >
     </div>
+    <!-- Mobile Menu ohne separaten "X"-Button -->
     <div class="mobile-menu" [class.open]="mobileMenuOpen">
-      <button class="close-btn" (click)="mobileMenuOpen = false">X</button>
       <div class="mobile-nav-items">
-        <a (click)="mobileMenuOpen = false; scrollToSection('about')">{{
-          "NAV.ABOUT" | translate
-        }}</a>
-        <a (click)="mobileMenuOpen = false; scrollToSection('skills')">{{
-          "NAV.SKILLS" | translate
-        }}</a>
-        <a (click)="mobileMenuOpen = false; scrollToSection('projects')">{{
-          "NAV.PROJECTS" | translate
-        }}</a>
-        <a (click)="mobileMenuOpen = false; scrollToSection('contact')">{{
-          "NAV.CONTACT" | translate
-        }}</a>
+        <!-- Menüeinträge schließen das Menü beim Klick -->
+        <a (click)="toggleMobileMenu(); scrollToSection('about')">
+          {{ "NAV.ABOUT" | translate }}
+        </a>
+        <a (click)="toggleMobileMenu(); scrollToSection('skills')">
+          {{ "NAV.SKILLS" | translate }}
+        </a>
+        <a (click)="toggleMobileMenu(); scrollToSection('projects')">
+          {{ "NAV.PROJECTS" | translate }}
+        </a>
+        <a (click)="toggleMobileMenu(); scrollToSection('contact')">
+          {{ "NAV.CONTACT" | translate }}
+        </a>
       </div>
       <div class="mobile-language-switch" (click)="toggleLanguage()">
         <span class="lang-option" id="lang-en">EN</span>
@@ -102,9 +106,7 @@
             [class.active]="isGerman"
           />
         </div>
-        <span class="lang-option" id="lang-de" (click)="toggleLanguage()"
-          >DE</span
-        >
+        <span class="lang-option" id="lang-de">DE</span>
       </div>
       <div class="mobile-socials">
         <a
@@ -138,8 +140,12 @@
       <span class="fullstack-container">
         <span class="fullstack" [innerHTML]="splittedFullstack"></span>
         <button class="hello-world">
-          <span class="hello-world-text">{{ "ATF.HELLO" | translate }}</span>
-          <span class="enes-text">{{ "ATF.ENAME" | translate }}</span>
+          <span class="hello-world-text">
+            {{ "ATF.HELLO" | translate }}
+          </span>
+          <span class="enes-text">
+            {{ "ATF.ENAME" | translate }}
+          </span>
         </button>
         <img
           src="assets/Images/AboveTheFold/WavingHand/waving_hand.webp"
