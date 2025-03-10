@@ -74,10 +74,9 @@
         >DE</span
       >
     </div>
-    <!-- Mobile Menu ohne separaten "X"-Button -->
+
     <div class="mobile-menu" [class.open]="mobileMenuOpen">
       <div class="mobile-nav-items">
-        <!-- Menüeinträge schließen das Menü beim Klick -->
         <a (click)="toggleMobileMenu(); scrollToSection('about')">
           {{ "NAV.ABOUT" | translate }}
         </a>
@@ -136,36 +135,38 @@
     </div>
   </header>
   <div class="atf-content">
-    <h1>
-      <span class="fullstack-container">
-        <span class="fullstack" [innerHTML]="splittedFullstack"></span>
-        <button class="hello-world">
-          <span class="hello-world-text">
-            {{ "ATF.HELLO" | translate }}
-          </span>
-          <span class="enes-text">
-            {{ "ATF.ENAME" | translate }}
-          </span>
-        </button>
-        <img
-          src="assets/Images/AboveTheFold/WavingHand/waving_hand.webp"
-          alt="Waving Hand"
-          class="waving-hand"
-        />
-        <img
-          src="assets/Images/AboveTheFold/Polaroid/Polaroid.webp"
-          alt="Polaroid"
-          class="polaroid"
-        />
-      </span>
-      <br />
-      <span class="developer-container">
-        <span class="developer" [innerHTML]="splittedDeveloper"></span>
-        <button class="get-in-touch" (click)="scrollToSection('contact')">
-          {{ "BUTTONS.GET_IN_TOUCH" | translate }}
-        </button>
-      </span>
-    </h1>
+    <div class="atf-content-inner">
+      <h1>
+        <span class="fullstack-container">
+          <span class="fullstack" [innerHTML]="splittedFullstack"></span>
+          <button class="hello-world">
+            <span class="hello-world-text">
+              {{ "ATF.HELLO" | translate }}
+            </span>
+            <span class="enes-text">
+              {{ "ATF.ENAME" | translate }}
+            </span>
+          </button>
+          <img
+            src="assets/Images/AboveTheFold/WavingHand/waving_hand.webp"
+            alt="Waving Hand"
+            class="waving-hand"
+          />
+          <img
+            src="assets/Images/AboveTheFold/Polaroid/Polaroid.webp"
+            alt="Polaroid"
+            class="polaroid"
+          />
+        </span>
+        <br />
+        <span class="developer-container">
+          <span class="developer" [innerHTML]="splittedDeveloper"></span>
+          <button class="get-in-touch" (click)="scrollToSection('contact')">
+            {{ "BUTTONS.GET_IN_TOUCH" | translate }}
+          </button>
+        </span>
+      </h1>
+    </div>
   </div>
   <div class="socials">
     <a

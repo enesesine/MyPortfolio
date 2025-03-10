@@ -32,7 +32,6 @@ export class AboveTheFoldComponent {
     }
   }
 
-  // Toggle-Methode für das mobile Menü
   toggleMobileMenu(): void {
     this.mobileMenuOpen = !this.mobileMenuOpen;
   }

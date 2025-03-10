@@ -1,6 +1,7 @@
 .atf-section {
   width: 100%;
   height: 100vh;
+  /* Den max-width-Wert hier entfernen, damit der Hintergrund vollflächig bleibt */
   background-image: url("/assets/Images/AboveTheFold/BackgroundATF/bgATF.webp");
   background-size: cover;
   background-position: center bottom;
@@ -140,6 +141,7 @@ p {
   }
 }
 
+/* ATF-Inhalt wird nun in einen inneren Wrapper (.atf-content-inner) gekapselt */
 .atf-content {
   text-align: center;
   margin-top: 100px;
@@ -149,6 +151,8 @@ p {
   justify-content: center;
   transform: scale(1);
   transform-origin: top center;
+
+  /* Inhalt bleibt wie gehabt, wird aber über den inneren Wrapper zentriert */
   h1 {
     font-size: 7rem;
     font-weight: bold;
@@ -323,6 +327,12 @@ p {
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     }
   }
+}
+
+/* Neuer Wrapper für den ATF-Content, begrenzt auf max. 1400px */
+.atf-content-inner {
+  max-width: 1400px;
+  width: 100%;
 }
 
 .socials {
