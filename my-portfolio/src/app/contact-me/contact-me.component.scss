@@ -152,7 +152,7 @@
     textarea::placeholder {
       color: #aaa;
     }
-    /* Blende den Placeholder aus, wenn das Feld ungültig und berührt ist */
+
     input.ng-invalid.ng-touched::placeholder,
     textarea.ng-invalid.ng-touched::placeholder {
       color: transparent;
@@ -216,7 +216,7 @@
     box-shadow: 4px 4px 0 #fff;
     transition: all 0.3s ease-in-out;
   }
-  /* Statt dem nativen disabled wird hier die CSS-Klasse "disabled" genutzt */
+
   .send-btn.disabled {
     opacity: 0.3;
     background: gray;
