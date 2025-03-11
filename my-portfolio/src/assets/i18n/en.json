@@ -120,6 +120,7 @@
       "EMAIL_LABEL": "What's your email?",
       "EMAIL_PLACEHOLDER": "youremail@example.com",
       "EMAIL_ERROR": "Please enter your email address.",
+      "EMAIL_INVALID_ERROR": "Please enter a valid email address.",
       "MESSAGE_LABEL": "How can I help you?",
       "MESSAGE_PLACEHOLDER": "Hello Enes, I am interested in...",
       "MESSAGE_ERROR": "Please write your message.",

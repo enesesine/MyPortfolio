@@ -37,6 +37,7 @@
         (ngSubmit)="onSubmit(contactForm)"
         novalidate
       >
+        <!-- NAME-FELD -->
         <div class="form-group">
           <label for="name">{{ "CONTACT.FORM.NAME_LABEL" | translate }}</label>
           <div class="input-wrapper">
@@ -47,11 +48,14 @@
               placeholder="{{ 'CONTACT.FORM.NAME_PLACEHOLDER' | translate }}"
               required
               ngModel
+              #nameCtrl="ngModel"
             />
+            <!-- Fehlermeldung, wenn Feld leer -->
             <span
               class="input-error"
               *ngIf="
-                contactForm.submitted && contactForm.controls['name']?.invalid
+                (contactForm.submitted || nameCtrl.dirty) &&
+                nameCtrl.errors?.['required']
               "
             >
               {{ "CONTACT.FORM.NAME_ERROR" | translate }}
@@ -60,10 +64,11 @@
           <div class="divider"></div>
         </div>
 
+        <!-- E-MAIL-FELD -->
         <div class="form-group">
-          <label for="email">{{
-            "CONTACT.FORM.EMAIL_LABEL" | translate
-          }}</label>
+          <label for="email">
+            {{ "CONTACT.FORM.EMAIL_LABEL" | translate }}
+          </label>
           <div class="input-wrapper">
             <input
               type="email"
@@ -71,28 +76,42 @@
               name="email"
               placeholder="yourEmail@example.com"
               required
+              pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$"
               ngModel
-              email
-              pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
               (input)="contactForm.controls['email'].updateValueAndValidity()"
+              #emailCtrl="ngModel"
             />
 
+            <!-- Fehlermeldung, wenn Feld leer -->
             <span
               class="input-error"
               *ngIf="
-                contactForm.submitted && !contactForm.controls['email']?.value
+                (contactForm.submitted || emailCtrl.dirty) &&
+                emailCtrl.errors?.['required']
               "
             >
               {{ "CONTACT.FORM.EMAIL_ERROR" | translate }}
+            </span>
+
+            <!-- Fehlermeldung, wenn Pattern ungültig -->
+            <span
+              class="input-error"
+              *ngIf="
+                (contactForm.submitted || emailCtrl.dirty) &&
+                emailCtrl.errors?.['pattern']
+              "
+            >
+              {{ "CONTACT.FORM.EMAIL_INVALID_ERROR" | translate }}
             </span>
           </div>
           <div class="divider"></div>
         </div>
 
+        <!-- NACHRICHT-FELD -->
         <div class="form-group">
-          <label for="message">{{
-            "CONTACT.FORM.MESSAGE_LABEL" | translate
-          }}</label>
+          <label for="message">
+            {{ "CONTACT.FORM.MESSAGE_LABEL" | translate }}
+          </label>
           <div class="input-wrapper">
             <textarea
               id="message"
@@ -100,12 +119,14 @@
               placeholder="{{ 'CONTACT.FORM.MESSAGE_PLACEHOLDER' | translate }}"
               required
               ngModel
+              #messageCtrl="ngModel"
             ></textarea>
+            <!-- Fehlermeldung, wenn Feld leer -->
             <span
               class="input-error"
               *ngIf="
-                contactForm.submitted &&
-                contactForm.controls['message']?.invalid
+                (contactForm.submitted || messageCtrl.dirty) &&
+                messageCtrl.errors?.['required']
               "
             >
               {{ "CONTACT.FORM.MESSAGE_ERROR" | translate }}
@@ -114,6 +135,7 @@
           <div class="divider"></div>
         </div>
 
+        <!-- CHECKBOX -->
         <div class="consent">
           <input type="checkbox" id="consent" name="consent" required ngModel />
           <label for="consent">
@@ -130,6 +152,7 @@
           </label>
         </div>
 
+        <!-- SEND-BUTTON -->
         <div class="send-button-container">
           <button
             type="submit"

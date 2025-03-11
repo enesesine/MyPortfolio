@@ -114,6 +114,7 @@
       "EMAIL_LABEL": "Wie lautet Ihre E-Mail?",
       "EMAIL_PLACEHOLDER": "ihreEmail@beispiel.com",
       "EMAIL_ERROR": "Bitte geben Sie Ihre E-Mail-Adresse ein.",
+      "EMAIL_INVALID_ERROR": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
       "MESSAGE_LABEL": "Wie kann ich Ihnen helfen?",
       "MESSAGE_PLACEHOLDER": "Hallo Enes, ich interessiere mich für...",
       "MESSAGE_ERROR": "Bitte schreiben Sie Ihre Nachricht.",
