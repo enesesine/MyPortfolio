@@ -6,9 +6,7 @@
       class="paper-ripple"
     />
     <div class="ripple-text">
-      <p>
-        {{ "SKILLSET.DESCRIPTION" | translate }}
-      </p>
+      <p>{{ "SKILLSET.DESCRIPTION" | translate }}</p>
     </div>
 
     <div class="my-stack">{{ "SKILLSET.MY_STACK" | translate }}</div>
@@ -23,7 +21,11 @@
   </div>
 
   <div class="icons-container">
-    <div class="icons-row frontend top">
+    <!-- ALLE 20 ICONS IN EINEM EINZIGEN CONTAINER -->
+    <div class="all-icons">
+      <!-- Hier die 20 Icons, exakt übernommen aus deinen 4 Rows -->
+
+      <!-- FRONTEND TOP (5 Icons) -->
       <div class="icon-item">
         <img
           src="assets/Images/SkillSet/Logos/Frontend/Angular.webp"
@@ -64,9 +66,8 @@
         />
         <span class="tech-label">TypeScript</span>
       </div>
-    </div>
 
-    <div class="icons-row frontend bottom">
+      <!-- FRONTEND BOTTOM (5 Icons) -->
       <div class="icon-item">
         <img
           src="assets/Images/SkillSet/Logos/Frontend/Scrum.webp"
@@ -107,9 +108,8 @@
         />
         <span class="tech-label">Firebase</span>
       </div>
-    </div>
 
-    <div class="icons-row backend top">
+      <!-- BACKEND TOP (5 Icons) -->
       <div class="icon-item">
         <img
           src="assets/Images/SkillSet/Logos/Backend/Python.webp"
@@ -150,9 +150,8 @@
         />
         <span class="tech-label">Flask</span>
       </div>
-    </div>
 
-    <div class="icons-row backend bottom">
+      <!-- BACKEND BOTTOM (5 Icons) -->
       <div class="icon-item">
         <img
           src="assets/Images/SkillSet/Logos/Backend/Linux.webp"

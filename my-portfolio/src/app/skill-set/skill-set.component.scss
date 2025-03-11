@@ -102,24 +102,23 @@
   margin-bottom: 120px;
 }
 
-/* Standard: 5 Icons pro Zeile */
-.icons-row.frontend.top,
-.icons-row.frontend.bottom,
-.icons-row.backend.top,
-.icons-row.backend.bottom {
+/* ALLE deine Icons in .all-icons */
+.all-icons {
   display: flex;
-  justify-content: center;
-  width: 100%;
+  flex-wrap: wrap; /* Icons umbrechen, wenn kein Platz */
+  justify-content: center; /* zentriere Icons in der Zeile */
 }
 
-.icons-row.frontend.top .icon-item,
-.icons-row.frontend.bottom .icon-item,
-.icons-row.backend.top .icon-item,
-.icons-row.backend.bottom .icon-item {
-  flex: 0 0 calc((100% - 4 * 10px) / 5);
-}
-
+/* ---------------------------
+   DESKTOP-DARSTELLUNG
+   => 5 Icons pro Zeile
+   => Mehr vertikal, weniger horizontal 
+   => margin: 15px 5px;
+----------------------------*/
 .icon-item {
+  flex: 0 0 20%; /* 5 Icons pro Zeile */
+  box-sizing: border-box;
+  margin: 15px 5px; /* oben/unten 15px, links/rechts 5px */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -143,19 +142,18 @@
   }
 }
 
-/* Media Query: Bei max-width:480px sollen pro Zeile 2 Icons angezeigt werden */
+/* ---------------------------
+   MOBILE-DARSTELLUNG
+   => 2 Icons pro Zeile
+   => margin: 10px 2.5px
+   => Basis: calc(50% - 5px)
+----------------------------*/
 @media screen and (max-width: 480px) {
-  .icons-row.frontend.top,
-  .icons-row.frontend.bottom,
-  .icons-row.backend.top,
-  .icons-row.backend.bottom {
-    flex-wrap: wrap;
-  }
-  .icons-row.frontend.top .icon-item,
-  .icons-row.frontend.bottom .icon-item,
-  .icons-row.backend.top .icon-item,
-  .icons-row.backend.bottom .icon-item {
-    flex: 0 0 calc((100% - 10px) / 3) !important;
+  .icon-item {
+    margin: 10px 2.5px; /* oben/unten 10px, links/rechts 2.5px */
+    flex: 0 0 calc(50% - 5px);
+    /* => 2.5px + 2.5px = 5px "Abzug" 
+       => passt exakt 2 Icons in 1 Zeile */
   }
 }
 
