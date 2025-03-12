@@ -1,7 +1,7 @@
 .atf-section {
   width: 100%;
   height: 100vh;
-  /* Hintergrund bleibt vollflächig */
+
   background-image: url("/assets/Images/AboveTheFold/BackgroundATF/bgATF.webp");
   background-size: cover;
   background-position: center bottom;
@@ -12,7 +12,6 @@
   color: white;
 }
 
-/* Globale Überschriften */
 h1 {
   font-family: "Bricolage", sans-serif;
   font-weight: bold;
@@ -533,6 +532,10 @@ p {
   }
   .burger-btn {
     display: block;
+  }
+
+  .socials {
+    left: 690px;
   }
 }
 
