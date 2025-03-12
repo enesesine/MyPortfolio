@@ -148,6 +148,14 @@
       color: #fff;
       width: 100%;
     }
+
+    /* Textarea-Einstellungen, damit es sich nicht in alle Richtungen ziehen lässt */
+    textarea {
+      resize: none; /* Keine manuelle Größenänderung */
+      max-height: 200px; /* Begrenze die Höhe */
+      overflow-y: auto; /* Scrollbar anzeigen, wenn Inhalt zu groß */
+    }
+
     input::placeholder,
     textarea::placeholder {
       color: #aaa;
@@ -159,18 +167,11 @@
     }
     .input-error {
       position: absolute;
-      /* Statt mittig im Feld nun UNTER dem Feld */
       top: 100%;
-      /* An den rechten Rand verschieben */
       right: 0;
-
-      /* Etwas Abstand nach oben, damit es nicht direkt am Input klebt */
       margin-top: 5px;
-
-      /* Schrift kleiner und nicht fett */
       font-size: 0.85rem;
       font-weight: normal;
-
       color: red;
       opacity: 0.8;
       font-family: inherit;
@@ -240,7 +241,7 @@
     border-bottom-color: #fff;
   }
 
-  // ADDED: Rote Markierung für ungültige Felder (wenn getouched)
+  /* Rote Markierung für ungültige Felder, wenn getouched */
   input.ng-invalid.ng-touched,
   textarea.ng-invalid.ng-touched {
     border-bottom-color: red;
